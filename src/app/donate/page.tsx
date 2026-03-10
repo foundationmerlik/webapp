@@ -1,0 +1,248 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download } from "lucide-react";
+
+export default function Donate() {
+    const [frequency, setFrequency] = useState("onetime");
+    const [amount, setAmount] = useState<number | string>(100);
+
+    const predefinedAmounts = [50, 100, 250];
+
+    return (
+        <div className="relative min-h-screen bg-background text-foreground pt-24 pb-32 overflow-hidden">
+
+            {/* Background Ornaments */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-gold/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+            <main className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+                {/* Top Section: Value Prop + Form */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-40">
+
+                    {/* Left Content: Value Proposition */}
+                    <div className="flex flex-col gap-10 mt-10">
+                        <div className="inline-flex items-center gap-3 rounded-full bg-brand-gold/10 px-5 py-2 w-fit">
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold opacity-75"></span>
+                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-gold"></span>
+                            </span>
+                            <span className="text-sm font-bold uppercase tracking-widest text-brand-gold">Make a Difference Today</span>
+                        </div>
+
+                        <h1 className="text-5xl md:text-6xl lg:text-[80px] font-black leading-[1.1] tracking-tight font-serif text-foreground">
+                            Invest in a Boy.<br />
+                            <span className="text-brand-gold italic">Strengthen a Nation.</span>
+                        </h1>
+
+                        <p className="text-xl md:text-2xl leading-relaxed text-foreground/70 font-medium max-w-2xl font-sans">
+                            Empowering the next generation of leaders through education and mentorship. Your contribution creates a ripple effect of positive change that transforms families and communities.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-8 pt-6 border-t border-foreground/10">
+                            <div className="flex flex-col gap-2">
+                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">15k<span className="text-brand-gold">+</span></span>
+                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Boys Mentored</span>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">92<span className="text-brand-gold">%</span></span>
+                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Graduation Rate</span>
+                            </div>
+                        </div>
+
+                        <div className="rounded-2xl bg-foreground/[0.03] p-8 border border-foreground/10 flex gap-6 mt-4">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-gold flex items-center justify-center text-brand-black shadow-lg">
+                                <ShieldCheck size={28} />
+                            </div>
+                            <div className="flex flex-col justify-center">
+                                <h4 className="font-bold text-xl font-serif text-foreground mb-2">Trusted Transparency</h4>
+                                <p className="text-base text-foreground/60 font-medium">100% of public donations go directly to funding our programs. We cover overhead through private grants.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Content: Donation Widget */}
+                    <div className="relative lg:mt-0">
+                        {/* Soft Glow behind Form */}
+                        <div className="absolute -inset-4 md:-inset-10 rounded-[3rem] bg-brand-gold/10 blur-[80px] pointer-events-none"></div>
+
+                        <div className="relative rounded-[2.5rem] border border-foreground/10 bg-background/80 backdrop-blur-xl p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.05)]">
+                            <h2 className="mb-8 text-3xl font-black font-serif text-foreground">Make a Donation</h2>
+
+                            {/* Frequency Toggle */}
+                            <div className="flex mb-10 h-14 bg-foreground/5 rounded-2xl p-1.5">
+                                <button
+                                    onClick={() => setFrequency("onetime")}
+                                    className={`flex-1 rounded-xl text-sm font-bold transition-all ${frequency === "onetime" ? "bg-background text-brand-gold shadow-md" : "text-foreground/60 hover:text-foreground"}`}
+                                >
+                                    One-time
+                                </button>
+                                <button
+                                    onClick={() => setFrequency("monthly")}
+                                    className={`flex-1 rounded-xl text-sm font-bold transition-all ${frequency === "monthly" ? "bg-background text-brand-gold shadow-md" : "text-foreground/60 hover:text-foreground"}`}
+                                >
+                                    Monthly
+                                </button>
+                            </div>
+
+                            {/* Payment Methods */}
+                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mb-10 border-b border-foreground/10 pb-4">
+                                <button className="flex flex-col items-center gap-3 border-b-2 border-brand-gold pb-4 transition-colors">
+                                    <CreditCard className="text-brand-gold" size={24} />
+                                    <span className="text-xs font-bold uppercase tracking-widest text-brand-gold">Card</span>
+                                </button>
+                                <button className="flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
+                                    <Wallet size={24} className="group-hover:text-brand-gold transition-colors" />
+                                    <span className="text-xs font-bold uppercase tracking-widest">M-Pesa</span>
+                                </button>
+                                <button className="flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:text-brand-gold transition-colors"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3" /></svg>
+                                    <span className="text-xs font-bold uppercase tracking-widest">Bank</span>
+                                </button>
+                                <button className="hidden sm:flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
+                                    <Building2 size={24} className="group-hover:text-brand-gold transition-colors" />
+                                    <span className="text-xs font-bold uppercase tracking-widest">Corp</span>
+                                </button>
+                            </div>
+
+                            {/* Amount Selection */}
+                            <div className="grid grid-cols-3 gap-4 mb-8">
+                                {predefinedAmounts.map((amt) => (
+                                    <button
+                                        key={amt}
+                                        onClick={() => setAmount(amt)}
+                                        className={`rounded-2xl py-4 text-lg font-black transition-all border ${amount === amt
+                                            ? "border-brand-gold bg-brand-gold/10 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                                            : "border-foreground/20 text-foreground hover:bg-foreground/5"
+                                            }`}
+                                    >
+                                        ${amt}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* Custom Amount */}
+                            <div className="mb-10">
+                                <label className="block text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3 ml-2">Custom Amount</label>
+                                <div className="relative group">
+                                    <span className="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-foreground/50 text-xl group-focus-within:text-brand-gold transition-colors">$</span>
+                                    <input
+                                        type="number"
+                                        value={amount}
+                                        onChange={(e) => setAmount(e.target.value)}
+                                        className="w-full rounded-2xl border-2 border-foreground/10 bg-foreground/5 py-5 pl-12 pr-6 text-xl font-bold focus:border-brand-gold focus:ring-0 outline-none transition-all"
+                                        placeholder="Enter amount"
+                                    />
+                                </div>
+                            </div>
+
+                            <button className="w-full rounded-2xl bg-brand-gold py-6 text-xl font-black text-brand-black shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all active:scale-95 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                Make Donation <CheckCircle2 size={24} />
+                            </button>
+                            <p className="mt-6 text-center text-sm font-semibold text-foreground/40 uppercase tracking-widest">
+                                Secure SSL Encrypted Transaction
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Transparency Section */}
+                <section className="mb-40 relative rounded-[3rem] bg-foreground/[0.02] border border-foreground/5 p-10 md:p-20 shadow-2xl overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-30"></div>
+
+                    <div className="flex flex-col items-center text-center mb-20 max-w-3xl mx-auto">
+                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Financial Accountability</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-serif text-foreground mb-6">Where Your Money Goes</h2>
+                        <p className="text-xl text-foreground/70 font-medium leading-relaxed">
+                            We believe in full financial accountability. See exactly how every dollar strengthens our nation's future leaders.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        {/* Scholarships */}
+                        <div className="flex flex-col items-center text-center p-8 bg-background rounded-3xl border border-foreground/5 shadow-sm group hover:-translate-y-2 transition-all duration-300">
+                            <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-brand-gold/10 text-brand-gold group-hover:bg-brand-gold group-hover:text-background transition-colors">
+                                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4 font-serif text-foreground">Scholarships <br /><span className="text-brand-gold">60%</span></h3>
+                            <p className="text-base text-foreground/60 font-medium leading-relaxed">Direct tuition fees, books, and uniforms for underprivileged boys across the country.</p>
+                        </div>
+
+                        {/* Training */}
+                        <div className="flex flex-col items-center text-center p-8 bg-background rounded-3xl border border-foreground/5 shadow-sm group hover:-translate-y-2 transition-all duration-300 delay-100">
+                            <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-brand-gold/10 text-brand-gold group-hover:bg-brand-gold group-hover:text-background transition-colors">
+                                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4 font-serif text-foreground">Skills Training <br /><span className="text-brand-gold">25%</span></h3>
+                            <p className="text-base text-foreground/60 font-medium leading-relaxed">Workshops, vocational training, and leadership bootcamps to prepare for the workforce.</p>
+                        </div>
+
+                        {/* Delivery */}
+                        <div className="flex flex-col items-center text-center p-8 bg-background rounded-3xl border border-foreground/5 shadow-sm group hover:-translate-y-2 transition-all duration-300 delay-200">
+                            <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-brand-gold/10 text-brand-gold group-hover:bg-brand-gold group-hover:text-background transition-colors">
+                                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4 font-serif text-foreground">Program Delivery <br /><span className="text-brand-gold">15%</span></h3>
+                            <p className="text-base text-foreground/60 font-medium leading-relaxed">Logistics, field mentors, and coordination to ensure programs reach the most remote areas.</p>
+                        </div>
+                    </div>
+
+                    <div className="mt-20 flex flex-col items-center gap-8 border-t border-foreground/10 pt-16">
+                        <p className="text-xl font-serif font-medium text-foreground italic">Want more details? Download our latest transparency report.</p>
+                        <button className="inline-flex items-center gap-4 rounded-full border-2 border-brand-gold px-10 py-4 font-bold text-brand-gold text-lg transition-all hover:bg-brand-gold hover:text-brand-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-1">
+                            <Download size={20} />
+                            2023 Impact Report (PDF)
+                        </button>
+                    </div>
+                </section>
+
+                {/* Gallery Section */}
+                <section>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg">
+                            <Image
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                alt="Boys in a modern classroom"
+                                src="/images/classroom.png"
+                            />
+                        </div>
+                        <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
+                            <Image
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                alt="Mentorship session outdoros"
+                                src="/images/mentorship.png"
+                            />
+                        </div>
+                        <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg">
+                            <Image
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 text-center"
+                                alt="Students celebrating"
+                                src="/images/outreach.png"
+                            />
+                        </div>
+                        <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
+                            <Image
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                alt="Close up of student hands"
+                                src="/images/hands.png"
+                            />
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    );
+}

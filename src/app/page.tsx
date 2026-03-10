@@ -1,65 +1,307 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Sparkles, Brain, Handshake, ShieldCheck, Sun, Compass, Activity, Users } from "lucide-react";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Boychild mental health themes for the marquee
+  const marqueeItems = [
+    { icon: Brain, text: "Mental Resilience" },
+    { icon: Handshake, text: "Brotherhood Support" },
+    { icon: ShieldCheck, text: "Safe Spaces" },
+    { icon: Sun, text: "Hope & Healing" },
+    { icon: Compass, text: "Guidance" },
+    { icon: Activity, text: "Emotional Balance" },
+    { icon: Users, text: "Community" }
+  ];
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      {/* Hero Section */}
+      <section className="relative w-full flex items-center pt-32 pb-8 overflow-hidden bg-background" style={{ minHeight: 'calc(100svh - 0px)' }}>
+
+        {/* Background Video Setup */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden flex justify-end bg-background pointer-events-none">
+          <div className="relative w-full md:w-[65%] h-full">
+            <video
+              src="/hero-bg.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`w-full h-full object-cover object-[70%_center] lg:object-center ${isLoaded ? 'animate-image-load' : 'opacity-0 scale-105'} transition-opacity duration-1000`}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {/* Soft Gradient Mask for seamless blending using CSS vars mapping to bg color map */}
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent w-full md:w-[80%]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent md:hidden"></div>
+          </div>
         </div>
-      </main>
-    </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 pointer-events-none">
+          <div className="max-w-[600px] pointer-events-auto mt-4 sm:mt-0 pb-24">
+
+            {/* Eyebrow Label */}
+            <div className={`flex items-center gap-3 mb-3 sm:mb-4 animate-reveal ${isLoaded ? '' : 'opacity-0'}`}>
+              <div className="h-[1px] w-12 bg-brand-gold"></div>
+              <span className="uppercase tracking-widest text-xs font-semibold text-brand-gold flex items-center gap-2">
+                <Sparkles size={14} /> The Merlik Foundation
+              </span>
+            </div>
+
+            {/* Main Typographic Headline */}
+            <div className={`font-serif text-3xl sm:text-4xl leading-tight text-foreground animate-reveal delay-100 ${isLoaded ? '' : 'opacity-0'}`}>
+              Restoring
+            </div>
+
+            <h2 className={`font-serif text-5xl sm:text-6xl md:text-[75px] font-bold split-text my-1 animate-reveal delay-100 ${isLoaded ? '' : 'opacity-0'}`}>
+              ORDER
+              <span>ORDER</span>
+              <span>ORDER</span>
+              <span>PURPOSE</span>
+            </h2>
+
+            <div className={`font-serif text-3xl sm:text-4xl leading-tight mb-4 text-foreground animate-reveal delay-100 ${isLoaded ? '' : 'opacity-0'}`}>
+              to the Hearts of Men.
+            </div>
+
+            {/* Sub-headline Paragraph */}
+            <p className={`text-sm sm:text-base text-foreground/70 mb-5 leading-relaxed animate-reveal delay-200 ${isLoaded ? '' : 'opacity-0'}`}>
+              Every great nation is built on the shoulders of strong, purposeful men. At Merlik Foundation, we walk with boys on their journey to become exactly that — one life at a time.
+            </p>
+
+            {/* Emerson Quote block */}
+            <blockquote className={`relative border-l-2 border-brand-gold pl-4 py-1 mb-8 animate-reveal delay-300 ${isLoaded ? '' : 'opacity-0'}`}>
+              <p className="italic text-foreground/60 text-sm leading-relaxed">
+                “Our chief want in life is somebody who will make us do what we can.”
+              </p>
+              <footer className="text-xs font-semibold text-foreground/80 mt-1 tracking-wide uppercase">
+                — Ralph Waldo Emerson
+              </footer>
+            </blockquote>
+
+            {/* Call to Actions */}
+            <div className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-reveal delay-400 ${isLoaded ? '' : 'opacity-0'}`}>
+              <Link href="/donate" className="btn-shimmer flex items-center justify-center gap-3 bg-brand-gold text-white px-6 py-3 rounded-full font-semibold shadow-[0_8px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                Support a Boy Today
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link href="/programs" className="flex items-center justify-center gap-3 bg-background/80 backdrop-blur-sm text-foreground border-2 border-foreground/20 px-6 py-3 rounded-full font-semibold hover:border-foreground transition-all duration-300">
+                Learn About Our Programs
+              </Link>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Endless Marquee Loop */}
+        <div className={`absolute bottom-0 left-0 w-full bg-background/80 backdrop-blur-md border-t border-black/5 py-4 z-20 overflow-hidden marquee-container transition-opacity duration-1000 delay-[600ms] ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="marquee-track">
+            {/* First Set */}
+            <div className="flex items-center">
+              {marqueeItems.map((item, idx) => (
+                <div key={`set1-${idx}`} className="flex items-center mx-6 sm:mx-10 marquee-item cursor-pointer group">
+                  <item.icon size={28} className="golden-3d mr-3" strokeWidth={1.5} />
+                  <span className="font-sans font-semibold text-foreground tracking-widest uppercase text-[10px] whitespace-nowrap group-hover:text-brand-gold transition-colors duration-300">
+                    {item.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+            {/* Duplicated Set for Seamless Loop */}
+            <div className="flex items-center">
+              {marqueeItems.map((item, idx) => (
+                <div key={`set2-${idx}`} className="flex items-center mx-6 sm:mx-10 marquee-item cursor-pointer group">
+                  <item.icon size={28} className="golden-3d mr-3" strokeWidth={1.5} />
+                  <span className="font-sans font-semibold text-foreground tracking-widest uppercase text-[10px] whitespace-nowrap group-hover:text-brand-gold transition-colors duration-300">
+                    {item.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Snapshot Bar */}
+      <section className="relative z-30 bg-brand-gold py-12 shadow-xl border-y border-brand-gold/20">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-black text-center">
+          <div className="text-brand-black text-center">
+            <p className="text-5xl font-black leading-none font-serif">12</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Counties</p>
+          </div>
+          <div className="text-brand-black text-center">
+            <p className="text-5xl font-black leading-none font-serif">20+</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Coaches</p>
+          </div>
+          <div className="text-brand-black text-center">
+            <p className="text-5xl font-black leading-none font-serif">300+</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Boys Helped</p>
+          </div>
+          <div className="text-brand-black text-center">
+            <p className="text-5xl font-black leading-none font-serif">2019</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Founded</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Brief About - Story */}
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
+            A minimalist approach to restoring purpose.
+          </h2>
+          <p className="text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed mb-12">
+            We believe that every young man deserves a compass. Through structured mentorship, academic support, and a community of brothers, we provide the tools needed to navigate the complexities of modern life.
+          </p>
+          <Link href="/about" className="group relative inline-flex items-center gap-3 px-10 py-5 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-lg">
+            Discover Our Story
+            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Programs Highlight */}
+      <section className="py-32 bg-foreground/5 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">Our Core Programs</h2>
+            <p className="text-lg text-foreground/60 mt-4 font-sans max-w-2xl mx-auto">Providing structured guidance, academic tools, and a reliable brotherhood.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Card 1 */}
+            <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-72 overflow-hidden bg-foreground/10">
+                <Image
+                  width={600} height={400}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Two young men talking outdoors in mentorship session"
+                  src="/images/mentorship.png"
+                />
+              </div>
+              <div className="p-10 relative">
+                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Mentorship</h3>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">One-on-one guidance from experienced coaches who understand the journey.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={16} />
+                </Link>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2 delay-100">
+              <div className="h-72 overflow-hidden bg-foreground/10">
+                <Image
+                  width={600} height={400}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Classroom setting with students focusing on work"
+                  src="/images/classroom.png"
+                />
+              </div>
+              <div className="p-10 relative">
+                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Education</h3>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Empowering minds through scholarships, tutoring, and technical workshops.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={16} />
+                </Link>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2 delay-200">
+              <div className="h-72 overflow-hidden bg-foreground/10">
+                <Image
+                  width={600} height={400}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Group of volunteers working in a community garden"
+                  src="/images/outreach.png"
+                />
+              </div>
+              <div className="p-10 relative">
+                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Outreach</h3>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Connecting with the streets to find those who need guidance the most.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={16} />
+                </Link>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Beneficiary Spotlight */}
+      <section className="py-32 bg-background relative z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-stretch border border-foreground/10 rounded-3xl overflow-hidden bg-background shadow-2xl">
+            <div className="lg:w-[45%] h-[500px] lg:h-auto relative">
+              <Image
+                width={800} height={800}
+                className="w-full h-full object-cover object-top"
+                alt="Portrait of Peter Masila, a confident young man smiling"
+                src="/images/peter_masila.jpg"
+              />
+              <div className="absolute bottom-8 left-8 bg-background/90 backdrop-blur-md p-6 rounded-2xl border border-foreground/5 shadow-xl">
+                <p className="text-foreground font-serif font-bold text-2xl mb-1">Peter Masila</p>
+                <p className="text-brand-gold text-sm uppercase font-bold tracking-widest">Alumni 2022</p>
+              </div>
+            </div>
+            <div className="lg:w-[55%] p-12 md:p-20 flex flex-col justify-center">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-10 text-foreground leading-tight">
+                From the Classroom to Graduation Day.
+              </h2>
+              <div className="relative">
+                <div className="absolute -top-6 -left-8 text-8xl text-brand-gold/20 font-serif leading-none italic">"</div>
+                <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed italic relative z-10 font-sans font-light">
+                  Before Merlik, I felt adrift. The coaches didn't just teach me skills; they showed me what it means to be a man of character. Today, I stand as a university graduate ready to serve my community.
+                </p>
+              </div>
+              <div className="flex items-center gap-6 mt-auto">
+                <div className="h-[2px] w-24 bg-brand-gold"></div>
+                <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">A Success Story</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Get Involved CTA */}
+      <section className="py-40 bg-brand-black text-white relative overflow-hidden">
+        {/* Glow Effects */}
+        <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-gold rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-6xl md:text-8xl font-serif font-black text-white mb-10 tracking-tighter">
+            Be Part of the Movement.
+          </h2>
+          <p className="text-xl text-white/70 font-sans mb-14 max-w-2xl mx-auto">
+            Your support transforms lives. Shape the men of tomorrow today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/get-involved" className="bg-brand-gold text-brand-black px-12 py-5 rounded-full font-black text-xl hover:brightness-110 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-300 transform hover:-translate-y-1">
+              Become a Mentor
+            </Link>
+            <Link href="/donate" className="border-2 border-white/30 text-white px-12 py-5 rounded-full font-black text-xl hover:bg-white hover:text-brand-black transition-all duration-300 transform hover:-translate-y-1">
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
