@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme, resolvedTheme, setTheme } = useTheme();
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,7 +24,7 @@ export default function Navbar() {
     }, []);
 
     const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
+        setTheme(resolvedTheme === "dark" ? "light" : "dark");
     };
 
     const navLinks = [
@@ -39,8 +39,8 @@ export default function Navbar() {
     return (
         <header
             className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
-                ? "bg-white dark:bg-[#111111] shadow-xl py-4 border-b border-black/5 dark:border-white/5"
-                : "bg-transparent py-6"
+                ? "bg-background shadow-xl py-4 border-b border-foreground/5"
+                : "bg-background/90 dark:bg-transparent backdrop-blur-md dark:backdrop-blur-none py-6"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 sm:px-12 flex justify-between items-center">
@@ -64,10 +64,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`font-sans font-semibold text-sm text-white transition-all duration-300 relative group hover:text-brand-gold ${mounted && theme !== "dark"
-                                ? "bg-black/25 backdrop-blur-sm px-3 py-1 rounded-full"
-                                : ""
-                                }`}
+                            className="font-sans font-semibold text-sm text-foreground transition-all duration-300 relative group hover:text-brand-gold"
                         >
                             {link.name}
                             <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
@@ -77,10 +74,10 @@ export default function Navbar() {
                     {mounted && (
                         <button
                             onClick={toggleTheme}
-                            className="p-2 rounded-full border border-white/40 text-white hover:border-brand-gold hover:text-brand-gold transition-all"
+                            className="p-2 rounded-full border border-foreground/40 text-foreground hover:border-brand-gold hover:text-brand-gold transition-all"
                             aria-label="Toggle Theme"
                         >
-                            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                            {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
                         </button>
                     )}
 
@@ -97,14 +94,14 @@ export default function Navbar() {
                     {mounted && (
                         <button
                             onClick={toggleTheme}
-                            className="p-2 rounded-full text-white hover:text-brand-gold transition-colors"
+                            className="p-2 rounded-full text-foreground hover:text-brand-gold transition-colors"
                         >
-                            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                            {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                     )}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="text-white p-2"
+                        className="text-foreground p-2"
                     >
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
