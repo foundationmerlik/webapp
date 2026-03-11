@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Brief About - Story */}
-      <section className="py-16 bg-background relative overflow-hidden">
+      <section className="py-8 bg-background relative overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 text-foreground">
             Empowering the Boy Child.
@@ -175,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* Programs Highlight */}
-      <section className="py-16 bg-foreground/5 relative">
+      <section className="py-8 bg-foreground/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Our Core Programs</h2>
@@ -246,26 +246,26 @@ export default function Home() {
       </section>
 
       {/* Beneficiary Spotlight */}
-      <section className="py-16 bg-background relative z-10">
+      <section className="py-8 bg-background relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-stretch border border-foreground/10 rounded-2xl overflow-hidden bg-background shadow-xl">
-            <div className="lg:w-[40%] h-[360px] lg:h-auto relative">
+            <div className="lg:w-[35%] h-[220px] lg:h-auto relative">
               <Image
                 width={800} height={800}
                 className="w-full h-full object-cover object-top"
                 alt="Portrait of Peter Masila, a confident young man smiling"
                 src="/images/peter_masila.jpg"
               />
-              <div className="absolute bottom-6 left-6 bg-background/90 backdrop-blur-md p-4 rounded-xl border border-foreground/5 shadow-lg">
-                <p className="text-foreground font-serif font-bold text-base mb-0.5">Peter Masila</p>
-                <p className="text-brand-gold text-xs uppercase font-bold tracking-widest">Makueni County</p>
+              <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-md p-3 rounded-xl border border-foreground/5 shadow-lg">
+                <p className="text-foreground font-serif font-bold text-sm mb-0.5">Peter Masila</p>
+                <p className="text-brand-gold text-[10px] uppercase font-bold tracking-widest">Makueni County</p>
               </div>
             </div>
-            <div className="lg:w-[60%] p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="text-xl md:text-2xl font-serif font-bold mb-5 text-foreground leading-tight">
+            <div className="lg:w-[65%] p-6 md:p-8 flex flex-col justify-center">
+              <h2 className="text-lg md:text-xl font-serif font-bold mb-3 text-foreground leading-tight">
                 Stories of Transformation
               </h2>
-              <div className="space-y-4 text-foreground/80 font-sans leading-relaxed relative z-10 text-sm">
+              <div className="space-y-2 text-foreground/80 font-sans leading-relaxed relative z-10 text-xs">
                 <p>
                   <strong className="text-foreground">Before:</strong> Grew up in a disadvantaged family in Makueni with no clear academic pathway or mentorship support.
                 </p>
@@ -279,9 +279,9 @@ export default function Home() {
                   <strong className="text-foreground">Impact (Now a Volunteer Mentor):</strong> Peter now volunteers as a Merlik mentor — a living demonstration of our sustainable cycle of impact.
                 </p>
               </div>
-              <div className="flex items-center gap-4 mt-7">
-                <div className="h-[2px] w-16 bg-brand-gold"></div>
-                <span className="text-brand-gold font-bold tracking-widest uppercase text-xs">A Success Story</span>
+              <div className="flex items-center gap-3 mt-5">
+                <div className="h-[2px] w-12 bg-brand-gold"></div>
+                <span className="text-brand-gold font-bold tracking-widest uppercase text-[10px]">A Success Story</span>
               </div>
             </div>
           </div>
