@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Globe, Users, ChevronDown, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Users, ChevronDown, Send, Instagram, Linkedin, Video } from "lucide-react";
 
 export default function Contact() {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -50,7 +50,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">Email Us</p>
-                                    <p className="text-xl font-bold font-serif text-foreground">hello@merlik.org</p>
+                                    <p className="text-xl font-bold font-serif text-foreground">info@merlikfoundation.org</p>
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">Call Us</p>
-                                    <p className="text-xl font-bold font-serif text-foreground">+254 700 123 456</p>
+                                    <p className="text-xl font-bold font-serif text-foreground">+254 795 966 792</p>
                                 </div>
                             </div>
 
@@ -69,8 +69,8 @@ export default function Contact() {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">Nairobi HQ</p>
-                                    <p className="text-xl font-bold font-serif text-foreground leading-tight">Westlands Business Park, 4th Fl<br />Nairobi, Kenya</p>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">Location</p>
+                                    <p className="text-xl font-bold font-serif text-foreground leading-tight">Nairobi, Kenya</p>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +79,14 @@ export default function Contact() {
                         <div className="pt-6">
                             <p className="text-sm font-bold uppercase tracking-widest text-foreground/50 mb-6">Connect with us on Social</p>
                             <div className="flex gap-4">
-                                <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-foreground/10 text-foreground/70 hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black hover:-translate-y-1 transition-all">
-                                    <Globe size={20} />
+                                <a href="https://instagram.com/MerlikFoundation" className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-foreground/10 text-foreground/70 hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black hover:-translate-y-1 transition-all">
+                                    <Instagram size={20} />
                                 </a>
-                                <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-foreground/10 text-foreground/70 hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black hover:-translate-y-1 transition-all">
-                                    <Users size={20} />
+                                <a href="https://linkedin.com/company/MerlikFoundation" className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-foreground/10 text-foreground/70 hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black hover:-translate-y-1 transition-all">
+                                    <Linkedin size={20} />
+                                </a>
+                                <a href="https://tiktok.com/@MerlikFoundation" className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-foreground/10 text-foreground/70 hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black hover:-translate-y-1 transition-all">
+                                    <Video size={20} />
                                 </a>
                             </div>
                         </div>

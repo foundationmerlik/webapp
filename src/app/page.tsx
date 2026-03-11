@@ -137,19 +137,19 @@ export default function Home() {
       <section className="relative z-30 bg-brand-gold py-12 shadow-xl border-y border-brand-gold/20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-black text-center">
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">12</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Counties</p>
+            <p className="text-5xl font-black leading-none font-serif">3</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Active Counties</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">20+</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Coaches</p>
+            <p className="text-5xl font-black leading-none font-serif">10+</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Trained Coaches</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">300+</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Boys Helped</p>
+            <p className="text-5xl font-black leading-none font-serif">1,000</p>
+            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Boys (2026 Goal)</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">2019</p>
+            <p className="text-5xl font-black leading-none font-serif">2017</p>
             <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Founded</p>
           </div>
         </div>
@@ -159,10 +159,13 @@ export default function Home() {
       <section className="py-32 bg-background relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
-            A minimalist approach to restoring purpose.
+            Empowering the Boy Child.
           </h2>
-          <p className="text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed mb-12">
-            We believe that every young man deserves a compass. Through structured mentorship, academic support, and a community of brothers, we provide the tools needed to navigate the complexities of modern life.
+          <p className="text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed mb-6">
+            Merlik Foundation is a Kenyan youth development organization focused on mentoring and equipping adolescent boys with the skills, values, and support systems needed to become responsible leaders in their communities.
+          </p>
+          <p className="text-lg md:text-xl text-foreground/60 font-sans leading-relaxed mb-12">
+            The name <strong>MERLIK</strong> derives from the Arabic word &quot;malki&quot; — meaning king — embodying our belief that every young man possesses inherent leadership potential waiting to be unlocked.
           </p>
           <Link href="/about" className="group relative inline-flex items-center gap-3 px-10 py-5 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-lg">
             Discover Our Story
@@ -191,7 +194,7 @@ export default function Home() {
               </div>
               <div className="p-10 relative">
                 <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Mentorship</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">One-on-one guidance from experienced coaches who understand the journey.</p>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Seven life-competency curriculum: 24 structured sessions, 36 contact hours per year.</p>
                 <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More <ArrowRight size={16} />
                 </Link>
@@ -211,7 +214,7 @@ export default function Home() {
               </div>
               <div className="p-10 relative">
                 <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Education</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Empowering minds through scholarships, tutoring, and technical workshops.</p>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Scholarship sponsorship for bright, needy boys through secondary school.</p>
                 <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More <ArrowRight size={16} />
                 </Link>
@@ -230,8 +233,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-10 relative">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Outreach</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Connecting with the streets to find those who need guidance the most.</p>
+                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Community Outreach</h3>
+                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Blue Bag Initiative, home visits, school engagements, and social responsibility.</p>
                 <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More <ArrowRight size={16} />
                 </Link>
@@ -255,20 +258,28 @@ export default function Home() {
               />
               <div className="absolute bottom-8 left-8 bg-background/90 backdrop-blur-md p-6 rounded-2xl border border-foreground/5 shadow-xl">
                 <p className="text-foreground font-serif font-bold text-2xl mb-1">Peter Masila</p>
-                <p className="text-brand-gold text-sm uppercase font-bold tracking-widest">Alumni 2022</p>
+                <p className="text-brand-gold text-sm uppercase font-bold tracking-widest">Makueni County</p>
               </div>
             </div>
-            <div className="lg:w-[55%] p-12 md:p-20 flex flex-col justify-center">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-10 text-foreground leading-tight">
-                From the Classroom to Graduation Day.
+            <div className="lg:w-[55%] p-12 md:p-16 flex flex-col justify-center">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground leading-tight">
+                Stories of Transformation
               </h2>
-              <div className="relative">
-                <div className="absolute -top-6 -left-8 text-8xl text-brand-gold/20 font-serif leading-none italic">"</div>
-                <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed italic relative z-10 font-sans font-light">
-                  Before Merlik, I felt adrift. The coaches didn't just teach me skills; they showed me what it means to be a man of character. Today, I stand as a university graduate ready to serve my community.
+              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed relative z-10 text-base md:text-lg">
+                <p>
+                  <strong className="text-foreground">Before:</strong> Grew up in a disadvantaged family in Makueni with no clear academic pathway or mentorship support.
+                </p>
+                <p>
+                  <strong className="text-foreground">Intervention:</strong> Received a Merlik scholarship to Nguu Secondary School and was paired with a dedicated mentor throughout his studies.
+                </p>
+                <p>
+                  <strong className="text-foreground">Outcome:</strong> Completed KCSE in 2020 and went on to earn a Bachelor&apos;s Degree in Commerce at Egerton University.
+                </p>
+                <p>
+                  <strong className="text-foreground">Impact (Now a Volunteer Mentor):</strong> Peter now volunteers as a Merlik mentor — a living demonstration of our sustainable cycle of impact.
                 </p>
               </div>
-              <div className="flex items-center gap-6 mt-auto">
+              <div className="flex items-center gap-6 mt-10">
                 <div className="h-[2px] w-24 bg-brand-gold"></div>
                 <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">A Success Story</span>
               </div>

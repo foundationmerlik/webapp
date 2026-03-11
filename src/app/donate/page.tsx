@@ -42,12 +42,12 @@ export default function Donate() {
 
                         <div className="grid grid-cols-2 gap-8 pt-6 border-t border-foreground/10">
                             <div className="flex flex-col gap-2">
-                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">15k<span className="text-brand-gold">+</span></span>
-                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Boys Mentored</span>
+                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">1,000</span>
+                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Boys (2026 Goal)</span>
                             </div>
                             <div className="flex flex-col gap-2">
-                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">92<span className="text-brand-gold">%</span></span>
-                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Graduation Rate</span>
+                                <span className="text-4xl lg:text-5xl font-black font-serif text-foreground">30<span className="text-brand-gold">+</span></span>
+                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/50">Trained Coaches</span>
                             </div>
                         </div>
 

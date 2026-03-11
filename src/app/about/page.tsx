@@ -24,7 +24,7 @@ export default function About() {
                         Our Story. <span className="text-brand-gold italic">Our Mission.</span> <br />Our People.
                     </h1>
                     <p className="text-lg md:text-xl md:text-2xl text-foreground/80 font-sans max-w-2xl mx-auto animate-reveal delay-200">
-                        A decade of building bridges, fostering hope, and empowering communities through sustainable impact.
+                        Empowering the Boy Child Through Education, Mentorship & General Life Development.
                     </p>
                 </div>
             </section>
@@ -42,47 +42,47 @@ export default function About() {
                 <div className="relative border-l border-brand-gold/30 ml-4 md:ml-0 md:border-l-0">
                     <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-brand-gold/30 transform -translate-x-1/2"></div>
 
-                    {/* 2010 */}
+                    {/* 2017 */}
                     <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2010</span>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2017</span>
                             <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Foundation Roots</h3>
                         </div>
                         <div className="md:pl-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                The Merlik Foundation was born in a small community center with a simple goal: to provide basic education tools to underserved children. Our founder, Sheila Ngui, saw a gap that needed a bridge.
+                                Merlik was born from a shared recognition that Kenya&apos;s boy child was being left behind without structured mentorship, role models, or life-skills support.
                             </p>
                         </div>
                     </div>
 
-                    {/* 2015 */}
+                    {/* 2019 */}
                     <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2015</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Expanding Reach</h3>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2019</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Official Registration</h3>
                         </div>
                         <div className="md:order-1 md:text-right pr-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                After five years of grassroots success, we expanded our operations to three continents, focusing on clean water initiatives and healthcare infrastructure in remote villages.
+                                Registered as a Kenyan youth development organization officially focused on mentoring and equipping adolescent boys with the skills and values to lead.
                             </p>
                         </div>
                     </div>
 
-                    {/* 2023 */}
+                    {/* Present */}
                     <div className="relative md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2023</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Global Impact</h3>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">Present</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">A Growing Movement</h3>
                         </div>
                         <div className="md:pl-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Today, Merlik Foundation supports over 200 projects annually, impacting more than 1.5 million lives through technology, education, and sustainable development.
+                                With 10+ trained coaches and 100+ volunteers, we are a growing movement transforming one boy at a time. The name &quot;MERLIK&quot; — derived from the Arabic word &quot;malki&quot; meaning king — remains at our core.
                             </p>
                         </div>
                     </div>
@@ -98,13 +98,13 @@ export default function About() {
                     <div className="mb-32">
                         <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Mission</h2>
                         <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground">
-                            To empower marginalized communities by providing <span className="text-brand-gold italic">sustainable solutions</span> to education, health, and economic inequality.
+                            Empowerment of the Boy Child through <span className="text-brand-gold italic">Education, Mentorship & General Life Development.</span>
                         </p>
                     </div>
                     <div>
                         <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Vision</h2>
                         <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground">
-                            A world where opportunity is <span className="text-brand-gold italic">universal</span> and dignity is a fundamental right for every human being.
+                            Developing Africa <span className="text-brand-gold italic">one boy at a time.</span>
                         </p>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ export default function About() {
                         </div>
                         <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Service</h3>
                         <p className="text-foreground/70 leading-relaxed font-medium">
-                            Placing the needs of others above our own through dedicated action and empathy.
+                            Dedicated commitment to community transformation.
                         </p>
                     </div>
 
@@ -136,7 +136,7 @@ export default function About() {
                         </div>
                         <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Responsibility</h3>
                         <p className="text-foreground/70 leading-relaxed font-medium">
-                            Taking ownership of our impact and ensuring sustainable outcomes for every initiative.
+                            Accountability in all our actions and programmes.
                         </p>
                     </div>
 
@@ -147,47 +147,122 @@ export default function About() {
                         </div>
                         <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Integrity</h3>
                         <p className="text-foreground/70 leading-relaxed font-medium">
-                            Maintaining the highest ethical standards in our partnerships and financial transparency.
+                            Unwavering ethical standards in all operations.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Leadership Section */}
+            {/* Governance & Leadership Section */}
             <section className="py-32 px-6 bg-foreground/[0.02]">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
-                    <div className="flex-1 order-2 md:order-1">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-20">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
-                            <div className="w-10 h-[1px] bg-brand-gold"></div> Leadership
+                            <div className="w-10 h-[1px] bg-brand-gold"></div> Leadership & Accountability
                         </h2>
                         <h3 className="text-4xl md:text-5xl lg:text-[56px] font-black font-serif mb-8 leading-tight text-foreground">
-                            The Visionary Behind the Movement
+                            Governance Structure
                         </h3>
-                        <p className="text-foreground/80 leading-relaxed text-xl mb-8 font-sans">
-                            Sheila Ngui has dedicated over two decades to humanitarian work. Under her leadership, the foundation has grown from a local initiative to a global force for good. Her philosophy is simple: <span className="italic">"Empowerment is not a gift, it's a right."</span>
-                        </p>
-                        <div className="flex gap-4">
-                            <Link href="/contact" className="px-8 py-3 bg-brand-gold text-white font-bold rounded-full hover:shadow-[0_4px_15px_rgba(212,175,55,0.3)] hover:-translate-y-1 transition-all">
-                                Reach Out
-                            </Link>
-                        </div>
                     </div>
-                    <div className="flex-1 flex justify-center order-1 md:order-2 w-full">
-                        <div className="relative w-full max-w-[450px]">
-                            <div className="absolute -inset-4 md:-inset-6 border border-brand-gold/30 rounded-2xl md:rounded-3xl trnasform translate-x-3 translate-y-3"></div>
-                            <div className="relative aspect-[3/4] bg-background overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl z-10 group">
-                                <Image
-                                    fill
-                                    alt="Professional headshot of Sheila Ngui"
-                                    className="w-full h-full object-cover grayscale mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
-                                    src="/images/sheila_ngui.jpg"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-10 text-white translate-y-4 group-hover:translate-y-0 transition-transform">
-                                    <h4 className="text-3xl font-bold font-serif">Sheila Ngui</h4>
-                                    <p className="text-brand-gold text-sm font-semibold uppercase tracking-widest mt-2">Founder & Executive Director</p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+                        {/* Management Team */}
+                        <div>
+                            <h4 className="text-2xl font-serif font-bold mb-6 text-foreground">Management Team</h4>
+                            <div className="space-y-6">
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
+                                    <p className="text-xl font-bold text-foreground">Sheila Ngui</p>
+                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Executive Director, Programme Dev. & Ops</p>
+                                </div>
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
+                                    <p className="text-xl font-bold text-foreground">Lavinah Gonah</p>
+                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Co-Founder, Community Outreach & Partnerships</p>
+                                </div>
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
+                                    <p className="text-xl font-bold text-foreground">Herbert Njoroge</p>
+                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Co-Founder, Strategic Planning & Resource Mobilization</p>
                                 </div>
                             </div>
                         </div>
+
+                        {/* Governance Details */}
+                        <div>
+                            <h4 className="text-2xl font-serif font-bold mb-6 text-foreground">Accountability & Oversight</h4>
+                            <div className="space-y-8 text-foreground/80 font-sans leading-relaxed">
+                                <div>
+                                    <strong className="text-foreground block mb-1">Legal Status</strong>
+                                    <p>Company Limited by Guarantee, Republic of Kenya. Fully registered non-profit with operational capacity since 2019.</p>
+                                </div>
+                                <div>
+                                    <strong className="text-foreground block mb-1">Board Oversight</strong>
+                                    <p>Provides strategic guidance and ensures financial accountability. Regular reporting to all stakeholders.</p>
+                                </div>
+                                <div>
+                                    <strong className="text-foreground block mb-1">Financial Controls</strong>
+                                    <p>Transparent financial management with board oversight, regular stakeholder reporting, and full accountability for donor funds. Fully itemized budgets and programme reports available to donors upon request. We welcome restricted grants, unrestricted support, and in-kind contributions.</p>
+                                </div>
+                                <div>
+                                    <strong className="text-foreground block mb-1">Safeguarding Policy</strong>
+                                    <p>All coaches trained to identify safeguarding concerns. Referral pathways established.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Global Impact Alignment (SDGs) & Partners */}
+            <section className="py-32 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-20">
+                        <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                            <div className="w-10 h-[1px] bg-brand-gold"></div> Global Impact
+                        </h2>
+                        <h3 className="text-4xl md:text-5xl lg:text-[56px] font-black font-serif mb-8 leading-tight text-foreground">
+                            SDG Alignment
+                        </h3>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 1 (No Poverty)</strong>
+                            <p className="text-foreground/70 text-sm">Sponsorship & career mentoring in informal settlements.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 3 (Good Health)</strong>
+                            <p className="text-foreground/70 text-sm">Mental health support & life skills for wellbeing.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 4 (Quality Education)</strong>
+                            <p className="text-foreground/70 text-sm">Scholarships & academic mentorship.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 5 (Gender Equality)</strong>
+                            <p className="text-foreground/70 text-sm">Positive masculinity & equitable communities.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 8 (Decent Work)</strong>
+                            <p className="text-foreground/70 text-sm">Career guidance & entrepreneurship.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 10 (Reduce Inequality)</strong>
+                            <p className="text-foreground/70 text-sm">Targeting marginalized boys.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 16 (Peace & Justice)</strong>
+                            <p className="text-foreground/70 text-sm">Ethical leaders building peaceful communities.</p>
+                        </div>
+                        <div className="p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl hover:border-brand-gold/30 transition-colors">
+                            <strong className="text-brand-gold block mb-2 font-serif">SDG 17 (Partnerships)</strong>
+                            <p className="text-foreground/70 text-sm">Schools, CBOs, government & corporates aligned.</p>
+                        </div>
+                    </div>
+
+                    <div className="text-center">
+                        <h4 className="font-serif font-bold text-2xl mb-6 text-brand-gold">Our Partners</h4>
+                        <p className="text-foreground/70 text-lg leading-relaxed max-w-4xl mx-auto">
+                            Yazua Afrika, Paper Hearts Foundation, The Social Worker Mike, Mukuru Promotion Center, Mukuru Rescue Center, New Life Children's Home.
+                        </p>
                     </div>
                 </div>
             </section>

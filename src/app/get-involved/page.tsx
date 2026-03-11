@@ -43,68 +43,116 @@ export default function GetInvolved() {
                     </div>
                 </section>
 
-                {/* Get Involved Grid */}
+                {/* 2026 Goals Section */}
                 <section className="mb-32" id="options">
                     <div className="flex flex-col items-center mb-16 animate-reveal delay-200">
-                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Our Mission</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">Ways to Get Involved</h2>
+                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Our Vision for the Future</span>
+                        <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">2026 SMART Goals</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {/* Card 1 */}
-                        <div className="group relative bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6 cursor-pointer hover:border-brand-gold hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300">
-                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                                <Brain size={32} />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Goal 1 */}
+                        <div className="bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6">
+                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold">
+                                <span className="font-serif font-black text-2xl">01</span>
                             </div>
                             <div className="flex-grow">
-                                <h3 className="text-2xl font-serif font-bold mb-4 text-foreground group-hover:text-brand-gold transition-colors">Become a Mentor</h3>
-                                <p className="text-foreground/70 leading-relaxed font-medium">Share your wisdom and guide young men as they navigate life's challenges and opportunities.</p>
-                            </div>
-                            <div className="mt-auto text-brand-gold text-sm font-bold tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all w-full border-t border-foreground/5 pt-6">
-                                Learn More <ArrowRight size={16} />
+                                <h3 className="text-xl font-serif font-bold mb-4 text-foreground">Programme Reach</h3>
+                                <p className="text-foreground/70 leading-relaxed font-medium mb-4">
+                                    Reaching 1,000 Boys | 30 Coaches | 3 Active Zones
+                                </p>
+                                <ul className="text-sm space-y-2 text-foreground/60 font-medium list-disc list-inside">
+                                    <li>400 boys - group mentoring</li>
+                                    <li>100 boys - personal coaching</li>
+                                    <li>200 boys - school engagements</li>
+                                    <li>300 boys - community events</li>
+                                </ul>
                             </div>
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="group relative bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6 cursor-pointer hover:border-brand-gold hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300 delay-100">
-                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                                <Heart size={32} />
+                        {/* Goal 2 */}
+                        <div className="bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6">
+                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold">
+                                <span className="font-serif font-black text-2xl">02</span>
                             </div>
                             <div className="flex-grow">
-                                <h3 className="text-2xl font-serif font-bold mb-4 text-foreground group-hover:text-brand-gold transition-colors">Volunteer</h3>
-                                <p className="text-foreground/70 leading-relaxed font-medium">Give your time to our local events, workshops, and community outreach programs.</p>
-                            </div>
-                            <div className="mt-auto text-brand-gold text-sm font-bold tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all w-full border-t border-foreground/5 pt-6">
-                                Get Started <ArrowRight size={16} />
+                                <h3 className="text-xl font-serif font-bold mb-4 text-foreground">Delivery & Outcomes</h3>
+                                <p className="text-foreground/70 leading-relaxed font-medium mb-4">
+                                    &ge;80% Engagement | 25-40% risk reduction
+                                </p>
+                                <ul className="text-sm space-y-2 text-foreground/60 font-medium list-disc list-inside">
+                                    <li>Behavior measured via SDQ</li>
+                                    <li>Self-confidence via Rosenberg Scale</li>
+                                    <li>&ge;70% personal SMART goals achieved</li>
+                                </ul>
                             </div>
                         </div>
 
-                        {/* Card 3 */}
-                        <div className="group relative bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6 cursor-pointer hover:border-brand-gold hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300 delay-200">
-                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                                <Handshake size={32} />
+                        {/* Goal 3 */}
+                        <div className="bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6">
+                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold">
+                                <span className="font-serif font-black text-2xl">03</span>
                             </div>
                             <div className="flex-grow">
-                                <h3 className="text-2xl font-serif font-bold mb-4 text-foreground group-hover:text-brand-gold transition-colors">Partner With Us</h3>
-                                <p className="text-foreground/70 leading-relaxed font-medium">Collaborate as a corporate partner or local business to scale our collective impact.</p>
-                            </div>
-                            <div className="mt-auto text-brand-gold text-sm font-bold tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all w-full border-t border-foreground/5 pt-6">
-                                Partner Info <ArrowRight size={16} />
+                                <h3 className="text-xl font-serif font-bold mb-4 text-foreground">Sustainability</h3>
+                                <p className="text-foreground/70 leading-relaxed font-medium mb-4">
+                                    Financial stability & impact visibility
+                                </p>
+                                <ul className="text-sm space-y-2 text-foreground/60 font-medium list-disc list-inside">
+                                    <li>Secure 2+ new strategic funders</li>
+                                    <li>Map 10+ funding prospects</li>
+                                    <li>Comprehensive Impact Report Dec 2026</li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {/* Card 4 */}
-                        <div className="group relative bg-background/50 backdrop-blur-xl border border-foreground/10 rounded-[2rem] p-10 flex flex-col items-start gap-6 cursor-pointer hover:border-brand-gold hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300 delay-300">
-                            <div className="w-16 h-16 rounded-2xl bg-foreground/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                                <Megaphone size={32} />
+                {/* Why Partner Section */}
+                <section className="mb-32">
+                    <div className="flex flex-col items-center mb-16">
+                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Impact & Trust</span>
+                        <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">Why Partner With Us?</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {['Evidence-Based Curriculum', 'Growing Mentor Network', 'Proven Community Partnerships', 'Focus on the Underserved', 'Scalable & Replicable Model', 'Track Record of Impact'].map(reason => (
+                            <div key={reason} className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm text-center">
+                                <h4 className="font-serif font-bold text-foreground text-lg">{reason}</h4>
                             </div>
-                            <div className="flex-grow">
-                                <h3 className="text-2xl font-serif font-bold mb-4 text-foreground group-hover:text-brand-gold transition-colors">Spread the Word</h3>
-                                <p className="text-foreground/70 leading-relaxed font-medium">Use your platform to advocate for our mission and help us reach more families.</p>
-                            </div>
-                            <div className="mt-auto text-brand-gold text-sm font-bold tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all w-full border-t border-foreground/5 pt-6">
-                                Share Now <ArrowRight size={16} />
-                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Partnership Opportunities Section */}
+                <section className="mb-32">
+                    <div className="flex flex-col items-center mb-16">
+                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Resource Requirements</span>
+                        <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">Partnership Options</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">Programme Grants</h4>
+                            <p className="text-foreground/70 text-sm">Restricted or unrestricted funding for the 2026 cycle.</p>
+                        </div>
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">Multi-Year Partnerships</h4>
+                            <p className="text-foreground/70 text-sm">Programme stability enabling evidence-building at scale.</p>
+                        </div>
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">Corporate CSR</h4>
+                            <p className="text-foreground/70 text-sm">Sponsor specific pillars, school sites, or coach stipends.</p>
+                        </div>
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">Adopt-a-Boy</h4>
+                            <p className="text-foreground/70 text-sm">Sponsor one boy's full secondary education journey.</p>
+                        </div>
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">In-Kind Support</h4>
+                            <p className="text-foreground/70 text-sm">Technology, printing, professional expertise.</p>
+                        </div>
+                        <div className="p-8 bg-foreground/[0.02] border border-foreground/10 rounded-2xl">
+                            <h4 className="text-xl font-serif font-bold mb-2">Institutional Partner</h4>
+                            <p className="text-foreground/70 text-sm">Schools & faith orgs to host and co-deliver curriculum.</p>
                         </div>
                     </div>
                 </section>

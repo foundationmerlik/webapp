@@ -52,18 +52,34 @@ export default function Programs() {
                             <p className="text-foreground/70 text-lg md:text-xl font-medium leading-relaxed mb-10">
                                 Our flagship program provides structured guidance and professional development for young men. We believe that true power comes from disciplined growth and the wisdom of those who have paved the way.
                             </p>
-                            <ul className="space-y-6 mb-12">
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                                 <li className="flex items-start gap-4">
-                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={24} />
-                                    <span className="text-lg font-medium text-foreground">1-on-1 coaching with industry leaders</span>
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Identity & Purpose:</strong> Self-discovery, values.</span>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={24} />
-                                    <span className="text-lg font-medium text-foreground">Bi-weekly masterclasses on leadership & ethics</span>
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Communication:</strong> Emotional intelligence, teamwork.</span>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={24} />
-                                    <span className="text-lg font-medium text-foreground">Access to the proprietary Mentorship Manual workbook</span>
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Leadership:</strong> Servant leadership, civic duty.</span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Financial Literacy:</strong> Budgeting, entrepreneurship.</span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Digital Citizenship:</strong> Online safety, computer skills.</span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Health & Wellbeing:</strong> Mental & reproductive health.</span>
+                                </li>
+                                <li className="flex items-start gap-4 sm:col-span-2">
+                                    <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={20} />
+                                    <span className="text-sm font-medium text-foreground"><strong>Career Pathways:</strong> SMART goals, higher education.</span>
                                 </li>
                             </ul>
                             <Link href="/get-involved" className="inline-flex items-center gap-4 bg-brand-black text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
@@ -186,13 +202,13 @@ export default function Programs() {
                     </div>
                 </section>
 
-                {/* 04 Merlik Library */}
+                {/* 04 The Crisis & Research Case */}
                 <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-background">
                     <div className="relative h-[60vh] lg:h-auto order-1 overflow-hidden bg-background">
                         <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
                             <Image
                                 src="/images/library.png"
-                                alt="Interior of a luxury classical library with wood shelving"
+                                alt="Youth looking towards the future"
                                 fill
                                 className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
                             />
@@ -202,28 +218,93 @@ export default function Programs() {
                     <div className="flex flex-col justify-center p-8 lg:p-24 order-2 relative z-10">
                         <div className="max-w-xl mx-auto lg:mx-0 ml-auto">
                             <span className="text-brand-gold font-black font-serif text-6xl lg:text-8xl mb-4 block opacity-20 select-none text-right lg:text-left">04</span>
-                            <h2 className="text-4xl lg:text-6xl font-black font-serif mb-6 text-foreground leading-tight text-right lg:text-left">Merlik <br />Library</h2>
-                            <p className="text-foreground/70 text-lg md:text-xl font-medium leading-relaxed mb-10 text-right lg:text-left">
-                                A sanctuary of knowledge. We provide curated access to books covering history, philosophy, technical skills, and leadership to shape well-rounded minds.
+                            <h2 className="text-4xl lg:text-5xl font-black font-serif mb-6 text-foreground leading-tight text-right lg:text-left">The Crisis & <br />Research Case</h2>
+                            <p className="text-foreground/70 text-base md:text-lg font-medium leading-relaxed mb-8 text-right lg:text-left">
+                                Kenya is a young nation—75% of all Kenyans are under 35. Yet systems to support boys are fragmented. Our model is built on evidence-based research showing significant improvements in behavioral, social-emotional, and academic outcomes.
                             </p>
 
-                            <div className="bg-foreground/[0.03] p-10 rounded-3xl border-l-4 border-brand-gold mb-12 shadow-sm">
-                                <p className="italic text-xl text-foreground mb-6 font-serif">
-                                    "The man who does not read has no advantage over the man who cannot read."
-                                </p>
-                                <p className="font-bold text-brand-gold uppercase tracking-widest text-sm">— Mark Twain</p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                                <div className="p-4 bg-foreground/[0.03] rounded-2xl border-l-4 border-brand-gold">
+                                    <p className="font-bold text-2xl font-serif text-foreground mb-1">30.8%</p>
+                                    <p className="text-xs text-foreground/70">Secondary students report alcohol use.</p>
+                                </div>
+                                <div className="p-4 bg-foreground/[0.03] rounded-2xl border-l-4 border-brand-gold">
+                                    <p className="font-bold text-2xl font-serif text-foreground mb-1">74%</p>
+                                    <p className="text-xs text-foreground/70">Lifetime substance use (street youth).</p>
+                                </div>
+                                <div className="p-4 bg-foreground/[0.03] rounded-2xl border-l-4 border-brand-gold">
+                                    <p className="font-bold text-2xl font-serif text-foreground mb-1">&lt;1 in 10</p>
+                                    <p className="text-xs text-foreground/70">Boys in informal settlements have a mentor.</p>
+                                </div>
+                                <div className="p-4 bg-foreground/[0.03] rounded-2xl border-l-4 border-brand-gold">
+                                    <p className="font-bold text-2xl font-serif text-foreground mb-1">SDQ</p>
+                                    <p className="text-xs text-foreground/70">Strengths & Difficulties Questionnaire used.</p>
+                                </div>
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-5 justify-end lg:justify-start">
-                                <Link href="/donate" className="inline-flex justify-center items-center gap-4 bg-brand-gold text-brand-black px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
-                                    <BookOpen size={20} className="text-brand-black group-hover:scale-110 transition-transform" />
-                                    Donate a Book
-                                </Link>
-                                <Link href="#" className="inline-flex justify-center items-center gap-4 bg-background border-2 border-foreground/20 text-foreground px-10 py-5 rounded-full font-bold text-lg hover:border-foreground transition-all group">
-                                    <Search size={20} className="text-foreground group-hover:scale-110 transition-transform" />
-                                    Browse Catalog
+                                <Link href="/get-involved" className="inline-flex justify-center items-center gap-4 bg-brand-gold text-brand-black px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
+                                    <UserPlus size={20} className="text-brand-black group-hover:scale-110 transition-transform" />
+                                    Become a Mentor
                                 </Link>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 05 Geographic Reach */}
+                <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen border-t border-foreground/5 bg-background">
+                    <div className="flex flex-col justify-center p-8 lg:p-24 order-2 lg:order-1 relative z-10">
+                        <div className="max-w-xl mx-auto lg:mx-0">
+                            <span className="text-brand-gold font-black font-serif text-6xl lg:text-8xl mb-4 block opacity-20 select-none">05</span>
+                            <h2 className="text-4xl lg:text-6xl font-black font-serif mb-6 text-foreground leading-tight">Geographic <br />Reach</h2>
+                            <p className="text-foreground/70 text-lg md:text-xl font-medium leading-relaxed mb-10">
+                                Over 14 counties. From urban informal settlements in Nairobi to schools in the Rift Valley, our growing network of dedicated volunteers delivers impact across Kenya.
+                            </p>
+
+                            <div className="space-y-8 mb-12">
+                                <div>
+                                    <h4 className="font-bold text-xl font-serif text-foreground mb-3">Active Programme Implementation</h4>
+                                    <ul className="space-y-4">
+                                        <li className="flex items-start gap-4">
+                                            <div className="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                            <p className="text-foreground/70 text-sm leading-relaxed"><strong className="text-foreground">Nairobi County:</strong> Mukuru Promotion Center, Mukuru Rescue Center (100+ boys), New Life Children's Home (Kibra).</p>
+                                        </li>
+                                        <li className="flex items-start gap-4">
+                                            <div className="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                            <p className="text-foreground/70 text-sm leading-relaxed"><strong className="text-foreground">Makueni County:</strong> Kivandini Comprehensive School, Wote (Oct 2025) - Joint session with Paper Hearts Foundation.</p>
+                                        </li>
+                                        <li className="flex items-start gap-4">
+                                            <div className="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                            <p className="text-foreground/70 text-sm leading-relaxed"><strong className="text-foreground">Trans Nzoia / Rift Valley:</strong> United Matunda Academy - fully deployed 12-month programme.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-xl font-serif text-foreground mb-3">Volunteer & Coaching Network</h4>
+                                    <p className="text-foreground/70 text-sm leading-relaxed mb-4">
+                                        Nairobi, Nakuru, Uasin Gishu, Kakamega, Busia, Kisumu, Kajiado, Makueni, Machakos, Embu, Meru, Trans Nzoia, Keiyo-Marakwet, Kisii.
+                                    </p>
+                                    <h5 className="font-bold text-sm uppercase tracking-widest text-foreground/50 mb-2">Coach Age Profile</h5>
+                                    <div className="flex flex-wrap gap-2 text-xs font-bold font-sans">
+                                        <span className="px-3 py-1 bg-foreground/[0.05] rounded-full">18-24: 16%</span>
+                                        <span className="px-3 py-1 bg-brand-gold/20 text-brand-gold rounded-full">25-30: 39%</span>
+                                        <span className="px-3 py-1 bg-foreground/[0.05] rounded-full">31-34: 34%</span>
+                                        <span className="px-3 py-1 bg-foreground/[0.05] rounded-full">35-40: 11%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background flex items-center justify-center p-12">
+                        <div className="relative w-full h-full max-h-[800px] rounded-[3rem] overflow-hidden border border-foreground/10 shadow-xl group">
+                            <Image
+                                src="/images/map.png"
+                                alt="Map highlighting our geographic reach in Kenya"
+                                fill
+                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            />
+                            <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>
                     </div>
                 </section>

@@ -20,11 +20,16 @@ export default function Footer() {
                     </div>
                 </Link>
 
-                <p className="text-foreground/60 text-sm font-medium tracking-wide">
-                    © {new Date().getFullYear()} Merlik Foundation. All rights reserved.
-                    <span className="hidden md:inline mx-3 opacity-30">|</span>
-                    <span className="block md:inline mt-2 md:mt-0 font-serif italic text-foreground/80">Restoring Order, Restoring Men.</span>
-                </p>
+                <div className="text-center md:text-left flex flex-col">
+                    <p className="text-foreground/60 text-sm font-medium tracking-wide">
+                        © {new Date().getFullYear()} Merlik Foundation. All rights reserved.
+                    </p>
+                    <p className="mt-2 font-serif italic text-foreground/80">
+                        Restoring order to the hearts of men - one at a time.<br className="md:hidden" />
+                        <span className="hidden md:inline mx-2">—</span>
+                        "We believe that the silhouette of a man can be shaped into anything."
+                    </p>
+                </div>
 
                 <div className="flex gap-6">
                     <a href="#" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300 transform hover:-translate-y-1">
