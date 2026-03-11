@@ -156,20 +156,20 @@ export default function Home() {
       </section>
 
       {/* Brief About - Story */}
-      <section className="py-32 bg-background relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
+      <section className="py-16 bg-background relative overflow-hidden">
+        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 text-foreground">
             Empowering the Boy Child.
           </h2>
-          <p className="text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed mb-6">
+          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-3">
             Merlik Foundation is a Kenyan youth development organization focused on mentoring and equipping adolescent boys with the skills, values, and support systems needed to become responsible leaders in their communities.
           </p>
-          <p className="text-lg md:text-xl text-foreground/60 font-sans leading-relaxed mb-12">
+          <p className="text-sm md:text-base text-foreground/60 font-sans leading-relaxed mb-8">
             The name <strong>MERLIK</strong> derives from the Arabic word &quot;malki&quot; — meaning king — embodying our belief that every young man possesses inherent leadership potential waiting to be unlocked.
           </p>
-          <Link href="/about" className="group relative inline-flex items-center gap-3 px-10 py-5 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-lg">
+          <Link href="/about" className="group relative inline-flex items-center gap-2 px-7 py-3 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-sm">
             Discover Our Story
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
