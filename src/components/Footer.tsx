@@ -28,10 +28,8 @@ export default function Footer() {
                     <p className="text-foreground/60 text-sm font-medium tracking-wide">
                         © {new Date().getFullYear()} Merlik Foundation. All rights reserved.
                     </p>
-                    <p className="mt-2 font-serif italic text-foreground/80">
-                        Restoring order to the hearts of men - one at a time.<br className="md:hidden" />
-                        <span className="hidden md:inline mx-2">—</span>
-                        "We believe that the silhouette of a man can be shaped into anything."
+                    <p className="mt-2 font-serif italic text-foreground/60 text-sm">
+                        restoring order to the hearts of men..
                     </p>
                 </div>
 
