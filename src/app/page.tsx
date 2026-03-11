@@ -261,11 +261,11 @@ export default function Home() {
                 <p className="text-brand-gold text-[10px] uppercase font-bold tracking-widest">Makueni County</p>
               </div>
             </div>
-            <div className="lg:w-[65%] p-6 md:p-8 flex flex-col justify-center">
-              <h2 className="text-lg md:text-xl font-serif font-bold mb-3 text-foreground leading-tight">
+            <div className="lg:w-[65%] p-12 md:p-16 flex flex-col justify-center">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground leading-tight">
                 Stories of Transformation
               </h2>
-              <div className="space-y-2 text-foreground/80 font-sans leading-relaxed relative z-10 text-xs">
+              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed relative z-10 text-base md:text-lg">
                 <p>
                   <strong className="text-foreground">Before:</strong> Grew up in a disadvantaged family in Makueni with no clear academic pathway or mentorship support.
                 </p>
@@ -279,9 +279,9 @@ export default function Home() {
                   <strong className="text-foreground">Impact (Now a Volunteer Mentor):</strong> Peter now volunteers as a Merlik mentor — a living demonstration of our sustainable cycle of impact.
                 </p>
               </div>
-              <div className="flex items-center gap-3 mt-5">
-                <div className="h-[2px] w-12 bg-brand-gold"></div>
-                <span className="text-brand-gold font-bold tracking-widest uppercase text-[10px]">A Success Story</span>
+              <div className="flex items-center gap-6 mt-10">
+                <div className="h-[2px] w-24 bg-brand-gold"></div>
+                <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">A Success Story</span>
               </div>
             </div>
           </div>
