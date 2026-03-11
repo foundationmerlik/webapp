@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, HeartHandshake, Globe, ShieldCheck } from "lucide-react";
+import { ArrowRight, HeartHandshake, Globe, ShieldCheck, BookOpen, Users } from "lucide-react";
 
 export default function About() {
     return (
@@ -36,15 +36,16 @@ export default function About() {
                         <div className="w-10 h-[1px] bg-brand-gold"></div>
                         The Journey
                     </h2>
-                    <p className="text-4xl md:text-6xl font-black font-serif mb-6 text-foreground">A Legacy of Change</p>
-                </div>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground">
+                        Empowering the Boy Child.
+                    </h2>      </div>
 
                 <div className="relative border-l border-brand-gold/30 ml-4 md:ml-0 md:border-l-0">
                     <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-brand-gold/30 transform -translate-x-1/2"></div>
 
                     {/* 2017 */}
                     <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
-                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
+                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
                             <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2017</span>
@@ -97,13 +98,13 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                     <div className="mb-32">
                         <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Mission</h2>
-                        <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground">
-                            Empowerment of the Boy Child through <span className="text-brand-gold italic">Education, Mentorship & General Life Development.</span>
+                        <p className="text-2xl md:text-4xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground relative z-10 px-8 py-10 rounded-3xl bg-background/50 backdrop-blur-md border border-brand-gold/20 shadow-xl">
+                            Empowerment of the Boy Child through Education, Mentorship & General Life Development. Our mission continues to foster systemic support networks tailored for boys from disadvantaged backgrounds, ensuring no boy gets left behind.
                         </p>
                     </div>
                     <div>
                         <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Vision</h2>
-                        <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground">
+                        <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground relative z-10 px-8 py-10 rounded-3xl bg-brand-gold bg-opacity-[0.03] backdrop-blur-md border border-brand-gold/10 shadow-lg">
                             Developing Africa <span className="text-brand-gold italic">one boy at a time.</span>
                         </p>
                     </div>
@@ -111,50 +112,50 @@ export default function About() {
             </section>
 
             {/* Core Values Grid */}
-            <section className="py-32 px-6 max-w-7xl mx-auto">
+            < section className="py-32 px-6 max-w-7xl mx-auto" >
                 <div className="text-center mb-20">
-                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Values</h2>
-                    <p className="text-4xl md:text-6xl font-black font-serif text-foreground">The Pillars of Merlik</p>
+                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Core Approach</h2>
+                    <p className="text-4xl md:text-6xl font-black font-serif text-foreground">The Three Pillars</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Service */}
+                    {/* Education */}
                     <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30">
                         <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
-                            <HeartHandshake size={36} />
+                            <BookOpen size={36} />
                         </div>
-                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Service</h3>
+                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Education</h3>
                         <p className="text-foreground/70 leading-relaxed font-medium">
-                            Dedicated commitment to community transformation.
+                            Providing critical academic resources and scholarships to unlock paths to success.
                         </p>
                     </div>
 
-                    {/* Responsibility */}
+                    {/* Mentorship */}
                     <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-100">
+                        <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
+                            <Users size={36} />
+                        </div>
+                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Mentorship</h3>
+                        <p className="text-foreground/70 leading-relaxed font-medium">
+                            Structured guidance based on 7 life competencies taught by experienced coaches.
+                        </p>
+                    </div>
+
+                    {/* Community Outreach */}
+                    <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-200">
                         <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
                             <Globe size={36} />
                         </div>
-                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Responsibility</h3>
+                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Community Outreach</h3>
                         <p className="text-foreground/70 leading-relaxed font-medium">
-                            Accountability in all our actions and programmes.
-                        </p>
-                    </div>
-
-                    {/* Integrity */}
-                    <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-200">
-                        <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
-                            <ShieldCheck size={36} />
-                        </div>
-                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Integrity</h3>
-                        <p className="text-foreground/70 leading-relaxed font-medium">
-                            Unwavering ethical standards in all operations.
+                            Advocacy and the Blue Bag initiative to tackle immediate wellbeing and safety.
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Governance & Leadership Section */}
-            <section className="py-32 px-6 bg-foreground/[0.02]">
+            < section className="py-32 px-6 bg-foreground/[0.02]" >
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-20">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
@@ -170,17 +171,32 @@ export default function About() {
                         <div>
                             <h4 className="text-2xl font-serif font-bold mb-6 text-foreground">Management Team</h4>
                             <div className="space-y-6">
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
-                                    <p className="text-xl font-bold text-foreground">Sheila Ngui</p>
-                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Executive Director, Programme Dev. & Ops</p>
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                        <Image src="/images/staff/sheila.jpg" alt="Sheila Ngui" fill className="object-cover" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xl font-bold text-foreground">Sheila Ngui</p>
+                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Executive Director, Programme Dev. & Ops</p>
+                                    </div>
                                 </div>
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
-                                    <p className="text-xl font-bold text-foreground">Lavinah Gonah</p>
-                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Co-Founder, Community Outreach & Partnerships</p>
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                        <Image src="/images/staff/lavinah.jpg" alt="Lavinah Gonah" fill className="object-cover" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xl font-bold text-foreground">Lavinah Gonah</p>
+                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Co-Founder, Community Outreach</p>
+                                    </div>
                                 </div>
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm">
-                                    <p className="text-xl font-bold text-foreground">Herbert Njoroge</p>
-                                    <p className="text-brand-gold font-semibold uppercase tracking-widest text-xs mt-1 mb-3">Co-Founder, Strategic Planning & Resource Mobilization</p>
+                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                        <Image src="/images/staff/herbert.jpg" alt="Herbert Njoroge" fill className="object-cover" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xl font-bold text-foreground">Herbert Njoroge</p>
+                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Co-Founder, Strategic Planning</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,10 +225,10 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Global Impact Alignment (SDGs) & Partners */}
-            <section className="py-32 px-6">
+            < section className="py-32 px-6" >
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-20">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
@@ -261,14 +277,14 @@ export default function About() {
                     <div className="text-center">
                         <h4 className="font-serif font-bold text-2xl mb-6 text-brand-gold">Our Partners</h4>
                         <p className="text-foreground/70 text-lg leading-relaxed max-w-4xl mx-auto">
-                            Yazua Afrika, Paper Hearts Foundation, The Social Worker Mike, Mukuru Promotion Center, Mukuru Rescue Center, New Life Children's Home.
+                            Yazua Afrika, Paper Hearts Foundation, The Social Worker Mike, Mukuru Promotion Center, Mukuru Rescue Center, Charitable Chefs.
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Call to Action */}
-            <section className="py-32 px-6 bg-brand-gold text-white relative overflow-hidden">
+            < section className="py-32 px-6 bg-brand-gold text-white relative overflow-hidden" >
                 <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="text-5xl md:text-7xl font-black font-serif mb-8 text-brand-black tracking-tight">Ready to make an impact?</h2>
@@ -284,7 +300,7 @@ export default function About() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 }
