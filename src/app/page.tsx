@@ -38,7 +38,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              className={`w-full h-full object-cover object-[70%_center] lg:object-center ${isLoaded ? 'animate-image-load' : 'opacity-0 scale-105'} transition-opacity duration-1000`}
+              className={`w-full h-full object-cover object-[70%_center] lg:object-center ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
             />
             {/* Soft Gradient Mask for seamless blending using CSS vars mapping to bg color map */}
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent w-full md:w-[80%]"></div>
