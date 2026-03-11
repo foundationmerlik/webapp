@@ -249,10 +249,10 @@ export default function Home() {
       <section className="py-8 bg-background relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row border border-foreground/10 rounded-2xl overflow-hidden bg-background shadow-xl">
-            <div className="lg:w-[35%] h-[220px] lg:h-[280px] relative shrink-0">
+            <div className="lg:w-[35%] relative shrink-0 bg-foreground/[0.03]">
               <Image
-                width={800} height={800}
-                className="w-full h-full object-cover object-top"
+                width={600} height={800}
+                className="w-full h-auto block"
                 alt="Portrait of Peter Masila, a confident young man smiling"
                 src="/images/peter_masila.jpg"
               />
