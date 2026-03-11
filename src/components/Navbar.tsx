@@ -46,16 +46,14 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 sm:px-12 flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center group cursor-pointer translate-y-[-2px] relative z-20">
-                    <div className="bg-white px-4 py-2 rounded-xl border border-brand-gold/50 shadow-[0_4px_25px_rgba(0,0,0,0.15)] flex items-center justify-center">
-                        <Image
-                            src="/logo.png"
-                            alt="Merlik Foundation"
-                            width={160}
-                            height={48}
-                            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                            priority
-                        />
-                    </div>
+                    <Image
+                        src={mounted && resolvedTheme === 'dark' ? '/logo_white.png' : '/logo_black.png'}
+                        alt="Merlik Foundation"
+                        width={160}
+                        height={48}
+                        className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
