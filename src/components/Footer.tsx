@@ -24,12 +24,12 @@ export default function Footer() {
                     />
                 </Link>
 
-                <div className="text-center md:text-left flex flex-col">
+                <div className="text-center flex flex-col">
                     <p className="text-foreground/60 text-sm font-medium tracking-wide">
                         © {new Date().getFullYear()} Merlik Foundation. All rights reserved.
                     </p>
                     <p className="mt-2 font-serif italic text-foreground/60 text-sm">
-                        restoring order to the hearts of men..
+                        restoring order to the hearts of men.
                     </p>
                 </div>
 

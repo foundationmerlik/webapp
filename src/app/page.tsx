@@ -134,23 +134,23 @@ export default function Home() {
       </section>
 
       {/* Impact Snapshot Bar */}
-      <section className="relative z-30 bg-brand-gold py-12 shadow-xl border-y border-brand-gold/20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-black text-center">
+      <section className="relative z-30 bg-brand-gold py-8 shadow-xl border-y border-brand-gold/20">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-black text-center">
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">3</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Active Counties</p>
+            <p className="text-3xl font-black leading-none font-serif">3</p>
+            <p className="text-xs font-bold uppercase mt-1 opacity-80 tracking-widest">Active Counties</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">10+</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Trained Coaches</p>
+            <p className="text-3xl font-black leading-none font-serif">10+</p>
+            <p className="text-xs font-bold uppercase mt-1 opacity-80 tracking-widest">Trained Coaches</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">1,000</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Boys (2026 Goal)</p>
+            <p className="text-3xl font-black leading-none font-serif">1,000</p>
+            <p className="text-xs font-bold uppercase mt-1 opacity-80 tracking-widest">Boys (2026 Goal)</p>
           </div>
           <div className="text-brand-black text-center">
-            <p className="text-5xl font-black leading-none font-serif">2017</p>
-            <p className="text-sm font-bold uppercase mt-2 opacity-80 tracking-widest">Founded</p>
+            <p className="text-3xl font-black leading-none font-serif">2017</p>
+            <p className="text-xs font-bold uppercase mt-1 opacity-80 tracking-widest">Founded</p>
           </div>
         </div>
       </section>
@@ -175,16 +175,16 @@ export default function Home() {
       </section>
 
       {/* Programs Highlight */}
-      <section className="py-32 bg-foreground/5 relative">
+      <section className="py-16 bg-foreground/5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">Our Core Programs</h2>
-            <p className="text-lg text-foreground/60 mt-4 font-sans max-w-2xl mx-auto">Providing structured guidance, academic tools, and a reliable brotherhood.</p>
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Our Core Programs</h2>
+            <p className="text-sm text-foreground/60 mt-3 font-sans max-w-2xl mx-auto">Providing structured guidance, academic tools, and a reliable brotherhood.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2">
-              <div className="h-72 overflow-hidden bg-foreground/10">
+              <div className="h-56 overflow-hidden bg-foreground/10">
                 <Image
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -192,11 +192,11 @@ export default function Home() {
                   src="/images/mentorship.png"
                 />
               </div>
-              <div className="p-10 relative">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Mentorship</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Seven life-competency curriculum: 24 structured sessions, 36 contact hours per year.</p>
-                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Read More <ArrowRight size={16} />
+              <div className="p-7 relative">
+                <h3 className="text-lg font-serif font-bold mb-2 text-foreground">Mentorship</h3>
+                <p className="text-foreground/70 mb-6 font-medium leading-relaxed text-sm">Seven life-competency curriculum: 24 structured sessions, 36 contact hours per year.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-xs flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={14} />
                 </Link>
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
               </div>
@@ -204,7 +204,7 @@ export default function Home() {
 
             {/* Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2 delay-100">
-              <div className="h-72 overflow-hidden bg-foreground/10">
+              <div className="h-56 overflow-hidden bg-foreground/10">
                 <Image
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -212,11 +212,11 @@ export default function Home() {
                   src="/images/classroom.png"
                 />
               </div>
-              <div className="p-10 relative">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Education</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Scholarship sponsorship for bright, needy boys through secondary school.</p>
-                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Read More <ArrowRight size={16} />
+              <div className="p-7 relative">
+                <h3 className="text-lg font-serif font-bold mb-2 text-foreground">Education</h3>
+                <p className="text-foreground/70 mb-6 font-medium leading-relaxed text-sm">Scholarship sponsorship for bright, needy boys through secondary school.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-xs flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={14} />
                 </Link>
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
               </div>
@@ -224,7 +224,7 @@ export default function Home() {
 
             {/* Card 3 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background border border-foreground/5 hover:border-brand-gold/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2 delay-200">
-              <div className="h-72 overflow-hidden bg-foreground/10">
+              <div className="h-56 overflow-hidden bg-foreground/10">
                 <Image
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -232,11 +232,11 @@ export default function Home() {
                   src="/images/outreach.png"
                 />
               </div>
-              <div className="p-10 relative">
-                <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Community Outreach</h3>
-                <p className="text-foreground/70 mb-8 font-medium leading-relaxed">Blue Bag Initiative, home visits, school engagements, and social responsibility.</p>
-                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Read More <ArrowRight size={16} />
+              <div className="p-7 relative">
+                <h3 className="text-lg font-serif font-bold mb-2 text-foreground">Community Outreach</h3>
+                <p className="text-foreground/70 mb-6 font-medium leading-relaxed text-sm">Blue Bag Initiative, home visits, school engagements, and social responsibility.</p>
+                <Link href="/programs" className="text-brand-gold font-bold uppercase tracking-widest text-xs flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={14} />
                 </Link>
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500"></div>
               </div>
@@ -246,26 +246,26 @@ export default function Home() {
       </section>
 
       {/* Beneficiary Spotlight */}
-      <section className="py-32 bg-background relative z-10">
+      <section className="py-16 bg-background relative z-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-stretch border border-foreground/10 rounded-3xl overflow-hidden bg-background shadow-2xl">
-            <div className="lg:w-[45%] h-[500px] lg:h-auto relative">
+          <div className="flex flex-col lg:flex-row items-stretch border border-foreground/10 rounded-2xl overflow-hidden bg-background shadow-xl">
+            <div className="lg:w-[40%] h-[360px] lg:h-auto relative">
               <Image
                 width={800} height={800}
                 className="w-full h-full object-cover object-top"
                 alt="Portrait of Peter Masila, a confident young man smiling"
                 src="/images/peter_masila.jpg"
               />
-              <div className="absolute bottom-8 left-8 bg-background/90 backdrop-blur-md p-6 rounded-2xl border border-foreground/5 shadow-xl">
-                <p className="text-foreground font-serif font-bold text-2xl mb-1">Peter Masila</p>
-                <p className="text-brand-gold text-sm uppercase font-bold tracking-widest">Makueni County</p>
+              <div className="absolute bottom-6 left-6 bg-background/90 backdrop-blur-md p-4 rounded-xl border border-foreground/5 shadow-lg">
+                <p className="text-foreground font-serif font-bold text-base mb-0.5">Peter Masila</p>
+                <p className="text-brand-gold text-xs uppercase font-bold tracking-widest">Makueni County</p>
               </div>
             </div>
-            <div className="lg:w-[55%] p-12 md:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground leading-tight">
+            <div className="lg:w-[60%] p-8 md:p-12 flex flex-col justify-center">
+              <h2 className="text-xl md:text-2xl font-serif font-bold mb-5 text-foreground leading-tight">
                 Stories of Transformation
               </h2>
-              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed relative z-10 text-base md:text-lg">
+              <div className="space-y-4 text-foreground/80 font-sans leading-relaxed relative z-10 text-sm">
                 <p>
                   <strong className="text-foreground">Before:</strong> Grew up in a disadvantaged family in Makueni with no clear academic pathway or mentorship support.
                 </p>
@@ -279,9 +279,9 @@ export default function Home() {
                   <strong className="text-foreground">Impact (Now a Volunteer Mentor):</strong> Peter now volunteers as a Merlik mentor — a living demonstration of our sustainable cycle of impact.
                 </p>
               </div>
-              <div className="flex items-center gap-6 mt-10">
-                <div className="h-[2px] w-24 bg-brand-gold"></div>
-                <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">A Success Story</span>
+              <div className="flex items-center gap-4 mt-7">
+                <div className="h-[2px] w-16 bg-brand-gold"></div>
+                <span className="text-brand-gold font-bold tracking-widest uppercase text-xs">A Success Story</span>
               </div>
             </div>
           </div>
@@ -289,25 +289,25 @@ export default function Home() {
       </section>
 
       {/* Get Involved CTA */}
-      <section className="py-40 bg-brand-black text-white relative overflow-hidden">
+      <section className="py-20 bg-brand-black text-white relative overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-gold rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-gold rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-6xl md:text-8xl font-serif font-black text-white mb-10 tracking-tighter">
+        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mb-4">
             Be Part of the Movement.
           </h2>
-          <p className="text-xl text-white/70 font-sans mb-14 max-w-2xl mx-auto">
+          <p className="text-sm text-white/70 font-sans mb-8 max-w-xl mx-auto">
             Your support transforms lives. Shape the men of tomorrow today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/get-involved" className="bg-brand-gold text-brand-black px-12 py-5 rounded-full font-black text-xl hover:brightness-110 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-300 transform hover:-translate-y-1">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/get-involved" className="bg-brand-gold text-brand-black px-8 py-3 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
               Become a Mentor
             </Link>
-            <Link href="/donate" className="border-2 border-white/30 text-white px-12 py-5 rounded-full font-black text-xl hover:bg-white hover:text-brand-black transition-all duration-300 transform hover:-translate-y-1">
+            <Link href="/donate" className="border border-white/30 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-brand-black transition-all duration-300 transform hover:-translate-y-1">
               Donate Now
             </Link>
           </div>
