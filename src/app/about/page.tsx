@@ -173,7 +173,7 @@ export default function About() {
                             <div className="space-y-6">
                                 <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
                                     <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
-                                        <Image src="/images/staff/sheila.jpg" alt="Sheila Ngui" fill className="object-cover" />
+                                        <Image src="/images/sheila_ngui.jpg" alt="Sheila Ngui" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-bold text-foreground">Sheila Ngui</p>
@@ -182,7 +182,7 @@ export default function About() {
                                 </div>
                                 <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
                                     <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
-                                        <Image src="/images/staff/lavinah.jpg" alt="Lavinah Gonah" fill className="object-cover" />
+                                        <Image src="/images/Lavinah.jpeg" alt="Lavinah Gonah" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-bold text-foreground">Lavinah Gonah</p>
@@ -191,7 +191,7 @@ export default function About() {
                                 </div>
                                 <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
                                     <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
-                                        <Image src="/images/staff/herbert.jpg" alt="Herbert Njoroge" fill className="object-cover" />
+                                        <Image src="/images/Herbert.jpeg" alt="Herbert Njoroge" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <p className="text-xl font-bold text-foreground">Herbert Njoroge</p>
