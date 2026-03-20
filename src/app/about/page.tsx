@@ -274,11 +274,47 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="text-center">
-                        <h4 className="font-serif font-bold text-2xl mb-6 text-brand-gold">Our Partners</h4>
-                        <p className="text-foreground/70 text-lg leading-relaxed max-w-4xl mx-auto">
-                            Yazua Afrika, Paper Hearts Foundation, The Social Worker Mike, Mukuru Promotion Center, Mukuru Rescue Center, Charitable Chefs.
-                        </p>
+                    <div className="mt-24">
+                        <div className="text-center mb-16">
+                            <h4 className="font-serif font-bold text-3xl mb-4 text-brand-gold">Our Strategic Partners</h4>
+                            <p className="text-foreground/70 max-w-2xl mx-auto">Collaborating with organizations across Kenya to maximize our impact on the ground.</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+                            {[
+                                { name: "Yazua Afrika", logo: "/images/partners/yazua_afrika.png" },
+                                { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true },
+                                { name: "Mukuru Promotion Center", logo: "/images/partners/mukuru_promotion.png" },
+                                { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png" },
+                                { name: "RI Welfare", logo: "/images/partners/ri_welfare.png" },
+                                { name: "Rafiki Mtaani Podcast", logo: "/images/partners/rafiki_mtaani.png" },
+                                { name: "ISI", logo: "/images/partners/isi.png" },
+                                { name: "Noova Designs Kenya", logo: "/images/partners/noova_designs.png" },
+                                { name: "Charitable Chefs", logo: null },
+                                { name: "Okoth Obera", logo: null },
+                                { name: "Seles", logo: null },
+                                { name: "Social Worker Mike", logo: null },
+                                { name: "Mukuru Rescue Center", logo: null },
+                            ].map((p, idx) => (
+                                <div key={idx} className="flex items-center justify-center p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl h-32 hover:border-brand-gold/30 transition-all group overflow-hidden grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                    {p.logo ? (
+                                        <div className="relative w-full h-full flex items-center justify-center">
+                                            <Image
+                                                src={p.logo}
+                                                alt={`${p.name} logo`}
+                                                fill
+                                                className={`object-contain transition-transform duration-500 group-hover:scale-105 ${p.isWhiteLogo ? 'invert dark:invert-0' : ''}`}
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="text-center px-2 flex flex-col items-center justify-center h-full">
+                                            <p className="font-serif font-black text-foreground/50 text-xs leading-tight mb-2 uppercase tracking-widest">{p.name}</p>
+                                            <div className="h-[2px] w-8 bg-brand-gold/30 group-hover:w-16 transition-all duration-500"></div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section >

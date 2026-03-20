@@ -19,6 +19,17 @@ export default function Home() {
     { icon: Users, text: "Community" }
   ];
 
+  const partnerLogos = [
+    { name: "Yazua Afrika", logo: "/images/partners/yazua_afrika.png" },
+    { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true },
+    { name: "Mukuru Promotion Center", logo: "/images/partners/mukuru_promotion.png" },
+    { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png" },
+    { name: "RI Welfare", logo: "/images/partners/ri_welfare.png" },
+    { name: "Rafiki Mtaani Podcast", logo: "/images/partners/rafiki_mtaani.png" },
+    { name: "ISI", logo: "/images/partners/isi.png" },
+    { name: "Noova Designs Kenya", logo: "/images/partners/noova_designs.png" },
+  ];
+
   useEffect(() => {
     // Trigger animations after component mounts
     setIsLoaded(true);
@@ -155,8 +166,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Strategic Partners Logos */}
+      <section className="bg-background py-10 opacity-70 hover:opacity-100 transition-opacity">
+        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
+          <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
+          <div className="flex whitespace-nowrap animate-marquee">
+            {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
+              <div key={index} className="flex items-center justify-center h-12 w-48 mx-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    fill
+                    className={`object-contain ${partner.isWhiteLogo ? 'invert dark:invert-0' : ''}`}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section >
+
       {/* Brief About - Story */}
-      <section className="py-8 bg-background relative overflow-hidden">
+      < section className="py-8 bg-background relative overflow-hidden" >
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 text-foreground">
             Empowering the Boy Child.
@@ -172,10 +204,10 @@ export default function Home() {
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </section>
+      </section >
 
       {/* Programs Highlight */}
-      <section className="py-8 bg-foreground/5 relative">
+      < section className="py-8 bg-foreground/5 relative" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Our Core Programs</h2>
@@ -243,10 +275,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Beneficiary Spotlight */}
-      <section className="py-8 bg-background relative z-10">
+      < section className="py-8 bg-background relative z-10" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row border border-foreground/10 rounded-2xl overflow-hidden bg-background shadow-xl">
             <div className="lg:w-[35%] relative shrink-0 bg-foreground/[0.03]">
@@ -286,15 +318,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Get Involved CTA */}
-      <section className="py-20 bg-brand-black text-white relative overflow-hidden">
+      < section className="py-20 bg-brand-black text-white relative overflow-hidden" >
         {/* Glow Effects */}
-        <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
+        < div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none" >
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-gold rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
-        </div>
+        </div >
 
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mb-4">
@@ -312,7 +344,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
