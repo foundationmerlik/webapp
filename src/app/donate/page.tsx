@@ -2,13 +2,24 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download, Heart, RefreshCw } from "lucide-react";
 
 export default function Donate() {
-    const [frequency, setFrequency] = useState("onetime");
+    const [frequency, setFrequency] = useState("monthly"); // default to monthly per best practices
     const [amount, setAmount] = useState<number | string>(100);
 
-    const predefinedAmounts = [50, 100, 250];
+    // Impact labels for each giving amount
+    const predefinedAmounts = [
+        { value: 50, label: "Books & supplies for 1 boy for a term" },
+        { value: 100, label: "One month of coaching sessions" },
+        { value: 250, label: "School fees for 1 boy for a term" },
+    ];
+
+    // 2026 goal progress (update periodically)
+    const goalAmount = 5000000; // KES 5M annual target
+    const raisedAmount = 1850000;
+    const progressPct = Math.min(100, Math.round((raisedAmount / goalAmount) * 100));
 
     return (
         <div className="relative min-h-screen bg-background text-foreground pt-24 pb-32 overflow-hidden">
@@ -70,20 +81,30 @@ export default function Donate() {
                         <div className="relative rounded-[2.5rem] border border-foreground/10 bg-background/80 backdrop-blur-xl p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.05)]">
                             <h2 className="mb-8 text-3xl font-black font-serif text-foreground">Make a Donation</h2>
 
-                            {/* Frequency Toggle */}
-                            <div className="flex mb-10 h-14 bg-foreground/5 rounded-2xl p-1.5">
-                                <button
-                                    onClick={() => setFrequency("onetime")}
-                                    className={`flex-1 rounded-xl text-sm font-bold transition-all ${frequency === "onetime" ? "bg-background text-brand-gold shadow-md" : "text-foreground/60 hover:text-foreground"}`}
-                                >
-                                    One-time
-                                </button>
-                                <button
-                                    onClick={() => setFrequency("monthly")}
-                                    className={`flex-1 rounded-xl text-sm font-bold transition-all ${frequency === "monthly" ? "bg-background text-brand-gold shadow-md" : "text-foreground/60 hover:text-foreground"}`}
-                                >
-                                    Monthly
-                                </button>
+                            {/* Frequency Toggle — Monthly is shown first and recommended */}
+                            <div className="mb-6">
+                                <p className="text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3">
+                                    Giving Frequency
+                                </p>
+                                <div className="flex mb-2 h-14 bg-foreground/5 rounded-2xl p-1.5">
+                                    <button
+                                        onClick={() => setFrequency("monthly")}
+                                        className={`flex-1 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 ${frequency === "monthly" ? "bg-brand-gold text-brand-black shadow-md" : "text-foreground/60 hover:text-foreground"}`}
+                                    >
+                                        <RefreshCw size={14} /> Monthly
+                                    </button>
+                                    <button
+                                        onClick={() => setFrequency("onetime")}
+                                        className={`flex-1 rounded-xl text-sm font-bold transition-all ${frequency === "onetime" ? "bg-background text-brand-gold shadow-md" : "text-foreground/60 hover:text-foreground"}`}
+                                    >
+                                        One-time
+                                    </button>
+                                </div>
+                                <p className="text-xs text-foreground/50 text-center">
+                                    {frequency === "monthly"
+                                        ? "💛 Monthly giving sustains our programmes year-round. Cancel anytime."
+                                        : "Every one-time gift makes a difference."}
+                                </p>
                             </div>
 
                             {/* Payment Methods */}
@@ -106,18 +127,19 @@ export default function Donate() {
                                 </button>
                             </div>
 
-                            {/* Amount Selection */}
-                            <div className="grid grid-cols-3 gap-4 mb-8">
-                                {predefinedAmounts.map((amt) => (
+                            {/* Amount Selection with Impact Labels */}
+                            <div className="grid grid-cols-1 gap-3 mb-6">
+                                {predefinedAmounts.map(({ value, label }) => (
                                     <button
-                                        key={amt}
-                                        onClick={() => setAmount(amt)}
-                                        className={`rounded-2xl py-4 text-lg font-black transition-all border ${amount === amt
-                                            ? "border-brand-gold bg-brand-gold/10 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]"
-                                            : "border-foreground/20 text-foreground hover:bg-foreground/5"
+                                        key={value}
+                                        onClick={() => setAmount(value)}
+                                        className={`rounded-2xl py-4 px-5 text-left transition-all border flex items-center justify-between gap-4 ${amount === value
+                                                ? "border-brand-gold bg-brand-gold/10 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                                                : "border-foreground/20 text-foreground hover:bg-foreground/5"
                                             }`}
                                     >
-                                        ${amt}
+                                        <span className="text-xl font-black">${value}</span>
+                                        <span className="text-xs font-medium text-right leading-tight opacity-70">{label}</span>
                                     </button>
                                 ))}
                             </div>
@@ -138,11 +160,25 @@ export default function Donate() {
                             </div>
 
                             <button className="w-full rounded-2xl bg-brand-gold py-6 text-xl font-black text-brand-black shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all active:scale-95 transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                                Make Donation <CheckCircle2 size={24} />
+                                {frequency === "monthly" ? <RefreshCw size={20} /> : <Heart size={20} />}
+                                {frequency === "monthly" ? "Give Monthly" : "Make Donation"}
                             </button>
-                            <p className="mt-6 text-center text-sm font-semibold text-foreground/40 uppercase tracking-widest">
-                                Secure SSL Encrypted Transaction
+                            <p className="mt-4 text-center text-xs font-semibold text-foreground/40 uppercase tracking-widest">
+                                🔒 Secure SSL Encrypted · Tax-deductible receipt issued
                             </p>
+                            <div className="mt-8 pt-6 border-t border-foreground/10">
+                                <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-3">2026 Goal Progress</p>
+                                <div className="w-full bg-foreground/10 rounded-full h-2.5 mb-2">
+                                    <div
+                                        className="bg-brand-gold h-2.5 rounded-full transition-all duration-700"
+                                        style={{ width: `${progressPct}%` }}
+                                    />
+                                </div>
+                                <p className="text-xs text-foreground/50 flex justify-between">
+                                    <span>KES {raisedAmount.toLocaleString()} raised</span>
+                                    <span>{progressPct}% of KES {goalAmount.toLocaleString()} goal</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Brain, Heart, Handshake, Megaphone } from "lucide-react";
+import { ArrowRight, Brain, Heart, Handshake, Megaphone, RefreshCw, Building2, Gift, Scale } from "lucide-react";
 
 export default function GetInvolved() {
     return (
@@ -154,6 +154,77 @@ export default function GetInvolved() {
                             <h4 className="text-xl font-serif font-bold mb-2">Institutional Partner</h4>
                             <p className="text-foreground/70 text-sm">Schools & faith orgs to host and co-deliver curriculum.</p>
                         </div>
+                    </div>
+                </section>
+
+                {/* Can't Attend? Donate CTA */}
+                <section className="mb-12">
+                    <div className="rounded-2xl bg-brand-gold/10 border border-brand-gold/30 p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <div>
+                            <p className="font-serif font-bold text-foreground text-lg">Can&apos;t make it to an event?</p>
+                            <p className="text-foreground/60 text-sm mt-1">Your financial gift keeps our programmes running. Every amount makes a real difference.</p>
+                        </div>
+                        <Link href="/donate" className="whitespace-nowrap flex items-center gap-2 px-6 py-3 bg-brand-gold text-brand-black font-bold rounded-full text-sm hover:brightness-110 transition-all shrink-0">
+                            <Heart size={16} /> Donate Instead
+                        </Link>
+                    </div>
+                </section>
+
+                {/* Ways to Give */}
+                <section className="mb-12">
+                    <div className="flex flex-col items-center mb-10">
+                        <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">More Ways to Help</span>
+                        <h2 className="text-2xl md:text-3xl font-serif font-black text-center text-foreground">Ways to Give</h2>
+                        <p className="text-foreground/60 text-sm mt-2 max-w-xl text-center">There are many ways to support Merlik Foundation beyond a one-time gift.</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><RefreshCw size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">Monthly Giving</h4>
+                                <p className="text-xs text-foreground/60">Set up a recurring gift to sustain our programmes year-round. Cancel any time.</p>
+                            </div>
+                        </div>
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><Building2 size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">Corporate CSR / Employer Match</h4>
+                                <p className="text-xs text-foreground/60">Ask your employer to match your donation or sponsor a pillar of our work.</p>
+                            </div>
+                        </div>
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><Heart size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">Adopt-a-Boy</h4>
+                                <p className="text-xs text-foreground/60">Sponsor one boy&apos;s full secondary education journey from enrolment to KCSE.</p>
+                            </div>
+                        </div>
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><Gift size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">In-Kind Donations</h4>
+                                <p className="text-xs text-foreground/60">Donate technology, printed materials, or professional expertise to our teams.</p>
+                            </div>
+                        </div>
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><Scale size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">Legacy / Planned Giving</h4>
+                                <p className="text-xs text-foreground/60">Leave a lasting impact by including Merlik Foundation in your will or estate plan.</p>
+                            </div>
+                        </div>
+                        <div className="p-6 bg-background border border-foreground/10 rounded-2xl flex gap-4 items-start">
+                            <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><Handshake size={18} /></div>
+                            <div>
+                                <h4 className="font-bold text-foreground mb-1">Institutional Partnership</h4>
+                                <p className="text-xs text-foreground/60">Schools and faith organisations can host and co-deliver our curriculum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-6 text-center">
+                        <Link href="/contact" className="inline-flex items-center gap-2 text-brand-gold font-bold text-sm underline underline-offset-4 hover:opacity-80 transition-opacity">
+                            Contact us to discuss your giving options <ArrowRight size={14} />
+                        </Link>
                     </div>
                 </section>
 

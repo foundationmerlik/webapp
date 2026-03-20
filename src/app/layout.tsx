@@ -16,8 +16,36 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Merlik Foundation",
-  description: "Restoring order to the hearts of men.",
+  title: {
+    default: "Merlik Foundation — Empowering the Boy Child in Kenya",
+    template: "%s | Merlik Foundation",
+  },
+  description:
+    "Merlik Foundation is a Kenyan nonprofit mentoring adolescent boys through education, mentorship, and community outreach. Help us develop Africa's next generation of leaders.",
+  keywords: [
+    "nonprofit Kenya",
+    "youth mentorship Kenya",
+    "boy child empowerment",
+    "Merlik Foundation",
+    "donate Kenya nonprofit",
+    "Nairobi youth development",
+  ],
+  openGraph: {
+    title: "Merlik Foundation — Empowering the Boy Child in Kenya",
+    description:
+      "Mentoring adolescent boys through education, mentorship, and community outreach across Kenya.",
+    url: "https://merlikfoundation.org",
+    siteName: "Merlik Foundation",
+    locale: "en_KE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Merlik Foundation — Empowering the Boy Child in Kenya",
+    description:
+      "Mentoring adolescent boys through education, mentorship, and community outreach across Kenya.",
+  },
+  metadataBase: new URL("https://merlikfoundation.org"),
 };
 
 export default function RootLayout({
