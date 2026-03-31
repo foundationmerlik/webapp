@@ -1,10 +1,20 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download, Heart, RefreshCw, User, Mail } from "lucide-react";
-import { usePaystackPayment } from "react-paystack";
+
+// Use dynamic import for the Paystack component to prevent "window is not defined" error during Next.js SSR/Prerendering
+const PaystackButton = dynamic(() => import("@/components/PaystackButton"), { 
+    ssr: false,
+    loading: () => (
+        <button className="w-full rounded-2xl bg-brand-gold/50 py-6 text-xl font-black text-brand-black/50 cursor-not-allowed flex items-center justify-center gap-3">
+            <RefreshCw size={20} className="animate-spin" /> Loading Payment...
+        </button>
+    )
+});
 
 export default function Donate() {
     const [frequency, setFrequency] = useState("onetime"); // Default to one-time for simple integration
@@ -27,49 +37,15 @@ export default function Donate() {
     const raisedAmount = 1850000;
     const progressPct = Math.min(100, Math.round((raisedAmount / goalAmount) * 100));
 
-    const config = useMemo(() => ({
-        reference: (new Date()).getTime().toString(),
-        email: email,
-        amount: Number(amount) * 100, // Paystack amount is in kobo/cents
-        publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_a9690e4d37e92a23f23e2c0a178f5496cae30d08",
-        currency: "KES",
-        metadata: {
-            custom_fields: [
-                {
-                    display_name: "First Name",
-                    variable_name: "first_name",
-                    value: firstName,
-                },
-                {
-                    display_name: "Last Name",
-                    variable_name: "last_name",
-                    value: lastName,
-                }
-            ]
-        }
-    }), [email, amount, firstName, lastName]);
-
-    const initializePayment = usePaystackPayment(config);
-
     const onSuccess = (reference: any) => {
         console.log("Payment Successful", reference);
         setIsProcessing(false);
         setIsSuccess(true);
-        // In a real app, you'd verify this on the backend
     };
 
     const onClose = () => {
         console.log("Payment Closed");
         setIsProcessing(false);
-    };
-
-    const handleDonation = () => {
-        if (!email || !firstName || !lastName || !amount) {
-            alert("Please fill in all details");
-            return;
-        }
-        setIsProcessing(true);
-        initializePayment({onSuccess, onClose});
     };
 
     if (isSuccess) {
@@ -252,18 +228,19 @@ export default function Donate() {
                                 </div>
                             </div>
 
-                            <button 
-                                onClick={handleDonation}
-                                disabled={isProcessing}
-                                className={`w-full rounded-2xl bg-brand-gold py-6 text-xl font-black text-brand-black shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all active:scale-95 transform hover:-translate-y-1 flex items-center justify-center gap-3 ${isProcessing ? 'opacity-70 cursor-not-allowed animate-pulse' : ''}`}
-                            >
-                                {isProcessing ? (
-                                    <RefreshCw size={20} className="animate-spin" />
-                                ) : (
-                                    frequency === "monthly" ? <RefreshCw size={20} /> : <Heart size={20} />
-                                )}
-                                {isProcessing ? "Processing..." : (frequency === "monthly" ? "Give Monthly" : "Make Donation")}
-                            </button>
+                            {/* Paystack Button Integrated Digitally */}
+                            <PaystackButton 
+                                email={email}
+                                amount={Number(amount)}
+                                firstName={firstName}
+                                lastName={lastName}
+                                frequency={frequency}
+                                onSuccess={onSuccess}
+                                onClose={onClose}
+                                isProcessing={isProcessing}
+                                setIsProcessing={setIsProcessing}
+                            />
+
                             <p className="mt-4 text-center text-xs font-semibold text-foreground/40 uppercase tracking-widest">
                                 🔒 Secure Paystack Payment · Tax-deductible receipt issued
                             </p>
