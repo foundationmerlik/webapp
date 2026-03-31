@@ -1,25 +1,104 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download, Heart, RefreshCw } from "lucide-react";
+import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download, Heart, RefreshCw, User, Mail } from "lucide-react";
+import { usePaystackPayment } from "react-paystack";
 
 export default function Donate() {
-    const [frequency, setFrequency] = useState("monthly"); // default to monthly per best practices
-    const [amount, setAmount] = useState<number | string>(100);
+    const [frequency, setFrequency] = useState("onetime"); // Default to one-time for simple integration
+    const [amount, setAmount] = useState<number | string>(1500);
+    const [email, setEmail] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
-    // Impact labels for each giving amount
+    // Impact labels for each giving amount (converted roughly to KES)
     const predefinedAmounts = [
-        { value: 50, label: "Books & supplies for 1 boy for a term" },
-        { value: 100, label: "One month of coaching sessions" },
-        { value: 250, label: "School fees for 1 boy for a term" },
+        { value: 1500, label: "Books & supplies for 1 boy for a term" },
+        { value: 5000, label: "One month of coaching sessions" },
+        { value: 15000, label: "School fees for 1 boy for a term" },
     ];
 
-    // 2026 goal progress (update periodically)
+    // 2026 goal progress
     const goalAmount = 5000000; // KES 5M annual target
     const raisedAmount = 1850000;
     const progressPct = Math.min(100, Math.round((raisedAmount / goalAmount) * 100));
+
+    const config = useMemo(() => ({
+        reference: (new Date()).getTime().toString(),
+        email: email,
+        amount: Number(amount) * 100, // Paystack amount is in kobo/cents
+        publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_a9690e4d37e92a23f23e2c0a178f5496cae30d08",
+        currency: "KES",
+        metadata: {
+            custom_fields: [
+                {
+                    display_name: "First Name",
+                    variable_name: "first_name",
+                    value: firstName,
+                },
+                {
+                    display_name: "Last Name",
+                    variable_name: "last_name",
+                    value: lastName,
+                }
+            ]
+        }
+    }), [email, amount, firstName, lastName]);
+
+    const initializePayment = usePaystackPayment(config);
+
+    const onSuccess = (reference: any) => {
+        console.log("Payment Successful", reference);
+        setIsProcessing(false);
+        setIsSuccess(true);
+        // In a real app, you'd verify this on the backend
+    };
+
+    const onClose = () => {
+        console.log("Payment Closed");
+        setIsProcessing(false);
+    };
+
+    const handleDonation = () => {
+        if (!email || !firstName || !lastName || !amount) {
+            alert("Please fill in all details");
+            return;
+        }
+        setIsProcessing(true);
+        initializePayment({onSuccess, onClose});
+    };
+
+    if (isSuccess) {
+        return (
+            <div className="relative min-h-screen bg-background text-foreground pt-24 pb-32 overflow-hidden flex items-center justify-center">
+                <div className="relative z-10 max-w-lg w-full p-12 bg-background/80 backdrop-blur-xl border border-brand-gold/20 rounded-[3rem] text-center shadow-2xl">
+                    <div className="w-24 h-24 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-8 text-brand-black shadow-lg shadow-brand-gold/20">
+                        <CheckCircle2 size={48} />
+                    </div>
+                    <h1 className="text-4xl font-black font-serif text-foreground mb-4">Thank You!</h1>
+                    <p className="text-xl text-foreground/70 font-medium mb-10 leading-relaxed">
+                        Your contribution of <span className="text-brand-gold font-bold">KES {Number(amount).toLocaleString()}</span> has been received. 
+                        We've sent a receipt to your email.
+                    </p>
+                    <button 
+                        onClick={() => setIsSuccess(false)}
+                        className="w-full rounded-2xl bg-brand-gold py-5 text-xl font-black text-brand-black shadow-lg hover:-translate-y-1 transition-all"
+                    >
+                        Return to Donate
+                    </button>
+                    <div className="mt-8">
+                        <Link href="/" className="text-foreground/40 font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">
+                            Back to Home
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="relative min-h-screen bg-background text-foreground pt-24 pb-32 overflow-hidden">
@@ -81,7 +160,41 @@ export default function Donate() {
                         <div className="relative rounded-[2.5rem] border border-foreground/10 bg-background/80 backdrop-blur-xl p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.05)]">
                             <h2 className="mb-8 text-3xl font-black font-serif text-foreground">Make a Donation</h2>
 
-                            {/* Frequency Toggle — Monthly is shown first and recommended */}
+                            {/* Donor Details */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div className="relative group">
+                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/30 group-focus-within:text-brand-gold transition-colors" size={18} />
+                                    <input
+                                        type="text"
+                                        placeholder="First Name"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                        className="w-full rounded-2xl border border-foreground/10 bg-foreground/5 py-4 pl-12 pr-4 font-medium focus:border-brand-gold outline-none transition-all"
+                                    />
+                                </div>
+                                <div className="relative group">
+                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/30 group-focus-within:text-brand-gold transition-colors" size={18} />
+                                    <input
+                                        type="text"
+                                        placeholder="Last Name"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                        className="w-full rounded-2xl border border-foreground/10 bg-foreground/5 py-4 pl-12 pr-4 font-medium focus:border-brand-gold outline-none transition-all"
+                                    />
+                                </div>
+                            </div>
+                            <div className="relative group mb-8">
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/30 group-focus-within:text-brand-gold transition-colors" size={18} />
+                                <input
+                                    type="email"
+                                    placeholder="Email Address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="w-full rounded-2xl border border-foreground/10 bg-foreground/5 py-4 pl-12 pr-4 font-medium focus:border-brand-gold outline-none transition-all"
+                                />
+                            </div>
+
+                            {/* Frequency Toggle */}
                             <div className="mb-6">
                                 <p className="text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3">
                                     Giving Frequency
@@ -107,38 +220,18 @@ export default function Donate() {
                                 </p>
                             </div>
 
-                            {/* Payment Methods */}
-                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mb-10 border-b border-foreground/10 pb-4">
-                                <button className="flex flex-col items-center gap-3 border-b-2 border-brand-gold pb-4 transition-colors">
-                                    <CreditCard className="text-brand-gold" size={24} />
-                                    <span className="text-xs font-bold uppercase tracking-widest text-brand-gold">Card</span>
-                                </button>
-                                <button className="flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
-                                    <Wallet size={24} className="group-hover:text-brand-gold transition-colors" />
-                                    <span className="text-xs font-bold uppercase tracking-widest">M-Pesa</span>
-                                </button>
-                                <button className="flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:text-brand-gold transition-colors"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3" /></svg>
-                                    <span className="text-xs font-bold uppercase tracking-widest">Bank</span>
-                                </button>
-                                <button className="hidden sm:flex flex-col items-center gap-3 border-b-2 border-transparent pb-4 text-foreground/40 hover:text-foreground transition-colors group">
-                                    <Building2 size={24} className="group-hover:text-brand-gold transition-colors" />
-                                    <span className="text-xs font-bold uppercase tracking-widest">Corp</span>
-                                </button>
-                            </div>
-
-                            {/* Amount Selection with Impact Labels */}
+                            {/* Amount Selection */}
                             <div className="grid grid-cols-1 gap-3 mb-6">
                                 {predefinedAmounts.map(({ value, label }) => (
                                     <button
                                         key={value}
                                         onClick={() => setAmount(value)}
-                                        className={`rounded-2xl py-4 px-5 text-left transition-all border flex items-center justify-between gap-4 ${amount === value
+                                        className={`rounded-2xl py-4 px-5 text-left transition-all border flex items-center justify-between gap-4 ${Number(amount) === value
                                                 ? "border-brand-gold bg-brand-gold/10 text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]"
                                                 : "border-foreground/20 text-foreground hover:bg-foreground/5"
                                             }`}
                                     >
-                                        <span className="text-xl font-black">${value}</span>
+                                        <span className="text-xl font-black">KES {value.toLocaleString()}</span>
                                         <span className="text-xs font-medium text-right leading-tight opacity-70">{label}</span>
                                     </button>
                                 ))}
@@ -146,25 +239,33 @@ export default function Donate() {
 
                             {/* Custom Amount */}
                             <div className="mb-10">
-                                <label className="block text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3 ml-2">Custom Amount</label>
+                                <label className="block text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3 ml-2">Custom Amount (KES)</label>
                                 <div className="relative group">
-                                    <span className="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-foreground/50 text-xl group-focus-within:text-brand-gold transition-colors">$</span>
+                                    <span className="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-foreground/50 text-xl group-focus-within:text-brand-gold transition-colors">KES</span>
                                     <input
                                         type="number"
                                         value={amount}
                                         onChange={(e) => setAmount(e.target.value)}
-                                        className="w-full rounded-2xl border-2 border-foreground/10 bg-foreground/5 py-5 pl-12 pr-6 text-xl font-bold focus:border-brand-gold focus:ring-0 outline-none transition-all"
+                                        className="w-full rounded-2xl border-2 border-foreground/10 bg-foreground/5 py-5 pl-16 pr-6 text-xl font-bold focus:border-brand-gold focus:ring-0 outline-none transition-all"
                                         placeholder="Enter amount"
                                     />
                                 </div>
                             </div>
 
-                            <button className="w-full rounded-2xl bg-brand-gold py-6 text-xl font-black text-brand-black shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all active:scale-95 transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                                {frequency === "monthly" ? <RefreshCw size={20} /> : <Heart size={20} />}
-                                {frequency === "monthly" ? "Give Monthly" : "Make Donation"}
+                            <button 
+                                onClick={handleDonation}
+                                disabled={isProcessing}
+                                className={`w-full rounded-2xl bg-brand-gold py-6 text-xl font-black text-brand-black shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)] transition-all active:scale-95 transform hover:-translate-y-1 flex items-center justify-center gap-3 ${isProcessing ? 'opacity-70 cursor-not-allowed animate-pulse' : ''}`}
+                            >
+                                {isProcessing ? (
+                                    <RefreshCw size={20} className="animate-spin" />
+                                ) : (
+                                    frequency === "monthly" ? <RefreshCw size={20} /> : <Heart size={20} />
+                                )}
+                                {isProcessing ? "Processing..." : (frequency === "monthly" ? "Give Monthly" : "Make Donation")}
                             </button>
                             <p className="mt-4 text-center text-xs font-semibold text-foreground/40 uppercase tracking-widest">
-                                🔒 Secure SSL Encrypted · Tax-deductible receipt issued
+                                🔒 Secure Paystack Payment · Tax-deductible receipt issued
                             </p>
                             <div className="mt-8 pt-6 border-t border-foreground/10">
                                 <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-3">2026 Goal Progress</p>
@@ -191,7 +292,7 @@ export default function Donate() {
                         <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Financial Accountability</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-serif text-foreground mb-6">Where Your Money Goes</h2>
                         <p className="text-xl text-foreground/70 font-medium leading-relaxed">
-                            We believe in full financial accountability. See exactly how every dollar strengthens our nation's future leaders.
+                            We believe in full financial accountability. See exactly how every KES strengthens our nation's future leaders.
                         </p>
                     </div>
 
