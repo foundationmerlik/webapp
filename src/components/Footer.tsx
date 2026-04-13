@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck } from "lucide-react";
+import ReportsModal from "@/components/ReportsModal";
 
 export default function Footer() {
     const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
+    const [isReportsModalOpen, setIsReportsModalOpen] = useState(false);
     useEffect(() => { setMounted(true); }, []);
 
     const handleSubscribe = (e: React.FormEvent) => {
@@ -28,6 +30,7 @@ export default function Footer() {
     ];
 
     return (
+        <>
         <footer className="bg-background border-t border-foreground/10">
 
             {/* Newsletter Strip */}
@@ -126,9 +129,12 @@ export default function Footer() {
                             </li>
                         </ul>
                         <div className="mt-5 flex flex-col gap-2">
-                            <Link href="/donate" className="text-xs text-brand-gold font-bold underline underline-offset-2 hover:opacity-80 transition-opacity">
-                                Download 2023 Impact Report (PDF) →
-                            </Link>
+                            <button
+                                onClick={() => setIsReportsModalOpen(true)}
+                                className="text-xs text-brand-gold font-bold underline underline-offset-2 hover:opacity-80 transition-opacity text-left"
+                            >
+                                View Impact Reports →
+                            </button>
                             <Link href="/contact" className="text-xs text-foreground/40 hover:text-foreground/60 transition-colors">
                                 Privacy Policy
                             </Link>
@@ -149,5 +155,7 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+        <ReportsModal isOpen={isReportsModalOpen} onClose={() => setIsReportsModalOpen(false)} />
+        </>
     );
 }

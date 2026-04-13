@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, CreditCard, Wallet, Building2, Download, Heart, RefreshCw, User, Mail } from "lucide-react";
+import ReportsModal from "@/components/ReportsModal";
 
 // Use dynamic import for the Paystack component to prevent "window is not defined" error during Next.js SSR/Prerendering
 const PaystackButton = dynamic(() => import("@/components/PaystackButton"), { 
@@ -24,6 +25,7 @@ export default function Donate() {
     const [lastName, setLastName] = useState("");
     const [isProcessing, setIsProcessing] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isReportsModalOpen, setIsReportsModalOpen] = useState(false);
 
     // Impact labels for each giving amount (converted roughly to KES)
     const predefinedAmounts = [
@@ -310,10 +312,13 @@ export default function Donate() {
                     </div>
 
                     <div className="mt-20 flex flex-col items-center gap-8 border-t border-foreground/10 pt-16">
-                        <p className="text-xl font-serif font-medium text-foreground italic">Want more details? Download our latest transparency report.</p>
-                        <button className="inline-flex items-center gap-4 rounded-full border-2 border-brand-gold px-10 py-4 font-bold text-brand-gold text-lg transition-all hover:bg-brand-gold hover:text-brand-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-1">
+                        <p className="text-xl font-serif font-medium text-foreground italic">Want more details? Download our transparency reports.</p>
+                        <button 
+                            onClick={() => setIsReportsModalOpen(true)}
+                            className="inline-flex items-center gap-4 rounded-full border-2 border-brand-gold px-10 py-4 font-bold text-brand-gold text-lg transition-all hover:bg-brand-gold hover:text-brand-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-1"
+                        >
                             <Download size={20} />
-                            2023 Impact Report (PDF)
+                            View Impact Reports
                         </button>
                     </div>
                 </section>
@@ -355,6 +360,9 @@ export default function Donate() {
                         </div>
                     </div>
                 </section>
+
+                {/* Reports Modal */}
+                <ReportsModal isOpen={isReportsModalOpen} onClose={() => setIsReportsModalOpen(false)} />
 
             </main>
         </div>
