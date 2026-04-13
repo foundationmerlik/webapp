@@ -23,10 +23,10 @@ export default function Home() {
     { name: "Yazua Afrika", logo: "/images/partners/yazua_afrika.png" },
     { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true },
     { name: "Mukuru Promotion Center", logo: "/images/partners/mukuru_promotion.png" },
-    { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png" },
+    { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png", isWhiteLogo: true },
     { name: "RI Welfare", logo: "/images/partners/ri_welfare.png" },
     { name: "Rafiki Mtaani Podcast", logo: "/images/partners/rafiki_mtaani.png" },
-    { name: "ISI", logo: "/images/partners/isi.png" },
+    { name: "ISI", logo: "/images/partners/isi.png", isWhiteLogo: true },
     { name: "Noova Designs Kenya", logo: "/images/partners/noova_designs.png" },
     { name: "Charitable Chefs", logo: "/images/partners/charitable.png" },
     { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
@@ -181,7 +181,7 @@ export default function Home() {
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     fill
-                    className={`object-contain ${partner.isWhiteLogo ? 'invert dark:invert-0' : ''}`}
+                    className={`object-contain ${partner.isWhiteLogo ? 'invert brightness-0' : ''}`}
                   />
                 </div>
               </div>
