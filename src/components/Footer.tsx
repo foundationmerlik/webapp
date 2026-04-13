@@ -114,7 +114,7 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm text-foreground/60">
                             <li className="flex items-start gap-2">
                                 <ShieldCheck size={15} className="text-brand-gold shrink-0 mt-0.5" />
-                                <span>Registered Non-Profit — Kenya <span className="text-foreground/40 text-xs">(Reg. No. pending)</span></span>
+                                <span>Registered Non-Profit — Kenya <span className="text-foreground/40 text-xs">Reg. No. CLG – QPFQME</span></span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <ShieldCheck size={15} className="text-brand-gold shrink-0 mt-0.5" />
