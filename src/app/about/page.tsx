@@ -307,9 +307,9 @@ export default function About() {
                                 { name: "Rafiki Mtaani Podcast", logo: "/images/partners/rafiki_mtaani.png" },
                                 { name: "ISI", logo: "/images/partners/isi.png" },
                                 { name: "Noova Designs Kenya", logo: "/images/partners/noova_designs.png" },
-                                { name: "Charitable Chefs", logo: null },
-                                { name: "Okoth Obera", logo: null },
-                                { name: "Seles", logo: null },
+                                { name: "Charitable Chefs", logo: "/images/partners/charitable.png" },
+                                { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
+                                { name: "Seles", logo: "/images/partners/seles.png" },
                                 { name: "Social Worker Mike", logo: null },
                                 { name: "Mukuru Rescue Center", logo: null },
                             ].map((p, idx) => (
