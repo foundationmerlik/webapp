@@ -190,10 +190,10 @@ export default function Home() {
       {/* Brief About - Story */}
       < section className="py-8 bg-background relative overflow-hidden" >
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-foreground">
             Empowering the Boy Child.
           </h2>
-          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-3">
+          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-4">
             Merlik Foundation is a Kenyan youth development organization focused on mentoring and equipping adolescent boys with the skills, values, and support systems needed to become responsible leaders in their communities.
           </p>
           <p className="text-sm md:text-base text-foreground/60 font-sans leading-relaxed mb-8">
@@ -209,9 +209,9 @@ export default function Home() {
       {/* Programs Highlight */}
       < section className="py-8 bg-foreground/5 relative" >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Our Core Programs</h2>
-            <p className="text-sm text-foreground/60 mt-3 font-sans max-w-2xl mx-auto">Providing structured guidance, academic tools, and a reliable brotherhood.</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">Our Core Programs</h2>
+            <p className="text-base md:text-lg text-foreground/60 mt-4 font-sans max-w-2xl mx-auto">Providing structured guidance, academic tools, and a reliable brotherhood.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
@@ -329,10 +329,10 @@ export default function Home() {
         </div >
 
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
             Be Part of the Movement.
           </h2>
-          <p className="text-sm text-white/70 font-sans mb-8 max-w-xl mx-auto">
+          <p className="text-base md:text-lg text-white/70 font-sans mb-10 max-w-xl mx-auto">
             Your support transforms lives. Shape the men of tomorrow today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
