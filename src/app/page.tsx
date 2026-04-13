@@ -175,7 +175,7 @@ export default function Home() {
           <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
-               <div key={index} className="flex items-center justify-center h-16 w-48 mx-6 bg-white rounded-xl p-4 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1">
+               <div key={index} className="flex-shrink-0 flex items-center justify-center h-16 w-48 mx-6 bg-white rounded-xl p-4 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.logo}
