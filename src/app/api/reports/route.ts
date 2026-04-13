@@ -6,9 +6,10 @@ export async function GET() {
     try {
         const reportsDir = path.join(process.cwd(), "public", "reports");
 
-        // Create the folder if it doesn't exist yet
+        // On Vercel, the file system is read-only at runtime.
+        // If the folder doesn't exist (because it's empty and git ignored it), return empty array.
         if (!fs.existsSync(reportsDir)) {
-            fs.mkdirSync(reportsDir, { recursive: true });
+            return NextResponse.json({ reports: [] });
         }
 
         const files = fs.readdirSync(reportsDir).filter((f) => f.toLowerCase().endsWith(".pdf"));
