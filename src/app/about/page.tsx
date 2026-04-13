@@ -313,20 +313,20 @@ export default function About() {
                                 { name: "Social Worker Mike", logo: null },
                                 { name: "Mukuru Rescue Center", logo: null },
                             ].map((p, idx) => (
-                                <div key={idx} className="flex items-center justify-center p-6 bg-white border border-foreground/10 rounded-2xl h-32 hover:border-brand-gold/30 transition-all group overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1">
+                                <div key={idx} className="flex items-center justify-center h-24 w-full transition-all group overflow-hidden hover:-translate-y-1">
                                     {p.logo ? (
                                         <div className="relative w-full h-full flex items-center justify-center">
                                             <Image
                                                 src={p.logo}
                                                 alt={`${p.name} logo`}
                                                 fill
-                                                className={`object-contain transition-transform duration-500 group-hover:scale-105 ${p.isWhiteLogo ? 'invert brightness-0' : ''}`}
+                                                className={`object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(212,175,55,0.2)] ${p.isWhiteLogo ? 'dark:invert-0' : 'dark:brightness-200 dark:grayscale dark:invert'}`}
                                             />
                                         </div>
                                     ) : (
-                                        <div className="text-center px-2 flex flex-col items-center justify-center h-full">
-                                            <p className="font-serif font-black text-foreground/50 text-xs leading-tight mb-2 uppercase tracking-widest">{p.name}</p>
-                                            <div className="h-[2px] w-8 bg-brand-gold/30 group-hover:w-16 transition-all duration-500"></div>
+                                        <div className="text-center px-2 flex flex-col items-center justify-center h-full opacity-40 group-hover:opacity-100 transition-opacity">
+                                            <p className="font-serif font-black text-foreground text-xs leading-tight mb-2 uppercase tracking-widest">{p.name}</p>
+                                            <div className="h-[1px] w-6 bg-brand-gold transition-all duration-500 group-hover:w-12"></div>
                                         </div>
                                     )}
                                 </div>

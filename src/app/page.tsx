@@ -175,13 +175,13 @@ export default function Home() {
           <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
-               <div key={index} className="flex-shrink-0 flex items-center justify-center h-16 w-48 mx-6 bg-white rounded-xl p-4 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1">
+               <div key={index} className="flex-shrink-0 flex items-center justify-center h-20 w-48 mx-8 transition-all duration-500 group hover:-translate-y-1">
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     fill
-                    className={`object-contain ${partner.isWhiteLogo ? 'invert brightness-0' : ''}`}
+                    className={`object-contain drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(212,175,55,0.2)] ${partner.isWhiteLogo ? 'dark:invert-0' : 'dark:brightness-200 dark:grayscale dark:invert'}`}
                   />
                 </div>
               </div>
