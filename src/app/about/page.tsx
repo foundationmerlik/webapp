@@ -20,7 +20,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
 
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-serif tracking-tight mb-6 leading-none text-foreground animate-reveal">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-serif tracking-tight mb-6 leading-tight text-foreground animate-reveal">
                         Our Story. <span className="text-brand-gold italic">Our Mission.</span> <br />Our People.
                     </h1>
                     <p className="text-lg md:text-xl md:text-2xl text-foreground/80 font-sans max-w-2xl mx-auto animate-reveal delay-200">
@@ -90,23 +90,36 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Mission & Vision: Large Typography */}
-            <section className="bg-foreground/[0.02] py-40 border-y border-brand-gold/10 overflow-hidden relative">
+            {/* Mission & Vision: Responsive Grid */}
+            <section className="bg-foreground/[0.02] py-24 md:py-32 border-y border-brand-gold/10 relative overflow-hidden">
                 <div className="absolute -right-40 top-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
                 <div className="absolute -left-40 bottom-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-                    <div className="mb-32">
-                        <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Mission</h2>
-                        <p className="text-2xl md:text-4xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground relative z-10 px-8 py-10 rounded-3xl bg-background/50 backdrop-blur-md border border-brand-gold/20 shadow-xl">
-                            Empowerment of the Boy Child through Education, Mentorship & General Life Development. Our mission continues to foster systemic support networks tailored for boys from disadvantaged backgrounds, ensuring no boy gets left behind.
-                        </p>
-                    </div>
-                    <div>
-                        <h2 className="text-6xl md:text-[150px] font-black text-foreground opacity-5 uppercase mb-[-2rem] md:mb-[-4rem] font-serif leading-none select-none">Vision</h2>
-                        <p className="text-3xl md:text-5xl font-serif font-bold leading-tight max-w-5xl mx-auto text-foreground relative z-10 px-8 py-10 rounded-3xl bg-brand-gold bg-opacity-[0.03] backdrop-blur-md border border-brand-gold/10 shadow-lg">
-                            Developing Africa <span className="text-brand-gold italic">one boy at a time.</span>
-                        </p>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                        {/* Mission */}
+                        <div className="bg-background/80 backdrop-blur-md p-10 md:p-16 rounded-[2.5rem] border border-brand-gold/20 shadow-xl relative overflow-hidden flex flex-col justify-center">
+                            <h2 className="text-6xl sm:text-7xl md:text-8xl font-black font-serif text-brand-gold/5 md:text-brand-gold/10 absolute -top-4 -right-4 select-none pointer-events-none">MISSION</h2>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground relative z-10 flex items-center gap-4">
+                                <div className="w-10 h-[2px] bg-brand-gold"></div>
+                                Our Mission
+                            </h3>
+                            <p className="text-xl md:text-3xl font-serif leading-relaxed font-semibold text-foreground/90 relative z-10">
+                                To empower the Boy Child through Education, Mentorship and General Life Development.
+                            </p>
+                        </div>
+                        
+                        {/* Vision */}
+                        <div className="bg-brand-gold/5 backdrop-blur-md p-10 md:p-16 rounded-[2.5rem] border border-brand-gold/20 shadow-xl relative overflow-hidden flex flex-col justify-center">
+                            <h2 className="text-6xl sm:text-7xl md:text-8xl font-black font-serif text-brand-gold/5 md:text-brand-gold/10 absolute -bottom-4 -right-4 select-none pointer-events-none">VISION</h2>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground relative z-10 flex items-center gap-4">
+                                <div className="w-10 h-[2px] bg-brand-gold"></div>
+                                Our Vision
+                            </h3>
+                            <p className="text-2xl md:text-4xl font-serif font-bold leading-relaxed text-foreground relative z-10">
+                                Developing Africa <br /><span className="text-brand-gold italic">one boy at a time.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
