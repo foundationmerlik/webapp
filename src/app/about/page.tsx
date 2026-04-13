@@ -105,7 +105,7 @@ export default function About() {
                                 Our Mission
                             </h3>
                             <p className="text-xl md:text-3xl font-serif leading-relaxed font-semibold text-foreground/90 relative z-10">
-                                To empower the Boy Child through Education, Mentorship and General Life Development.
+                                Empowerment of the Boy Child through Education, Mentorship and General Life Development.
                             </p>
                         </div>
                         
@@ -117,7 +117,7 @@ export default function About() {
                                 Our Vision
                             </h3>
                             <p className="text-2xl md:text-4xl font-serif font-bold leading-relaxed text-foreground relative z-10">
-                                Developing Africa <br /><span className="text-brand-gold italic">one boy at a time.</span>
+                                Strengthening and Developing Nations <span className="text-brand-gold italic">one boy at a time.</span>
                             </p>
                         </div>
                     </div>
@@ -126,9 +126,11 @@ export default function About() {
 
             {/* Core Values Grid */}
             < section className="py-32 px-6 max-w-7xl mx-auto" >
-                <div className="text-center mb-20">
-                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Core Approach</h2>
-                    <p className="text-4xl md:text-6xl font-black font-serif text-foreground">The Three Pillars</p>
+                <div className="text-center mb-20 max-w-4xl mx-auto">
+                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Approach</h2>
+                    <p className="text-xl md:text-2xl font-serif font-medium text-foreground leading-relaxed">
+                        Through carefully designed educational initiatives and mentorship programs, we address both immediate needs and long-term development goals. Our work focuses on building a community of empowered individuals who will shape the future with knowledge, integrity, and leadership.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -288,9 +290,11 @@ export default function About() {
                     </div>
 
                     <div className="mt-24">
-                        <div className="text-center mb-16">
-                            <h4 className="font-serif font-bold text-3xl mb-4 text-brand-gold">Our Strategic Partners</h4>
-                            <p className="text-foreground/70 max-w-2xl mx-auto">Collaborating with organizations across Kenya to maximize our impact on the ground.</p>
+                        <div className="text-center mb-16 max-w-4xl mx-auto">
+                            <h4 className="font-serif font-bold text-3xl mb-4 text-brand-gold">Strategic Partnerships</h4>
+                            <p className="text-foreground/70 text-lg leading-relaxed">
+                                Merlik Foundation actively collaborates with Community Based Organizations, Civil Society Organizations, government institutions, regional bodies, and donors. These partnerships amplify our impact and ensure sustainable program delivery.
+                            </p>
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
