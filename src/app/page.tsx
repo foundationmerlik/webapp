@@ -28,6 +28,9 @@ export default function Home() {
     { name: "Rafiki Mtaani Podcast", logo: "/images/partners/rafiki_mtaani.png" },
     { name: "ISI", logo: "/images/partners/isi.png" },
     { name: "Noova Designs Kenya", logo: "/images/partners/noova_designs.png" },
+    { name: "Charitable Chefs", logo: "/images/partners/charitable.png" },
+    { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
+    { name: "Seles", logo: "/images/partners/seles.png" },
   ];
 
   useEffect(() => {
@@ -172,7 +175,7 @@ export default function Home() {
           <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
-              <div key={index} className="flex items-center justify-center h-12 w-48 mx-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+               <div key={index} className="flex items-center justify-center h-16 w-48 mx-6 bg-white rounded-xl p-4 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.logo}

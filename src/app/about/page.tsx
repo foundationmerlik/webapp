@@ -313,7 +313,7 @@ export default function About() {
                                 { name: "Social Worker Mike", logo: null },
                                 { name: "Mukuru Rescue Center", logo: null },
                             ].map((p, idx) => (
-                                <div key={idx} className="flex items-center justify-center p-6 bg-foreground/[0.02] border border-foreground/5 rounded-2xl h-32 hover:border-brand-gold/30 transition-all group overflow-hidden grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                <div key={idx} className="flex items-center justify-center p-6 bg-white border border-foreground/10 rounded-2xl h-32 hover:border-brand-gold/30 transition-all group overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1">
                                     {p.logo ? (
                                         <div className="relative w-full h-full flex items-center justify-center">
                                             <Image
