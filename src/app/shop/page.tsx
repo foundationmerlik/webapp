@@ -8,32 +8,32 @@ import Link from "next/link";
 const products = [
     {
         name: "Merlik Branded Hoodie",
-        image: "/_next/static/media/hood.5748a89a.jpg",
+        image: "/images/shop/hood.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded Hoodie"
     },
     {
         name: "Merlik Branded T-Shirt",
-        image: "/_next/static/media/t-shirt.38e8aebb.jpg",
+        image: "/images/shop/t-shirt.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded T-Shirt"
     },
     {
         name: "Merlik Branded Cap",
-        image: "/_next/static/media/cap.1077e8c0.jpg",
+        image: "/images/shop/cap.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded Cap"
     },
     {
         name: "Merlik Branded Water Bottle",
-        image: "/_next/static/media/water-bottle.83c3de96.jpg",
+        image: "/images/shop/water-bottle.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded Water Bottle"
     },
     {
         name: "Merlik Branded Keyholder",
-        image: "/_next/static/media/keyholder.2d5ce616.jpg",
+        image: "/images/shop/keyholder.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded Keyholder"
     },
     {
         name: "Merlik Branded Mug",
-        image: "/_next/static/media/mug.d68bd3f0.jpg",
+        image: "/images/shop/mug.webp",
         whatsapp: "https://wa.me/254795966792?text=Hello, I'd like to order the Merlik Branded Mug"
     }
 ];
