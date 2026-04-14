@@ -246,6 +246,63 @@ export default function Donate() {
                             <p className="mt-4 text-center text-xs font-semibold text-foreground/40 uppercase tracking-widest">
                                 🔒 Secure Paystack Payment · Tax-deductible receipt issued
                             </p>
+
+                            {/* Manual Payment Section */}
+                            <div className="mt-10 pt-10 border-t border-foreground/10 space-y-8">
+                                <div className="text-center">
+                                    <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 mb-2">Other Ways to Give</h3>
+                                    <div className="h-1 w-10 bg-brand-gold mx-auto rounded-full"></div>
+                                </div>
+
+                                <div className="space-y-4">
+                                    {/* Bank */}
+                                    <div className="p-6 rounded-2xl bg-foreground/[0.03] border border-foreground/5 group hover:border-brand-gold/30 transition-all">
+                                        <div className="flex items-center gap-3 text-brand-gold font-bold uppercase tracking-widest text-[10px] mb-4">
+                                            <Building2 size={14} /> Bank Transfer
+                                        </div>
+                                        <div className="space-y-3">
+                                            <div className="flex justify-between text-sm">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Bank</span>
+                                                <span className="font-bold">Kenya Commercial Bank</span>
+                                            </div>
+                                            <div className="flex justify-between text-sm">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Account Name</span>
+                                                <span className="font-bold">MERLIK FOUNDATION</span>
+                                            </div>
+                                            <div className="flex justify-between items-center">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Account No.</span>
+                                                <span className="font-black text-brand-gold">1309280843</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* M-Pesa */}
+                                    <div className="p-6 rounded-2xl bg-brand-gold/5 border border-brand-gold/10 group hover:border-brand-gold/30 transition-all">
+                                        <div className="flex items-center gap-3 text-brand-gold font-bold uppercase tracking-widest text-[10px] mb-4">
+                                            <Wallet size={14} /> M-Pesa Paybill
+                                        </div>
+                                        <div className="space-y-3">
+                                            <div className="flex justify-between text-sm">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Paybill</span>
+                                                <span className="font-black text-brand-gold">522533</span>
+                                            </div>
+                                            <div className="flex justify-between text-sm">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Account No.</span>
+                                                <span className="font-black text-brand-gold">8019800</span>
+                                            </div>
+                                            <div className="flex justify-between text-sm">
+                                                <span className="opacity-40 font-bold uppercase text-[10px]">Business Name</span>
+                                                <span className="font-bold truncate ml-4 tracking-tighter">MERLIK FOUNDATION LIMITED</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p className="text-[10px] text-center text-foreground/40 font-bold uppercase tracking-widest italic pt-2">
+                                    Please send proof of payment to info@merlikfoundation.org
+                                </p>
+                            </div>
+
                             <div className="mt-8 pt-6 border-t border-foreground/10">
                                 <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-3">2026 Goal Progress</p>
                                 <div className="w-full bg-foreground/10 rounded-full h-2.5 mb-2">
