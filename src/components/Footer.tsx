@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck, Lock } from "lucide-react";
+import { Instagram, Linkedin, Mail, ArrowRight, ShieldCheck, Lock } from "lucide-react";
 import ReportsModal from "@/components/ReportsModal";
 import NewsletterModal from "@/components/NewsletterModal";
 import SafeYear from "@/components/SafeYear";
@@ -128,7 +128,13 @@ export default function Footer() {
                                 <Linkedin size={18} />
                             </a>
                             <a href="https://www.tiktok.com/@merlikfoundation?_t=8riNpakE5f5&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Merlik Foundation on TikTok" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-500 shadow-sm hover:shadow-brand-gold/20">
-                                <Video size={18} />
+                                <svg 
+                                    viewBox="0 0 24 24" 
+                                    className="w-[18px] h-[18px] fill-current"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.59-1.01V14.5c.01 2.32-.6 4.67-2.06 6.47-1.47 1.84-3.73 2.87-6.03 3.02-2.52.21-5.14-.54-7-2.31-1.93-1.84-2.8-4.66-2.28-7.27.46-2.52 2.33-4.75 4.72-5.71 1.28-.53 2.68-.73 4.05-.62V12.1c-.81-.13-1.67-.02-2.4.34-1.01.47-1.74 1.48-1.91 2.58-.19 1.09.11 2.27.81 3.13.67.84 1.8 1.34 2.88 1.3 1.08-.01 2.1-.55 2.72-1.44.5-.72.69-1.62.68-2.51V.02z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
