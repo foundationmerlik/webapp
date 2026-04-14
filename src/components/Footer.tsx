@@ -84,8 +84,14 @@ export default function Footer() {
                                 className="h-10 w-auto object-contain"
                             />
                         </Link>
-                        <p className="font-serif italic text-foreground/60 text-sm leading-relaxed">
-                            restoring order to the hearts of men.
+                        <div className="flex flex-col gap-2">
+                            <h3 className="font-serif font-black text-xl text-foreground">Merlik Foundation</h3>
+                            <p className="text-brand-gold font-bold uppercase tracking-widest text-[10px]">
+                                Developing Nations, One Boy at a Time
+                            </p>
+                        </div>
+                        <p className="text-foreground/60 text-sm leading-relaxed max-w-xs font-medium">
+                            Empowering young boys in Kenya through education, mentorship and community engagement since 2019.
                         </p>
                         {/* Social Links */}
                         <div className="flex gap-4 mt-2">
