@@ -70,7 +70,7 @@ export default function Navbar() {
     const forceDarkHero = isHome && !isScrolled;
 
     const linkClass = `font-sans font-semibold text-sm transition-all duration-300 relative group ${
-        forceDarkHero ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
+        forceDarkHero && resolvedTheme === "dark" ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
     }`;
     const underline = <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-300 group-hover:w-full" />;
 
@@ -87,7 +87,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center group cursor-pointer translate-y-[-2px] relative z-20">
                     <Image
-                        src={mounted && (resolvedTheme === "dark" || forceDarkHero) ? "/logo_white.png" : "/logo_black.png"}
+                        src={mounted && resolvedTheme === "dark" ? "/logo_white.png" : "/logo_black.png"}
                         alt="Merlik Foundation"
                         width={160} height={48}
                         className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
@@ -110,7 +110,7 @@ export default function Navbar() {
                             onClick={() => setProgramsOpen(!programsOpen)}
                             onMouseEnter={() => setProgramsOpen(true)}
                             className={`flex items-center gap-1.5 font-sans font-semibold text-sm transition-all duration-300 relative group hover:text-brand-gold ${
-                                forceDarkHero ? "text-white" : "text-foreground"
+                                forceDarkHero && resolvedTheme === "dark" ? "text-white" : "text-foreground"
                             }`}
                         >
                             Programs
@@ -160,7 +160,7 @@ export default function Navbar() {
 
                     {mounted && (
                         <button onClick={toggleTheme} className={`p-2 rounded-full border transition-all ${
-                            forceDarkHero 
+                            forceDarkHero && resolvedTheme === "dark"
                                 ? "border-white/40 text-white hover:border-brand-gold hover:text-brand-gold" 
                                 : "border-foreground/40 text-foreground hover:border-brand-gold hover:text-brand-gold"
                         }`} aria-label="Toggle Theme">
@@ -215,13 +215,13 @@ export default function Navbar() {
                 <div className="flex items-center gap-4 md:hidden">
                     {mounted && (
                         <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${
-                            forceDarkHero ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
+                            forceDarkHero && resolvedTheme === "dark" ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
                         }`}>
                             {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                     )}
                     <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`p-2 ${
-                        forceDarkHero ? "text-white" : "text-foreground"
+                        forceDarkHero && resolvedTheme === "dark" ? "text-white" : "text-foreground"
                     }`}>
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
