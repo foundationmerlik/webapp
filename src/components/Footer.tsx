@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck } from "lucide-react";
+import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck, Lock } from "lucide-react";
 import ReportsModal from "@/components/ReportsModal";
 
 export default function Footer() {
@@ -15,9 +15,27 @@ export default function Footer() {
     const [isReportsModalOpen, setIsReportsModalOpen] = useState(false);
     useEffect(() => { setMounted(true); }, []);
 
-    const handleSubscribe = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubscribe = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (email) { setSubscribed(true); setEmail(""); }
+        if (!email) return;
+        
+        setIsSubmitting(true);
+        try {
+            const res = await fetch("/api/newsletter/subscribe", {
+                method: "POST",
+                body: JSON.stringify({ email }),
+            });
+            if (res.ok) {
+                setSubscribed(true);
+                setEmail("");
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const exploreLinks = [
@@ -61,8 +79,12 @@ export default function Footer() {
                                 placeholder="your@email.com"
                                 className="px-5 py-3 rounded-full border border-foreground/20 bg-background text-foreground text-sm focus:outline-none focus:border-brand-gold transition-colors w-full sm:w-72"
                             />
-                            <button type="submit" className="flex items-center justify-center gap-2 px-6 py-3 bg-brand-gold text-brand-black font-bold rounded-full text-sm hover:brightness-110 transition-all whitespace-nowrap">
-                                Subscribe <ArrowRight size={14} />
+                            <button 
+                                type="submit" 
+                                disabled={isSubmitting}
+                                className="flex items-center justify-center gap-2 px-6 py-3 bg-brand-gold text-brand-black font-bold rounded-full text-sm hover:brightness-110 transition-all whitespace-nowrap disabled:opacity-50"
+                            >
+                                {isSubmitting ? "Subscribing..." : <>Subscribe <ArrowRight size={14} /></>}
                             </button>
                         </form>
                     )}
@@ -159,9 +181,14 @@ export default function Footer() {
                             >
                                 View Impact Reports →
                             </button>
-                            <Link href="/contact" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
-                                Privacy Policy
-                            </Link>
+                            <div className="flex flex-col gap-3">
+                                <Link href="/contact" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
+                                    Privacy Policy
+                                </Link>
+                                <Link href="/login" className="text-xs text-brand-gold/60 hover:text-brand-gold transition-colors uppercase tracking-[0.2em] font-black flex items-center gap-2">
+                                    <Lock size={12} /> Staff Portal
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
