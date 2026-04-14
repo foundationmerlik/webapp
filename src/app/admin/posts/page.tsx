@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   FileText, 
   Plus, 
@@ -214,7 +215,12 @@ function PostsContent() {
                 <div key={post.id} className="group bg-white dark:bg-zinc-900/50 rounded-[2.5rem] border border-foreground/5 overflow-hidden shadow-sm hover:border-brand-gold/30 transition-all flex flex-col">
                     <div className="aspect-video bg-foreground/5 relative overflow-hidden">
                         {post.image ? (
-                            <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <Image 
+                                src={post.image} 
+                                alt={post.title} 
+                                fill 
+                                className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                            />
                         ) : (
                             <div className="w-full h-full flex items-center justify-center text-foreground/10">
                                 <FileText size={48} />
