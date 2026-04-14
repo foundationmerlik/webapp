@@ -35,6 +35,33 @@ export default function Home() {
     { name: "Mukuru Rescue Center", logo: null },
   ];
 
+  const testimonials = [
+    {
+      name: "Max Mbugua",
+      text: "Volunteering at Merlik has been a highlight of my year. Being part of a movement that makes such a positive impact on these boys' lives is truly inspiring. Go, Merlik, go! The future is yours to shape.",
+    },
+    {
+      name: "Vincent Ingosi",
+      text: "I'm happy to be part of Merlik Foundation team. Being their first attache' and later their volunteer has not only strengthened my organizational, communication, and leadership skills but also gave me the opportunity to make a positive impact on the lives of others",
+    },
+    {
+      name: "Stephanie Wanza",
+      text: "The team was professional in all its endeavours and fully committed to bettering the lives of the boys in lower income societies by moulding them into great men. Being a volunteer in such a foundation has been an honour",
+    },
+    {
+      name: "Job Mithanga",
+      text: "You can’t talk of Merlik without “a picturesque opportunity, served in delight”. Every engagement is not just a memory. You start building castles’, brick by brick, with a reminiscence of how amazing it is to serve. Always grateful to be part of the Merlik Foundation.",
+    },
+    {
+      name: "Ashley Mbithe",
+      text: "I spent nearly 3 months volunteering with Merlik and the experience was unforgettable not only was it an eye opening experience to see how the other half of the world lives but to make an impact so great to the community and touch lives was quite a memorable experience. Volunteering with Merlik foundation is very rewarding. I mostly enjoyed how the planning for the outreach was executed with the utmost professionalism, care, passion and most importantly love. I would do it over and over again.",
+    },
+    {
+      name: "Zebedee Amukoye",
+      text: "Merlik foundation has impacted boys to realize that their dreams are valid when someone thinks about them and willing to mentor and sharpen their skills not only in academic but also sharpening their talents in acrobatics and football, merlik foundation kudos for your support.",
+    },
+  ];
+
   useEffect(() => {
     // Trigger animations after component mounts
     setIsLoaded(true);
@@ -329,7 +356,78 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
+
+      {/* Testimonials Marquee Section */}
+      <section className="py-24 bg-foreground/[0.02] border-y border-foreground/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-[1px] w-12 bg-brand-gold"></div>
+            <span className="text-brand-gold font-bold text-[10px] uppercase tracking-[0.3em]">Testimonials</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-serif font-black text-foreground">
+            Voices of Impact.
+          </h2>
+        </div>
+
+        <div className="space-y-8 marquee-container">
+          {/* Row 1: Right to Left */}
+          <div className="marquee-track flex gap-6" style={{ "--marquee-duration": "80s" } as any}>
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div key={`t1-${i}`} className="flex-shrink-0 w-[400px] p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
+                <div className="mb-6 text-brand-gold/20 flex justify-between items-start">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4H3c-.6 0-1 .4-1 1s.4 1 1 1ZM13 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4h-1c-.6 0-1 .4-1 1s.4 1 1 1Z" /></svg>
+                  </div>
+                  <div className="text-foreground/20 hover:text-brand-gold transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-expand"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8" /><path d="M3 16.2V21m0 0h4.8M3 21l6-6" /><path d="M21 7.8V3m0 0h-4.8M21 3l-6 6" /><path d="M3 7.8V3m0 0h4.8M3 3l6 6" /></svg>
+                  </div>
+                </div>
+                <p className="text-foreground/80 font-medium italic mb-8 leading-relaxed line-clamp-4">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-serif font-black text-brand-gold">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-serif font-bold text-foreground">{t.name}</h4>
+                    <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest">Foundation Supporter</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Left to Right */}
+          <div className="marquee-track-ltr flex gap-6" style={{ "--marquee-duration": "80s" } as any}>
+            {[...testimonials.reverse(), ...testimonials].map((t, i) => (
+              <div key={`t2-${i}`} className="flex-shrink-0 w-[400px] p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
+                <div className="mb-6 text-brand-gold/20 flex justify-between items-start">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4H3c-.6 0-1 .4-1 1s.4 1 1 1ZM13 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4h-1c-.6 0-1 .4-1 1s.4 1 1 1Z" /></svg>
+                  </div>
+                  <div className="text-foreground/20 hover:text-brand-gold transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-expand"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8" /><path d="M3 16.2V21m0 0h4.8M3 21l6-6" /><path d="M21 7.8V3m0 0h-4.8M21 3l-6 6" /><path d="M3 7.8V3m0 0h4.8M3 3l6 6" /></svg>
+                  </div>
+                </div>
+                <p className="text-foreground/80 font-medium italic mb-8 leading-relaxed line-clamp-4">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-serif font-black text-brand-gold">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-serif font-bold text-foreground">{t.name}</h4>
+                    <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest">Community Volunteer</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Get Involved CTA */}
       < section className="py-20 bg-brand-black text-white relative overflow-hidden" >
