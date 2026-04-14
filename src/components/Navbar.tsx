@@ -69,9 +69,7 @@ export default function Navbar() {
     const isHome = pathname === "/";
     const forceDarkHero = isHome && !isScrolled;
 
-    const linkClass = `font-sans font-semibold text-sm transition-all duration-300 relative group ${
-        forceDarkHero && resolvedTheme === "dark" ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
-    }`;
+    const linkClass = "font-sans font-semibold text-sm text-foreground transition-all duration-300 relative group hover:text-brand-gold";
     const underline = <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-300 group-hover:w-full" />;
 
     return (
@@ -109,9 +107,7 @@ export default function Navbar() {
                         <button
                             onClick={() => setProgramsOpen(!programsOpen)}
                             onMouseEnter={() => setProgramsOpen(true)}
-                            className={`flex items-center gap-1.5 font-sans font-semibold text-sm transition-all duration-300 relative group hover:text-brand-gold ${
-                                forceDarkHero && resolvedTheme === "dark" ? "text-white" : "text-foreground"
-                            }`}
+                            className="flex items-center gap-1.5 font-sans font-semibold text-sm text-foreground transition-all duration-300 relative group hover:text-brand-gold"
                         >
                             Programs
                             <ChevronDown size={14} className={`transition-transform duration-300 ${programsOpen ? "rotate-180 text-brand-gold" : ""}`} />
@@ -159,11 +155,7 @@ export default function Navbar() {
                     ))}
 
                     {mounted && (
-                        <button onClick={toggleTheme} className={`p-2 rounded-full border transition-all ${
-                            forceDarkHero && resolvedTheme === "dark"
-                                ? "border-white/40 text-white hover:border-brand-gold hover:text-brand-gold" 
-                                : "border-foreground/40 text-foreground hover:border-brand-gold hover:text-brand-gold"
-                        }`} aria-label="Toggle Theme">
+                        <button onClick={toggleTheme} className="p-2 rounded-full border border-foreground/40 text-foreground hover:border-brand-gold hover:text-brand-gold transition-all" aria-label="Toggle Theme">
                             {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
                         </button>
                     )}
@@ -214,15 +206,11 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <div className="flex items-center gap-4 md:hidden">
                     {mounted && (
-                        <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${
-                            forceDarkHero && resolvedTheme === "dark" ? "text-white hover:text-brand-gold" : "text-foreground hover:text-brand-gold"
-                        }`}>
+                        <button onClick={toggleTheme} className="p-2 rounded-full text-foreground hover:text-brand-gold transition-colors">
                             {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                     )}
-                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`p-2 ${
-                        forceDarkHero && resolvedTheme === "dark" ? "text-white" : "text-foreground"
-                    }`}>
+                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-foreground p-2">
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
