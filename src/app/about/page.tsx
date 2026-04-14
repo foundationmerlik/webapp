@@ -310,7 +310,7 @@ export default function About() {
                                 { name: "Charitable Chefs", logo: "/images/partners/charitable.png" },
                                 { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
                                 { name: "Seles", logo: "/images/partners/seles.png" },
-                                { name: "Social Worker Mike", logo: null },
+                                { name: "Social Worker Mike", logo: "/images/partners/social_workers.jpg" },
                                 { name: "Mukuru Rescue Center", logo: null },
                             ].map((p, idx) => (
                                 <div key={idx} className="flex items-center justify-center h-24 w-full transition-all group overflow-hidden hover:-translate-y-1">

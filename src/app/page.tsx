@@ -31,6 +31,8 @@ export default function Home() {
     { name: "Charitable Chefs", logo: "/images/partners/charitable.png" },
     { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
     { name: "Seles", logo: "/images/partners/seles.png" },
+    { name: "Social Worker Mike", logo: "/images/partners/social_workers.jpg" },
+    { name: "Mukuru Rescue Center", logo: null },
   ];
 
   useEffect(() => {
@@ -173,22 +175,28 @@ export default function Home() {
       <section className="bg-background py-10 opacity-70 hover:opacity-100 transition-opacity">
         <div className="max-w-7xl mx-auto px-6 overflow-hidden">
           <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
-          <div className="flex whitespace-nowrap animate-marquee">
-            {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
-               <div key={index} className="flex-shrink-0 flex items-center justify-center h-20 w-48 mx-8 transition-all duration-500 group hover:-translate-y-1">
-                <div className={`relative w-full h-full flex items-center justify-center ${partner.bgColor ? 'p-6 rounded-3xl' : ''}`} style={partner.bgColor ? { backgroundColor: partner.bgColor } : {}}>
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    fill
-                    className="object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]"
-                  />
+          <div className="marquee-container overflow-hidden">
+            <div className="marquee-track-ltr">
+              {[...partnerLogos, ...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
+                <div key={index} className="flex-shrink-0 flex items-center justify-center h-20 w-48 mx-8 transition-all duration-500 group hover:-translate-y-1">
+                  {partner.logo ? (
+                    <div className={`relative w-full h-full flex items-center justify-center ${partner.bgColor ? 'p-6 rounded-3xl' : ''}`} style={partner.bgColor ? { backgroundColor: partner.bgColor } : {}}>
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        fill
+                        className="object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]"
+                      />
+                    </div>
+                  ) : (
+                    <span className="font-bold text-foreground/60 text-sm uppercase tracking-widest text-center">{partner.name}</span>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Brief About - Story */}
       < section className="py-8 bg-background relative overflow-hidden" >
