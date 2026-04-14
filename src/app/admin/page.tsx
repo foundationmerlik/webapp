@@ -108,15 +108,15 @@ export default async function AdminDashboard() {
                 </Link>
             </div>
             
-            <div className="p-8 rounded-3xl border-2 border-dashed border-foreground/10 flex flex-col items-center justify-center text-center gap-4 hover:border-brand-gold/30 transition-all cursor-pointer group">
+            <Link href="/admin/newsletters" className="p-8 rounded-3xl border-2 border-dashed border-foreground/10 flex flex-col items-center justify-center text-center gap-4 hover:border-brand-gold/30 transition-all cursor-pointer group">
                 <div className="w-16 h-16 rounded-full bg-foreground/5 flex items-center justify-center text-foreground/20 group-hover:text-brand-gold transition-colors">
                     <Mail size={32} />
                 </div>
                 <div>
                     <h4 className="font-bold text-foreground">Launch Newsletter</h4>
-                    <p className="text-xs text-foreground/40 mt-1 uppercase tracking-widest font-black">Email your 1,000 donors</p>
+                    <p className="text-xs text-foreground/40 mt-1 uppercase tracking-widest font-black">Engage Subcommittee Members</p>
                 </div>
-            </div>
+            </Link>
         </div>
       </div>
     </div>
