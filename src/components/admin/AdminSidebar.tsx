@@ -27,7 +27,7 @@ export default function AdminSidebar({ user }: { user: any }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch
@@ -81,11 +81,11 @@ export default function AdminSidebar({ user }: { user: any }) {
             <div className="mb-10 flex items-center justify-between">
               <Link href="/">
                 <Image
-                  src="/logo_black.png"
+                  src={mounted && resolvedTheme === 'dark' ? '/logo_white.png' : '/logo_black.png'}
                   alt="Merlik Foundation"
                   width={140}
                   height={42}
-                  className="h-10 w-auto object-contain dark:invert"
+                  className="h-10 w-auto object-contain"
                 />
               </Link>
               
