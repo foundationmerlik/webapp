@@ -24,13 +24,13 @@ export async function POST(request: Request) {
         const transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
           },
         });
 
         const mailOptions = {
-          from: `"Merlik Foundation" <${process.env.EMAIL_USER}>`,
+          from: process.env.SMTP_FROM || `"Merlik Foundation" <${process.env.SMTP_USER}>`,
           to: email,
           subject: "Welcome to Merlik Foundation Newsletter! 🌓",
           html: `
