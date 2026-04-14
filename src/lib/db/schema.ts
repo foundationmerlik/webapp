@@ -48,3 +48,26 @@ export const newsletterCampaigns = sqliteTable("newsletter_campaigns", {
   sentAt: integer("sent_at", { mode: "timestamp" }).default(sql`(strftime('%s', 'now'))`),
   sentBy: text("sent_by").references(() => users.id),
 });
+
+export const formSubmissions = sqliteTable("form_submissions", {
+  id: text("id").primaryKey(),
+  type: text("type", { enum: ["contact", "volunteer", "internship", "mentorship", "sponsorship", "partnership"] }).notNull(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone"),
+  message: text("message"),
+  metadata: text("metadata"), // Store extra fields as JSON if needed
+  status: text("status", { enum: ["pending", "reviewed", "archived"] }).default("pending"),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(strftime('%s', 'now'))`),
+});
+
+export const donations = sqliteTable("donations", {
+  id: text("id").primaryKey(),
+  donorName: text("donor_name"),
+  donorEmail: text("donor_email"),
+  amount: integer("amount").notNull(),
+  currency: text("currency").default("KES"),
+  reference: text("reference").notNull().unique(),
+  status: text("status").notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(strftime('%s', 'now'))`),
+});

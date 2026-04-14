@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { db } from "@/lib/db";
+import { formSubmissions } from "@/lib/db/schema";
+import { v4 as uuidv4 } from "uuid";
 
 const FOUNDATION_EMAILS = [
     "foundationmerlik@gmail.com",
@@ -60,6 +63,17 @@ export async function POST(req: Request) {
         };
 
         const config = types[type] || { title: "Support Request", color: "#D4AF37", icon: "✨" };
+
+        // 0. Log to DB
+        await db.insert(formSubmissions).values({
+            id: uuidv4(),
+            type: type as any,
+            name,
+            email,
+            phone,
+            message,
+            status: "pending"
+        });
 
         const adminMailOptions = {
             from: process.env.SMTP_FROM,

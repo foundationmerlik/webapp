@@ -29,6 +29,7 @@ export default function AdminSidebar({ user }: { user: any }) {
     { name: "Content (Blogs/News)", href: "/admin/posts", icon: FileText },
     { name: "Calendar Events", href: "/admin/calendar", icon: Calendar },
     { name: "Newsletter", href: "/admin/newsletters", icon: Mail },
+    { name: "Mission Control", href: "/admin/inquiries", icon: Bell, adminOnly: true },
     { name: "Staff Management", href: "/admin/staff", icon: Users, adminOnly: true },
     { name: "Settings", href: "/admin/settings", icon: Key },
   ];

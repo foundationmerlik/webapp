@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { db } from "@/lib/db";
+import { formSubmissions } from "@/lib/db/schema";
+import { v4 as uuidv4 } from "uuid";
 
 const FOUNDATION_EMAILS = [
     "foundationmerlik@gmail.com",
@@ -164,6 +167,18 @@ export async function POST(req: NextRequest) {
         if (!name || !email || !message) {
             return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
         }
+
+        // 0. Log to DB
+        await db.insert(formSubmissions).values({
+            id: uuidv4(),
+            type: "contact",
+            name,
+            email,
+            phone,
+            message,
+            metadata: JSON.stringify({ role }),
+            status: "pending"
+        });
 
         // 1. Confirmation email → sender
         await transporter.sendMail({

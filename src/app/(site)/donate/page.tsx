@@ -39,10 +39,26 @@ export default function Donate() {
     const raisedAmount = 1850000;
     const progressPct = Math.min(100, Math.round((raisedAmount / goalAmount) * 100));
 
-    const onSuccess = (reference: any) => {
+    const onSuccess = async (reference: any) => {
         console.log("Payment Successful", reference);
         setIsProcessing(false);
         setIsSuccess(true);
+
+        try {
+            await fetch("/api/donations", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    donorName: `${firstName} ${lastName}`,
+                    donorEmail: email,
+                    amount: Number(amount),
+                    reference: reference.reference,
+                    status: reference.status
+                })
+            });
+        } catch (err) {
+            console.error("Failed to log donation:", err);
+        }
     };
 
     const onClose = () => {
