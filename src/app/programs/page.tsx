@@ -11,7 +11,7 @@ export default function Programs() {
             <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
-                        src="/images/programs_hero.png"
+                        src="/images/programs_hero.jpg"
                         alt="Group of diverse professionals collaborating in a modern setting"
                         fill
                         className="object-cover opacity-60 mix-blend-screen scale-105 animate-image-load"
@@ -91,7 +91,7 @@ export default function Programs() {
                     <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background">
                         <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
                             <Image
-                                src="/images/mentorship.png"
+                                src="/images/Mentorship.jpg"
                                 alt="Two men shaking hands in a professional mentorship meeting"
                                 fill
                                 className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
@@ -106,7 +106,7 @@ export default function Programs() {
                     <div className="relative h-[60vh] lg:h-auto order-1 overflow-hidden bg-background">
                         <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
                             <Image
-                                src="/images/classroom.png"
+                                src="/images/classroom.jpg"
                                 alt="Students studying together in a modern academic library"
                                 fill
                                 className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
@@ -192,7 +192,7 @@ export default function Programs() {
                     <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background">
                         <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
                             <Image
-                                src="/images/outreach.png"
+                                src="/images/outreach.jpg"
                                 alt="A group of diverse volunteers working together outdoors"
                                 fill
                                 className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
@@ -207,7 +207,7 @@ export default function Programs() {
                     <div className="relative h-[60vh] lg:h-auto order-1 overflow-hidden bg-background">
                         <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
                             <Image
-                                src="/images/library.png"
+                                src="/images/Education.jpg"
                                 alt="Youth looking towards the future"
                                 fill
                                 className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"

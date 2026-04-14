@@ -224,7 +224,7 @@ export default function Home() {
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Two young men talking outdoors in mentorship session"
-                  src="/images/mentorship.png"
+                  src="/images/Mentorship.jpg"
                 />
               </div>
               <div className="p-7 relative">
@@ -244,7 +244,7 @@ export default function Home() {
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Classroom setting with students focusing on work"
-                  src="/images/classroom.png"
+                  src="/images/classroom.jpg"
                 />
               </div>
               <div className="p-7 relative">
@@ -264,7 +264,7 @@ export default function Home() {
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Group of volunteers working in a community garden"
-                  src="/images/outreach.png"
+                  src="/images/outreach.jpg"
                 />
               </div>
               <div className="p-7 relative">
