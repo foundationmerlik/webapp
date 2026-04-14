@@ -300,7 +300,7 @@ export default function About() {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
                             {[
                                 { name: "Yazua Afrika", logo: "/images/partners/yazua_afrika.png" },
-                                { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true },
+                                { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true, bgColor: "#EB81A9" },
                                 { name: "Mukuru Promotion Center", logo: "/images/partners/mukuru_promotion.png" },
                                 { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png", isWhiteLogo: true },
                                 { name: "RI Welfare", logo: "/images/partners/ri_welfare.png" },
@@ -315,7 +315,7 @@ export default function About() {
                             ].map((p, idx) => (
                                 <div key={idx} className="flex items-center justify-center h-24 w-full transition-all group overflow-hidden hover:-translate-y-1">
                                     {p.logo ? (
-                                        <div className="relative w-full h-full flex items-center justify-center">
+                                        <div className={`relative w-full h-full flex items-center justify-center ${p.bgColor ? 'p-6 rounded-3xl' : ''}`} style={p.bgColor ? { backgroundColor: p.bgColor } : {}}>
                                             <Image
                                                 src={p.logo}
                                                 alt={`${p.name} logo`}

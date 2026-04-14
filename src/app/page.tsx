@@ -21,7 +21,7 @@ export default function Home() {
 
   const partnerLogos = [
     { name: "Yazua Afrika", logo: "/images/partners/yazua_afrika.png" },
-    { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true },
+    { name: "Paper Hearts Foundation", logo: "/images/partners/paper_hearts.png", isWhiteLogo: true, bgColor: "#EB81A9" },
     { name: "Mukuru Promotion Center", logo: "/images/partners/mukuru_promotion.png" },
     { name: "Raising heARTs Foundation", logo: "/images/partners/raising_hearts.png", isWhiteLogo: true },
     { name: "RI Welfare", logo: "/images/partners/ri_welfare.png" },
@@ -176,7 +176,7 @@ export default function Home() {
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
                <div key={index} className="flex-shrink-0 flex items-center justify-center h-20 w-48 mx-8 transition-all duration-500 group hover:-translate-y-1">
-                <div className="relative w-full h-full">
+                <div className={`relative w-full h-full flex items-center justify-center ${partner.bgColor ? 'p-6 rounded-3xl' : ''}`} style={partner.bgColor ? { backgroundColor: partner.bgColor } : {}}>
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo`}
