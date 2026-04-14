@@ -186,7 +186,7 @@ export default function Footer() {
                                 View Impact Reports →
                             </button>
                             <div className="flex flex-row items-center gap-6">
-                                <Link href="/contact" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
+                                <Link href="/privacy" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
                                     Privacy Policy
                                 </Link>
                                 <Link href="/login" className="text-xs text-brand-gold/60 hover:text-brand-gold transition-colors uppercase tracking-[0.2em] font-black flex items-center gap-2">
