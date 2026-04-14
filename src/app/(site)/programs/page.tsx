@@ -297,15 +297,18 @@ export default function Programs() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background flex items-center justify-center p-12">
+                    <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background flex items-center justify-center p-6 md:p-12">
                         <div className="relative w-full h-full max-h-[800px] rounded-[3rem] overflow-hidden border border-foreground/10 shadow-xl group">
-                            <Image
-                                src="/images/map.png"
-                                alt="Map highlighting our geographic reach in Kenya"
-                                fill
-                                className="object-cover  transition-all duration-700"
-                            />
-                            <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-transparent transition-colors"></div>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7509098231317!2d36.83451517413271!3d-1.325368035668329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f113fe368e131%3A0x68daf0630c1dcb74!2sMerlik%20Foundation!5e0!3m2!1sen!2ske!4v1776179347335!5m2!1sen!2ske" 
+                                width="100%" 
+                                height="100%" 
+                                style={{ border: 0 }} 
+                                allowFullScreen={true} 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="grayscale hover:grayscale-0 transition-all duration-700"
+                            ></iframe>
                         </div>
                     </div>
                 </section>
