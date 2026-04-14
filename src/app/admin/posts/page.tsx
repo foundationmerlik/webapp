@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { 
   FileText, 
   Plus, 
@@ -16,11 +17,14 @@ import {
   X
 } from "lucide-react";
 
-export default function PostsManager() {
+function PostsContent() {
   const [posts, setPosts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const action = searchParams.get("action");
   
   // Form State
   const [formData, setFormData] = useState({
@@ -33,7 +37,10 @@ export default function PostsManager() {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+    if (action === "new") {
+        setIsAdding(true);
+    }
+  }, [action]);
 
   const fetchPosts = async () => {
     try {
@@ -60,6 +67,7 @@ export default function PostsManager() {
       if (res.ok) {
         setFormData({ title: "", excerpt: "", content: "", type: "blog", image: "" });
         setIsAdding(false);
+        router.replace("/admin/posts");
         fetchPosts();
       }
     } catch (err) {
@@ -77,7 +85,15 @@ export default function PostsManager() {
           <p className="text-foreground/50 font-medium mt-1">Write, edit and publish stories.</p>
         </div>
         <button 
-          onClick={() => setIsAdding(!isAdding)}
+          onClick={() => {
+            if (isAdding) {
+                router.replace("/admin/posts");
+                setIsAdding(false);
+            } else {
+                router.replace("/admin/posts?action=new");
+                setIsAdding(true);
+            }
+          }}
           className="px-6 py-3 bg-brand-gold text-brand-black rounded-2xl font-bold flex items-center gap-2 hover:brightness-110 transition-all text-sm"
         >
           {isAdding ? <X size={18} /> : <Plus size={18} />}

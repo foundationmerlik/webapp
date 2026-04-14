@@ -38,7 +38,7 @@ export default async function AdminDashboard() {
           <p className="text-foreground/50 font-medium mt-1">Status overview of Merlik presence.</p>
         </div>
         <div className="flex items-center gap-3">
-            <Link href="/admin/posts/new" className="px-6 py-3 bg-brand-gold text-brand-black rounded-2xl font-bold flex items-center gap-2 hover:brightness-110 transition-all text-sm">
+            <Link href="/admin/posts?action=new" className="px-6 py-3 bg-brand-gold text-brand-black rounded-2xl font-bold flex items-center gap-2 hover:brightness-110 transition-all text-sm">
                 <FileText size={18} /> New Article
             </Link>
         </div>
@@ -103,7 +103,7 @@ export default async function AdminDashboard() {
                 <TrendingUp className="absolute top-[-20px] right-[-20px] w-40 h-40 opacity-10 group-hover:scale-110 transition-transform" />
                 <h3 className="text-2xl font-black font-serif mb-4 relative z-10">Expand Your Reach</h3>
                 <p className="text-brand-black/70 font-medium mb-6 relative z-10">Regularly updating the blog helps SEO and keeps your community engaged across Kenya.</p>
-                <Link href="/admin/posts/new" className="inline-flex items-center gap-2 bg-brand-black text-white px-6 py-3 rounded-xl font-bold text-sm relative z-10 hover:brightness-125 transition-all">
+                <Link href="/admin/posts?action=new" className="inline-flex items-center gap-2 bg-brand-black text-white px-6 py-3 rounded-xl font-bold text-sm relative z-10 hover:brightness-125 transition-all">
                     Write Story <ArrowUpRight size={16} />
                 </Link>
             </div>
