@@ -43,47 +43,92 @@ export default function About() {
                 <div className="relative border-l border-brand-gold/30 ml-4 md:ml-0 md:border-l-0">
                     <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-brand-gold/30 transform -translate-x-1/2"></div>
 
-                    {/* 2017 */}
+                    {/* 2019 */}
                     <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2017</span>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2019</span>
                             <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Foundation Roots</h3>
                         </div>
                         <div className="md:pl-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Merlik was born from a shared recognition that Kenya&apos;s boy child was being left behind without structured mentorship, role models, or life-skills support.
+                                Merlik Foundation established by dedicated community members in Nairobi.
                             </p>
                         </div>
                     </div>
 
-                    {/* 2019 */}
+                    {/* 2020 */}
                     <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2019</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Official Registration</h3>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2020</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">First Success</h3>
                         </div>
                         <div className="md:order-1 md:text-right pr-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Registered as a Kenyan youth development organization officially focused on mentoring and equipping adolescent boys with the skills and values to lead.
+                                First sponsored boy, Peter Masila, successfully completes high school and earns university placement.
                             </p>
                         </div>
                     </div>
 
-                    {/* Present */}
-                    <div className="relative md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
-                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
+                    {/* 2022 */}
+                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
-                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">Present</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">A Growing Movement</h3>
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2022</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Structured Mentorship</h3>
                         </div>
                         <div className="md:pl-6">
                             <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                With 10+ trained coaches and 100+ volunteers, we are a growing movement transforming one boy at a time. The name &quot;MERLIK&quot; — derived from the Arabic word &quot;malki&quot; meaning king — remains at our core.
+                                Launch of structured mentorship program matching boys with professional mentors.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 2023 */}
+                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
+                            shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
+                        <div className="md:order-2 md:pl-6">
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2023</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Expanded Outreach</h3>
+                        </div>
+                        <div className="md:order-1 md:text-right pr-6">
+                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
+                                Community outreach expanded with Blue Umbrella Day and Boy Child Awareness Walk partnerships.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 2024 */}
+                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
+                            shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
+                        <div className="md:text-right pr-6">
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2024</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Scaling Impact</h3>
+                        </div>
+                        <div className="md:pl-6">
+                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
+                                Volunteer network grows to 18+ mission partners. 300+ boys impacted across programs.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 2025 */}
+                    <div className="relative md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                        <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
+                            shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
+                        <div className="md:order-2 md:pl-6">
+                            <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2025</span>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Strategic Growth</h3>
+                        </div>
+                        <div className="md:order-1 md:text-right pr-6">
+                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
+                                Deepened strategic partnerships with CBOs, government bodies, and regional networks.
                             </p>
                         </div>
                     </div>
