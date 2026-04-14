@@ -320,7 +320,7 @@ export default function About() {
                                                 src={p.logo}
                                                 alt={`${p.name} logo`}
                                                 fill
-                                                className={`object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(212,175,55,0.2)] ${p.isWhiteLogo ? 'dark:invert-0' : 'dark:brightness-200 dark:grayscale dark:invert'}`}
+                                                className="object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]"
                                             />
                                         </div>
                                     ) : (
