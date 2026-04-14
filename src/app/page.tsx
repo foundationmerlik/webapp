@@ -149,7 +149,7 @@ export default function Home() {
 
         {/* Endless Marquee Loop */}
         <div className={`absolute bottom-0 left-0 w-full bg-background/80 backdrop-blur-md border-t border-black/5 py-4 z-20 overflow-hidden marquee-container transition-opacity duration-1000 delay-[600ms] ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="marquee-track">
+          <div className="marquee-track" style={{ "--marquee-duration": "80s" } as any}>
             {/* First Set */}
             <div className="flex items-center">
               {marqueeItems.map((item, idx) => (
@@ -203,7 +203,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 overflow-hidden">
           <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/40 text-center mb-10">Our Strategic Partners</p>
           <div className="marquee-container overflow-hidden">
-            <div className="marquee-track-ltr">
+            <div className="marquee-track-ltr" style={{ "--marquee-duration": "80s" } as any}>
               {[...partnerLogos, ...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
                 <div key={index} className="flex-shrink-0 flex items-center justify-center h-20 w-48 mx-8 transition-all duration-500 group hover:-translate-y-1">
                   {partner.logo ? (
