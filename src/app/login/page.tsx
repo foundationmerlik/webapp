@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import SafeYear from "@/components/SafeYear";
 import { Lock, Mail, ArrowRight, Loader2, Sparkles, Eye, EyeOff } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,12 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,11 +59,11 @@ export default function Login() {
         <div className="flex flex-col items-center text-center mb-10">
           <Link href="/" className="inline-block mb-8 transition-transform hover:scale-105">
             <Image
-              src="/logo_black.png"
+              src={mounted && resolvedTheme === 'dark' ? '/logo_white.png' : '/logo_black.png'}
               alt="Merlik Foundation"
               width={180}
               height={54}
-              className="h-12 w-auto object-contain dark:invert"
+              className="h-12 w-auto object-contain"
             />
           </Link>
           <div className="inline-flex items-center gap-2 rounded-full bg-brand-gold/10 px-4 py-1.5 mb-6">
