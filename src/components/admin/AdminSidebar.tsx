@@ -65,26 +65,28 @@ export default function AdminSidebar({ user }: { user: any }) {
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         <div className="flex flex-col h-full p-8">
-          {/* Logo */}
-          <Link href="/" className="mb-12">
-            <Image
-              src="/logo_black.png"
-              alt="Merlik Foundation"
-              width={140}
-              height={42}
-              className="h-10 w-auto object-contain dark:invert"
-            />
-          </Link>
+          <div className="shrink-0">
+            {/* Logo */}
+            <Link href="/" className="mb-10 block">
+              <Image
+                src="/logo_black.png"
+                alt="Merlik Foundation"
+                width={140}
+                height={42}
+                className="h-10 w-auto object-contain dark:invert"
+              />
+            </Link>
 
-          {/* User Profile Info */}
-          <div className="mb-10 p-5 rounded-3xl bg-foreground/[0.03] border border-foreground/5">
-            <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-2">Connected as</p>
-            <p className="font-serif font-black text-foreground truncate">{user.name || 'Staff'}</p>
-            <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest mt-1">{user.role}</p>
+            {/* User Profile Info */}
+            <div className="mb-8 p-5 rounded-3xl bg-foreground/[0.03] border border-foreground/5">
+              <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-2">Connected as</p>
+              <p className="font-serif font-black text-foreground truncate">{user.name || 'Staff'}</p>
+              <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest mt-1">{user.role}</p>
+            </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 space-y-2">
+          {/* Navigation - Scrollable section */}
+          <nav className="flex-1 overflow-y-auto pr-2 -mr-2 space-y-2 custom-scrollbar">
             {menuItems.filter(item => !item.adminOnly || user.role === 'admin').map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -107,8 +109,8 @@ export default function AdminSidebar({ user }: { user: any }) {
             })}
           </nav>
 
-          {/* Bottom Actions */}
-          <div className="mt-auto pt-8 border-t border-foreground/5">
+          {/* Bottom Actions - Fixed at bottom */}
+          <div className="shrink-0 mt-8 pt-8 border-t border-foreground/5">
             <button
               onClick={handleLogout}
               className="w-full flex items-center gap-4 px-5 py-4 rounded-2xl font-bold text-sm text-red-500 hover:bg-red-500/10 transition-all"
