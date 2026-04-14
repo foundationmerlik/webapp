@@ -185,7 +185,7 @@ export default function Footer() {
                             >
                                 View Impact Reports →
                             </button>
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-row items-center gap-6">
                                 <Link href="/contact" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
                                     Privacy Policy
                                 </Link>
