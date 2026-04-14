@@ -5,6 +5,8 @@ import { MapPin, Clock, Calendar as CalendarIcon, ArrowRight, Share2, Bell } fro
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Calendar | Merlik Foundation",
   description: "Join our upcoming mentorship sessions, community outreach programs, and fundraiser events across Kenya.",

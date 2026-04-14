@@ -237,3 +237,11 @@ function PostsContent() {
     </div>
   );
 }
+
+export default function PostsManager() {
+    return (
+        <Suspense fallback={<div className="p-20 text-center"><Loader2 className="animate-spin mx-auto text-brand-gold" size={40} /></div>}>
+            <PostsContent />
+        </Suspense>
+    );
+}

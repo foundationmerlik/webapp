@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, User, Search, Filter } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Blog & News | Merlik Foundation",
   description: "Stay updated with the latest stories, news, and impact reports from the Merlik Foundation. Developing nations, one boy at a time.",
