@@ -265,7 +265,7 @@ export default function About() {
             </section >
 
             {/* Global Impact Alignment (SDGs) & Partners */}
-            < section className="py-32 px-6" >
+            <section className="pt-32 pb-0 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-20">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
@@ -330,7 +330,6 @@ export default function About() {
                                 { name: "Okoth Obera", logo: "/images/partners/okoth.png" },
                                 { name: "Seles", logo: "/images/partners/seles.png" },
                                 { name: "Social Worker Mike", logo: "/images/partners/social_workers.jpg" },
-                                { name: "Mukuru Rescue Center", logo: null },
                             ].map((p, idx) => (
                                 <div key={idx} className="flex items-center justify-center h-24 w-full transition-all group overflow-hidden hover:-translate-y-1">
                                     {p.logo ? (
@@ -356,7 +355,7 @@ export default function About() {
             </section>
 
             {/* Supplemental Partners Scroller */}
-            <section className="mx-auto w-full xl:max-w-[1375px] px-4 lg:px-6 my-20">
+            <section className="mx-auto w-full xl:max-w-[1375px] px-4 lg:px-6 mb-20">
                 <div className="scroller relative z-10 overflow-hidden" style={{ "--animation-direction": "forwards", "--animation-duration": "80s" } as any}>
                     <div className="flex min-w-full shrink-0 w-max flex-nowrap animate-scroll hover:[animation-play-state:paused] gap-2">
                         {[
