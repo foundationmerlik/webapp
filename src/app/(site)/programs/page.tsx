@@ -90,7 +90,7 @@ export default function Programs() {
                         </div>
                     </div>
                     <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background">
-                        <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
+                        <div className="sticky top-20 h-full lg:h-[calc(100vh-80px)] w-full">
                             <Image
                                 src="/images/Mentorship.jpg"
                                 alt="Two men shaking hands in a professional mentorship meeting"
@@ -105,7 +105,7 @@ export default function Programs() {
                 {/* 02 Education Support */}
                 <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen border-b border-foreground/5 bg-background">
                     <div className="relative h-[60vh] lg:h-auto order-1 overflow-hidden bg-background">
-                        <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
+                        <div className="sticky top-20 h-full lg:h-[calc(100vh-80px)] w-full">
                             <Image
                                 src="/images/classroom.jpg"
                                 alt="Students studying together in a modern academic library"
@@ -191,7 +191,7 @@ export default function Programs() {
                         </div>
                     </div>
                     <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background">
-                        <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
+                        <div className="sticky top-20 h-full lg:h-[calc(100vh-80px)] w-full">
                             <Image
                                 src="/images/outreach.jpg"
                                 alt="A group of diverse volunteers working together outdoors"
@@ -206,7 +206,7 @@ export default function Programs() {
                 {/* 04 The Crisis & Research Case */}
                 <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-background">
                     <div className="relative h-[60vh] lg:h-auto order-1 overflow-hidden bg-background">
-                        <div className="sticky top-20 lg:h-[calc(100vh-80px)] w-full">
+                        <div className="sticky top-20 h-full lg:h-[calc(100vh-80px)] w-full">
                             <Image
                                 src="/images/Education.jpg"
                                 alt="Youth looking towards the future"
