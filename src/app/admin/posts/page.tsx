@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import { 
   FileText, 
   Plus, 
@@ -74,6 +75,19 @@ function PostsContent() {
       console.error(err);
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Are you sure you want to delete this story? This action cannot be undone.")) return;
+    
+    try {
+      const res = await fetch(`/api/admin/posts?id=${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) fetchPosts();
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -221,10 +235,16 @@ function PostsContent() {
                                 {new Date(post.createdAt).toLocaleDateString()}
                             </span>
                             <div className="flex items-center gap-2">
-                                <button className="p-3 bg-foreground/5 rounded-xl text-foreground/40 hover:text-brand-gold transition-colors">
+                                <Link 
+                                    href={`/admin/posts/edit/${post.id}`}
+                                    className="p-3 bg-foreground/5 rounded-xl text-foreground/40 hover:text-brand-gold transition-colors"
+                                >
                                     <Edit3 size={18} />
-                                </button>
-                                <button className="p-3 bg-foreground/5 rounded-xl text-foreground/40 hover:text-red-500 transition-colors">
+                                </Link>
+                                <button 
+                                    onClick={() => handleDelete(post.id)}
+                                    className="p-3 bg-foreground/5 rounded-xl text-foreground/40 hover:text-red-500 transition-colors"
+                                >
                                     <Trash2 size={18} />
                                 </button>
                             </div>
