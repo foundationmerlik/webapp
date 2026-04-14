@@ -388,15 +388,15 @@ export default function Donate() {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110 "
                                 alt="Boys in a modern classroom"
-                                src="/images/classroom.png"
+                                src="/images/classroom.jpg"
                             />
                         </div>
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
                             <Image
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110 "
-                                alt="Mentorship session outdoros"
-                                src="/images/mentorship.png"
+                                alt="Mentorship session outdoors"
+                                src="/images/Mentorship.jpg"
                             />
                         </div>
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg">
@@ -404,15 +404,15 @@ export default function Donate() {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110  text-center"
                                 alt="Students celebrating"
-                                src="/images/outreach.png"
+                                src="/images/outreach.jpg"
                             />
                         </div>
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
                             <Image
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110 "
-                                alt="Close up of student hands"
-                                src="/images/hands.png"
+                                alt="Education and impact"
+                                src="/images/Education.jpg"
                             />
                         </div>
                     </div>
