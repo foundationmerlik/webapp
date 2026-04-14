@@ -8,34 +8,35 @@ export default function Programs() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[60vh] md:h-[75vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/images/programs_hero.jpg"
-                        alt="Group of diverse professionals collaborating in a modern setting"
+                        alt="Empowerment and mentorship illustration"
                         fill
-                        className="object-cover opacity-60 mix-blend-screen scale-105 animate-image-load"
+                        className="object-cover opacity-50 mix-blend-screen scale-105 animate-image-load"
+                        priority
                     />
                 </div>
 
-                <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">
-                    <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-6 block animate-reveal">Our Mission</span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-8 font-serif animate-reveal delay-100 drop-shadow-lg">
-                        Creating a Monarch of <span className="text-brand-gold italic">Empowered Men.</span>
+                <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+                    <span className="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-6 block animate-reveal">Our Mission</span>
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8 font-serif animate-reveal delay-100 drop-shadow-2xl">
+                        Creating a Monarch of <br /><span className="text-brand-gold italic">Empowering Men.</span>
                     </h1>
-                    <p className="text-lg md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed mb-12 animate-reveal delay-200">
+                    <p className="text-base md:text-xl text-white/90 font-sans max-w-3xl mx-auto leading-relaxed mb-10 animate-reveal delay-200">
                         Empowering the next generation through structured mentorship, world-class education support, and strategic community advocacy.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-reveal delay-300">
-                        <a href="#programs" className="w-full sm:w-auto bg-brand-gold text-brand-black px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-reveal delay-300">
+                        <a href="#programs" className="w-full sm:w-auto bg-brand-gold text-brand-black px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-1">
                             Explore Our Programs
                         </a>
-                        <Link href="/get-involved" className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all transform hover:-translate-y-1">
+                        <Link href="/get-involved" className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all transform hover:-translate-y-1">
                             Become a Partner
                         </Link>
                     </div>
                 </div>
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+                <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce hidden md:block">
                     <ChevronDown size={32} />
                 </div>
             </section>
