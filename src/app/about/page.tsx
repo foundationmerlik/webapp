@@ -90,34 +90,62 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Mission & Vision: Responsive Grid */}
+            {/* Core Pillars: Mission, Vision, Approach, Partnerships */}
             <section className="bg-foreground/[0.02] py-24 md:py-32 border-y border-brand-gold/10 relative overflow-hidden">
                 <div className="absolute -right-40 top-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
                 <div className="absolute -left-40 bottom-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-                        {/* Mission */}
-                        <div className="bg-background/80 backdrop-blur-md p-10 md:p-16 rounded-[2.5rem] border border-brand-gold/20 shadow-xl relative overflow-hidden flex flex-col justify-center">
-                            <h2 className="text-6xl sm:text-7xl md:text-8xl font-black font-serif text-brand-gold/5 md:text-brand-gold/10 absolute -top-4 -right-4 select-none pointer-events-none">MISSION</h2>
-                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground relative z-10 flex items-center gap-4">
-                                <div className="w-10 h-[2px] bg-brand-gold"></div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Mission Card */}
+                        <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
+                            <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
+                                Mission
+                            </span>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground">
                                 Our Mission
                             </h3>
-                            <p className="text-xl md:text-3xl font-serif leading-relaxed font-semibold text-foreground/90 relative z-10">
+                            <p className="text-foreground/80 font-sans leading-relaxed text-lg font-medium">
                                 Empowerment of the Boy Child through Education, Mentorship and General Life Development.
                             </p>
                         </div>
-                        
-                        {/* Vision */}
-                        <div className="bg-brand-gold/5 backdrop-blur-md p-10 md:p-16 rounded-[2.5rem] border border-brand-gold/20 shadow-xl relative overflow-hidden flex flex-col justify-center">
-                            <h2 className="text-6xl sm:text-7xl md:text-8xl font-black font-serif text-brand-gold/5 md:text-brand-gold/10 absolute -bottom-4 -right-4 select-none pointer-events-none">VISION</h2>
-                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground relative z-10 flex items-center gap-4">
-                                <div className="w-10 h-[2px] bg-brand-gold"></div>
+
+                        {/* Vision Card */}
+                        <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
+                            <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
+                                Vision
+                            </span>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground">
                                 Our Vision
                             </h3>
-                            <p className="text-2xl md:text-4xl font-serif font-bold leading-relaxed text-foreground relative z-10">
-                                Strengthening and Developing Nations <span className="text-brand-gold italic">one boy at a time.</span>
+                            <p className="text-foreground/80 font-sans leading-relaxed text-lg font-medium">
+                                Strengthening and Developing Nations one boy at a time.
+                            </p>
+                        </div>
+
+                        {/* Approach Card */}
+                        <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
+                            <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
+                                Approach
+                            </span>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground">
+                                Our Approach
+                            </h3>
+                            <p className="text-foreground/80 font-sans leading-relaxed text-base md:text-lg font-medium">
+                                Through carefully designed educational initiatives and mentorship programs, we address both immediate needs and long-term development goals. Our work focuses on building a community of empowered individuals who will shape the future with knowledge, integrity, and leadership.
+                            </p>
+                        </div>
+
+                        {/* Partnerships Card */}
+                        <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
+                            <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
+                                Partnerships
+                            </span>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground">
+                                Strategic Partnerships
+                            </h3>
+                            <p className="text-foreground/80 font-sans leading-relaxed text-base md:text-lg font-medium">
+                                Merlik Foundation actively collaborates with Community Based Organizations, Civil Society Organizations, government institutions, regional bodies, and donors. These partnerships amplify our impact and ensure sustainable program delivery.
                             </p>
                         </div>
                     </div>
@@ -125,13 +153,7 @@ export default function About() {
             </section>
 
             {/* Core Values Grid */}
-            < section className="py-32 px-6 max-w-7xl mx-auto" >
-                <div className="text-center mb-20 max-w-4xl mx-auto">
-                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Approach</h2>
-                    <p className="text-xl md:text-2xl font-serif font-medium text-foreground leading-relaxed">
-                        Through carefully designed educational initiatives and mentorship programs, we address both immediate needs and long-term development goals. Our work focuses on building a community of empowered individuals who will shape the future with knowledge, integrity, and leadership.
-                    </p>
-                </div>
+            < section className="pb-32 px-6 max-w-7xl mx-auto pt-16" >
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Education */}
@@ -291,10 +313,7 @@ export default function About() {
 
                     <div className="mt-24">
                         <div className="text-center mb-16 max-w-4xl mx-auto">
-                            <h4 className="font-serif font-bold text-3xl mb-4 text-brand-gold">Strategic Partnerships</h4>
-                            <p className="text-foreground/70 text-lg leading-relaxed">
-                                Merlik Foundation actively collaborates with Community Based Organizations, Civil Society Organizations, government institutions, regional bodies, and donors. These partnerships amplify our impact and ensure sustainable program delivery.
-                            </p>
+                            <h4 className="font-serif font-bold text-3xl mb-4 text-brand-gold">Our Partners</h4>
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
