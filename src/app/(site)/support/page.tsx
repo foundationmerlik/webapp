@@ -335,7 +335,7 @@ function SupportContent() {
 
                     {activeTabId === "sponsor" && (
                         <div className="h-full min-h-[500px] rounded-[3rem] overflow-hidden relative shadow-2xl border border-foreground/10">
-                            <Image fill src="/images/mentorship.png" alt="Boy laughing" className="object-cover" />
+                            <Image fill src="/images/gallery/482021736_656826440187305_4826138251330898547_n.jpg" alt="A young boy benefiting from the Merlik Foundation programs" className="object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-60"></div>
                             <div className="absolute bottom-10 left-10 right-10">
                                 <p className="text-white font-serif text-3xl font-black leading-tight italic">
