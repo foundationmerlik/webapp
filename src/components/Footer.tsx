@@ -20,13 +20,20 @@ export default function Footer() {
         if (email) { setSubscribed(true); setEmail(""); }
     };
 
-    const navLinks = [
+    const exploreLinks = [
+        { name: "Home", href: "/" },
         { name: "About Us", href: "/about" },
-        { name: "Programs", href: "/programs" },
-        { name: "Get Involved", href: "/support" },
-        { name: "Gallery", href: "/gallery" },
-        { name: "Contact", href: "/contact" },
+        { name: "Our Projects", href: "/programs" },
+        { name: "Calendar", href: "/calendar" },
+        { name: "Blog & News", href: "/blog" },
+    ];
+
+    const involvedLinks = [
+        { name: "Volunteer", href: "/support?tab=volunteer" },
+        { name: "Internship", href: "/support?tab=internship" },
         { name: "Donate", href: "/donate" },
+        { name: "Become a Mentor", href: "/support?tab=mentor" },
+        { name: "Sponsor a Boy", href: "/support?tab=sponsor" },
     ];
 
     return (
@@ -64,7 +71,7 @@ export default function Footer() {
 
             {/* Main Footer Body */}
             <div className="max-w-7xl mx-auto px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
                     {/* Brand Column */}
                     <div className="flex flex-col gap-5">
@@ -97,11 +104,25 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Nav */}
+                    {/* Explore */}
                     <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-5">Quick Links</p>
-                        <ul className="space-y-3">
-                            {navLinks.map((l) => (
+                        <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-6">Explore</p>
+                        <ul className="space-y-4">
+                            {exploreLinks.map((l) => (
+                                <li key={l.name}>
+                                    <Link href={l.href} className="text-sm text-foreground/70 hover:text-brand-gold transition-colors font-medium">
+                                        {l.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Get Involved */}
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-6">Get Involved</p>
+                        <ul className="space-y-4">
+                            {involvedLinks.map((l) => (
                                 <li key={l.name}>
                                     <Link href={l.href} className="text-sm text-foreground/70 hover:text-brand-gold transition-colors font-medium">
                                         {l.name}
@@ -113,29 +134,29 @@ export default function Footer() {
 
                     {/* Trust / Accountability */}
                     <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-5">Transparency &amp; Trust</p>
-                        <ul className="space-y-3 text-sm text-foreground/60">
-                            <li className="flex items-start gap-2">
-                                <ShieldCheck size={15} className="text-brand-gold shrink-0 mt-0.5" />
-                                <span>Registered Non-Profit — Kenya <span className="text-foreground/40 text-xs">Reg. No. CLG – QPFQME</span></span>
+                        <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-6">Transparency</p>
+                        <ul className="space-y-4 text-sm text-foreground/60">
+                            <li className="flex items-start gap-3">
+                                <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
+                                <span>Registered Non-Profit — Kenya <span className="text-foreground/40 text-[10px] block mt-1 uppercase font-bold tracking-tighter">Reg. No. CLG – QPFQME</span></span>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <ShieldCheck size={15} className="text-brand-gold shrink-0 mt-0.5" />
+                            <li className="flex items-start gap-3">
+                                <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
                                 <span>100% of public donations fund programmes directly</span>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <ShieldCheck size={15} className="text-brand-gold shrink-0 mt-0.5" />
+                            <li className="flex items-start gap-3">
+                                <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
                                 <span>Tax receipts issued for all qualifying gifts</span>
                             </li>
                         </ul>
-                        <div className="mt-5 flex flex-col gap-2">
+                        <div className="mt-8 flex flex-col gap-3">
                             <button
                                 onClick={() => setIsReportsModalOpen(true)}
-                                className="text-xs text-brand-gold font-bold underline underline-offset-2 hover:opacity-80 transition-opacity text-left"
+                                className="text-xs text-brand-gold font-bold underline underline-offset-4 hover:opacity-80 transition-opacity text-left"
                             >
                                 View Impact Reports →
                             </button>
-                            <Link href="/contact" className="text-xs text-foreground/40 hover:text-foreground/60 transition-colors">
+                            <Link href="/contact" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors uppercase tracking-widest font-bold">
                                 Privacy Policy
                             </Link>
                         </div>
