@@ -91,7 +91,7 @@ export default function Gallery() {
                                     src={image.src}
                                     alt={image.title}
                                     fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-110 "
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{image.category}</span>

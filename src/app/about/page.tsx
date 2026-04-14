@@ -14,7 +14,7 @@ export default function About() {
                         src="/images/hands.png"
                         alt="Monochrome image of hands reaching towards a bright light"
                         fill
-                        className="object-cover grayscale opacity-40 mix-blend-multiply dark:mix-blend-screen scale-105 animate-image-load"
+                        className="object-cover  scale-105 animate-image-load"
                     />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>

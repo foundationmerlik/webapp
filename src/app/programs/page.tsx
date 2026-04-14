@@ -95,7 +95,7 @@ export default function Programs() {
                                 src="/images/Mentorship.jpg"
                                 alt="Two men shaking hands in a professional mentorship meeting"
                                 fill
-                                className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background hidden lg:block"></div>
                         </div>
@@ -110,7 +110,7 @@ export default function Programs() {
                                 src="/images/classroom.jpg"
                                 alt="Students studying together in a modern academic library"
                                 fill
-                                className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background hidden lg:block"></div>
                         </div>
@@ -196,7 +196,7 @@ export default function Programs() {
                                 src="/images/outreach.jpg"
                                 alt="A group of diverse volunteers working together outdoors"
                                 fill
-                                className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background hidden lg:block"></div>
                         </div>
@@ -211,7 +211,7 @@ export default function Programs() {
                                 src="/images/Education.jpg"
                                 alt="Youth looking towards the future"
                                 fill
-                                className="object-cover grayscale mix-blend-multiply dark:mix-blend-lighten opacity-80"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background hidden lg:block"></div>
                         </div>
@@ -303,7 +303,7 @@ export default function Programs() {
                                 src="/images/map.png"
                                 alt="Map highlighting our geographic reach in Kenya"
                                 fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                className="object-cover  transition-all duration-700"
                             />
                             <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-transparent transition-colors"></div>
                         </div>

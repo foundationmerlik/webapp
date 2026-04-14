@@ -329,7 +329,7 @@ export default function Donate() {
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg">
                             <Image
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 "
                                 alt="Boys in a modern classroom"
                                 src="/images/classroom.png"
                             />
@@ -337,7 +337,7 @@ export default function Donate() {
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
                             <Image
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 "
                                 alt="Mentorship session outdoros"
                                 src="/images/mentorship.png"
                             />
@@ -345,7 +345,7 @@ export default function Donate() {
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg">
                             <Image
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 text-center"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110  text-center"
                                 alt="Students celebrating"
                                 src="/images/outreach.png"
                             />
@@ -353,7 +353,7 @@ export default function Donate() {
                         <div className="h-80 rounded-[2rem] overflow-hidden relative group shadow-lg sm:-translate-y-8">
                             <Image
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 "
                                 alt="Close up of student hands"
                                 src="/images/hands.png"
                             />

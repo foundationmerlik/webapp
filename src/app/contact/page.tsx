@@ -142,7 +142,7 @@ export default function Contact() {
                         </div>
 
                         {/* Map Decoration */}
-                        <div className="mt-10 rounded-[2rem] overflow-hidden h-48 border border-foreground/10 grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-xl relative group">
+                        <div className="mt-10 rounded-[2rem] overflow-hidden h-48 border border-foreground/10 transition-all duration-700 cursor-pointer shadow-xl relative group">
                             <Image
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
