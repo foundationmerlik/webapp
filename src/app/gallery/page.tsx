@@ -15,6 +15,28 @@ export default function Gallery() {
         { src: "/images/gallery/IMG-20260310-WA0011.jpg", title: "Strategic Planning", category: "Leadership" },
         { src: "/images/gallery/IMG-20260310-WA0015.jpg", title: "Global Partnerships", category: "Impact" },
         { src: "/images/gallery/IMG-20260310-WA0016.jpg", title: "Local Impact Session", category: "Service" },
+        { src: "/images/gallery/462691246_18037994462328565_4187030217141268497_n.jfif", title: "Field Action", category: "Service" },
+        { src: "/images/gallery/464893699_18039906197328565_4080320743001001697_n.jfif", title: "Community Building", category: "Impact" },
+        { src: "/images/gallery/472936607_616035334266416_5750791626185907384_n.jpg", title: "Team Collaboration", category: "Leadership" },
+        { src: "/images/gallery/472952725_18048607562328565_4565614255561986593_n (1).jfif", title: "Mentorship Group", category: "Mentorship" },
+        { src: "/images/gallery/472952725_18048607562328565_4565614255561986593_n.jfif", title: "Student Support", category: "Education" },
+        { src: "/images/gallery/473337884_1122555146170625_350353846994794811_n.jpg", title: "Youth Engagement", category: "Service" },
+        { src: "/images/gallery/473535305_618593047343978_8277381454969131977_n.jpg", title: "Community Work", category: "Impact" },
+        { src: "/images/gallery/473568217_1122559119503561_3591824270032936601_n.jpg", title: "Leadership Seminar", category: "Leadership" },
+        { src: "/images/gallery/474271701_626233719913244_487750033405265174_n.jpg", title: "Skills Training", category: "Education" },
+        { src: "/images/gallery/474767579_1128816535544486_3846929425689138926_n.jpg", title: "Volunteer Drive", category: "Service" },
+        { src: "/images/gallery/474976897_463454780176419_5602066565479749917_n.jpg", title: "Community Outreach", category: "Service" },
+        { src: "/images/gallery/479824910_642692764934006_5709492703225631219_n.jpg", title: "Impact Action", category: "Impact" },
+        { src: "/images/gallery/481085452_650294437507172_9202501778532992740_n.jpg", title: "Youth Summit", category: "Leadership" },
+        { src: "/images/gallery/481272304_654830170386932_3708236616754970607_n.jpg", title: "Program Activity", category: "Service" },
+        { src: "/images/gallery/481915350_656830330186916_4879338430681625034_n.jpg", title: "Local Impact", category: "Impact" },
+        { src: "/images/gallery/482128790_658393970030552_5148946339851402032_n.jpg", title: "Field Mentorship", category: "Mentorship" },
+        { src: "/images/gallery/482211795_658585970011352_4641941607428542748_n.jpg", title: "Workshop Focus", category: "Education" },
+        { src: "/images/gallery/482212048_657544953448787_9101391952024787279_n.jpg", title: "Project Milestone", category: "Impact" },
+        { src: "/images/gallery/485749755_1887166662021099_6450029913653660307_n.jpg", title: "Community Success", category: "Service" },
+        { src: "/images/gallery/486056941_1887166665354432_7406888741597857789_n.jpg", title: "Group Session", category: "Leadership" },
+        { src: "/images/gallery/487982466_675033181699964_29159658548175993_n.jpg", title: "Team Building", category: "Mentorship" },
+        { src: "/images/gallery/488654850_2787690034753457_4611330111416720041_n.jpg", title: "On-Ground Action", category: "Service" }
     ];
 
     useEffect(() => {
