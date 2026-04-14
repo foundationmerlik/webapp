@@ -50,6 +50,7 @@ export async function POST(request: Request) {
             <body>
                 <div class="container">
                     <div class="header">
+                        <img src="https://webapp-wr2z.vercel.app/logo_black.png" alt="Merlik Foundation" height="40" style="display:block;margin:0 auto 15px;" />
                         <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0;">MERLIK FOUNDATION</h2>
                         <p style="color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-size: 10px; font-weight: bold; margin-top: 5px;">Developing Nations, One Boy at a Time</p>
                     </div>
