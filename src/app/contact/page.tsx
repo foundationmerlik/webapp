@@ -5,6 +5,15 @@ import Image from "next/image";
 import { Mail, Phone, MapPin, Globe, Users, ChevronDown, Send, Instagram, Linkedin, Video } from "lucide-react";
 
 export default function Contact() {
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        role: "Donor",
+        message: ""
+    });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     const faqs = [
@@ -22,6 +31,44 @@ export default function Contact() {
         }
     ];
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+        setErrorMessage("");
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formState)
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                setStatus("success");
+                setFormState({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    role: "Donor",
+                    message: ""
+                });
+            } else {
+                throw new Error(data.error || "Failed to send message");
+            }
+        } catch (err: any) {
+            console.error("Form submission error:", err);
+            setStatus("error");
+            setErrorMessage(err.message || "Something went wrong. Please try again later.");
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormState(prev => ({ ...prev, [name]: value }));
+    };
+
     return (
         <div className="relative min-h-screen bg-background overflow-hidden pb-20 pt-24">
             {/* Glow Effects */}
@@ -35,10 +82,10 @@ export default function Contact() {
                     <div className="flex flex-col gap-12 mt-10">
                         <div className="space-y-6">
                             <h1 className="text-6xl md:text-[80px] font-black tracking-tighter text-foreground font-serif leading-none">
-                                Let's Talk<span className="text-brand-gold">.</span>
+                                Let&apos;s Talk<span className="text-brand-gold">.</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-foreground/70 font-sans font-medium max-w-md leading-relaxed">
-                                Have a question or looking to partner with us? Our team is dedicated to empowering communities and we'd love to hear from you.
+                                Have a question or looking to partner with us? Our team is dedicated to empowering communities and we&apos;d love to hear from you.
                             </p>
                         </div>
 
@@ -98,47 +145,111 @@ export default function Contact() {
                         <div className="relative rounded-[2.5rem] bg-foreground/[0.03] border border-foreground/10 backdrop-blur-xl p-8 md:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(212,175,55,0.05)] overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/20 rounded-full blur-[50px] pointer-events-none"></div>
 
-                            <form className="relative z-10 space-y-8" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-3">
-                                        <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Full Name</label>
-                                        <input type="text" placeholder="John Doe" className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" />
+                            {status === "success" ? (
+                                <div className="relative z-10 text-center py-12 space-y-6">
+                                    <div className="w-20 h-20 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center mx-auto">
+                                        <Send size={40} />
                                     </div>
-                                    <div className="space-y-3">
-                                        <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Email</label>
-                                        <input type="email" placeholder="john@example.com" className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" />
-                                    </div>
+                                    <h2 className="text-3xl font-black font-serif text-foreground">Message Sent!</h2>
+                                    <p className="text-foreground/70 text-lg leading-relaxed">
+                                        Thank you for reaching out. We&apos;ve received your message and will get back to you within 1-2 business days.
+                                    </p>
+                                    <button 
+                                        onClick={() => setStatus("idle")}
+                                        className="text-brand-gold font-bold hover:underline"
+                                    >
+                                        Send another message
+                                    </button>
                                 </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-3">
-                                        <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Phone</label>
-                                        <input type="tel" placeholder="+254 --- --- ---" className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" />
-                                    </div>
-                                    <div className="space-y-3">
-                                        <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">I am a...</label>
-                                        <div className="relative">
-                                            <select className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm appearance-none pr-10">
-                                                <option>Donor</option>
-                                                <option>Volunteer</option>
-                                                <option>Partner</option>
-                                                <option>Press</option>
-                                                <option>Other</option>
-                                            </select>
-                                            <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-foreground/50 pointer-events-none" size={20} />
+                            ) : (
+                                <form className="relative z-10 space-y-8" onSubmit={handleSubmit}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-3">
+                                            <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Full Name</label>
+                                            <input 
+                                                required
+                                                type="text" 
+                                                name="name"
+                                                value={formState.name}
+                                                onChange={handleChange}
+                                                placeholder="John Doe" 
+                                                className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" 
+                                            />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Email</label>
+                                            <input 
+                                                required
+                                                type="email" 
+                                                name="email"
+                                                value={formState.email}
+                                                onChange={handleChange}
+                                                placeholder="john@example.com" 
+                                                className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" 
+                                            />
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="space-y-3">
-                                    <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Message</label>
-                                    <textarea rows={5} placeholder="How can we help?" className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-5 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm resize-none"></textarea>
-                                </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-3">
+                                            <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Phone</label>
+                                            <input 
+                                                type="tel" 
+                                                name="phone"
+                                                value={formState.phone}
+                                                onChange={handleChange}
+                                                placeholder="+254 --- --- ---" 
+                                                className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm" 
+                                            />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">I am a...</label>
+                                            <div className="relative">
+                                                <select 
+                                                    name="role"
+                                                    value={formState.role}
+                                                    onChange={handleChange}
+                                                    className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-4 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm appearance-none pr-10"
+                                                >
+                                                    <option>Donor</option>
+                                                    <option>Volunteer</option>
+                                                    <option>Partner</option>
+                                                    <option>Press</option>
+                                                    <option>Other</option>
+                                                </select>
+                                                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-foreground/50 pointer-events-none" size={20} />
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <button type="submit" className="w-full rounded-2xl bg-brand-gold py-5 text-lg font-black text-brand-black transition-all hover:bg-brand-gold-light hover:shadow-[0_10px_30px_rgba(212,175,55,0.4)] active:scale-95 transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.2)] flex items-center justify-center gap-3">
-                                    Send Message <Send size={20} />
-                                </button>
-                            </form>
+                                    <div className="space-y-3">
+                                        <label className="text-sm font-bold uppercase tracking-widest text-foreground/60 ml-2">Message</label>
+                                        <textarea 
+                                            required
+                                            name="message"
+                                            value={formState.message}
+                                            onChange={handleChange}
+                                            rows={5} 
+                                            placeholder="How can we help?" 
+                                            className="w-full bg-background rounded-2xl border-2 border-foreground/5 px-6 py-5 text-foreground focus:border-brand-gold focus:ring-0 transition-colors outline-none text-lg font-medium shadow-sm resize-none"
+                                        ></textarea>
+                                    </div>
+
+                                    {status === "error" && (
+                                        <p className="text-red-500 font-bold ml-2">
+                                            {errorMessage}
+                                        </p>
+                                    )}
+
+                                    <button 
+                                        disabled={status === "loading"}
+                                        type="submit" 
+                                        className={`w-full rounded-2xl bg-brand-gold py-5 text-lg font-black text-brand-black transition-all hover:bg-brand-gold-light hover:shadow-[0_10px_30px_rgba(212,175,55,0.4)] active:scale-95 transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.2)] flex items-center justify-center gap-3 ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
+                                    >
+                                        {status === "loading" ? "Sending..." : "Send Message"} <Send size={20} />
+                                    </button>
+                                </form>
+                            )}
                         </div>
 
                         {/* Map Decoration */}
