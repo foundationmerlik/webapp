@@ -374,7 +374,7 @@ export default function Home() {
           {/* Row 1: Right to Left */}
           <div className="marquee-track flex gap-6" style={{ "--marquee-duration": "80s" } as any}>
             {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={`t1-${i}`} className="flex-shrink-0 w-[400px] p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
+              <div key={`t1-${i}`} className="flex-shrink-0 w-[300px] md:w-[450px] p-6 md:p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
                 <div className="mb-6 text-brand-gold/20 flex justify-between items-start">
                   <div className="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4H3c-.6 0-1 .4-1 1s.4 1 1 1ZM13 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4h-1c-.6 0-1 .4-1 1s.4 1 1 1Z" /></svg>
@@ -402,7 +402,7 @@ export default function Home() {
           {/* Row 2: Left to Right */}
           <div className="marquee-track-ltr flex gap-6" style={{ "--marquee-duration": "80s" } as any}>
             {[...testimonials.reverse(), ...testimonials].map((t, i) => (
-              <div key={`t2-${i}`} className="flex-shrink-0 w-[400px] p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
+              <div key={`t2-${i}`} className="flex-shrink-0 w-[300px] md:w-[450px] p-6 md:p-8 rounded-3xl bg-background border border-foreground/10 hover:border-brand-gold/30 transition-all duration-500 group shadow-lg">
                 <div className="mb-6 text-brand-gold/20 flex justify-between items-start">
                   <div className="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4H3c-.6 0-1 .4-1 1s.4 1 1 1ZM13 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4c0 2.2-1.8 4-4 4h-1c-.6 0-1 .4-1 1s.4 1 1 1Z" /></svg>

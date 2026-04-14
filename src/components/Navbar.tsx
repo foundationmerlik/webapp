@@ -216,7 +216,7 @@ export default function Navbar() {
                     >
                         {navLinks.slice(0, 2).map((link) => (
                             <Link key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)}
-                                className="font-serif text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between group">
+                                className="font-serif text-2xl sm:text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between group">
                                 {link.name}
                                 <span className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-white transition-all transform group-hover:translate-x-2">
                                     <ArrowRight size={20} />
@@ -228,7 +228,7 @@ export default function Navbar() {
                         <div>
                             <button
                                 onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
-                                className="w-full font-serif text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between"
+                                className="w-full font-serif text-2xl sm:text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between"
                             >
                                 Programs
                                 <ChevronDown size={24} className={`transition-transform duration-300 ${mobileProgramsOpen ? "rotate-180 text-brand-gold" : "text-foreground/40"}`} />
@@ -263,7 +263,7 @@ export default function Navbar() {
                         <div>
                             <button
                                 onClick={() => setMobileGetInvolvedOpen(!mobileGetInvolvedOpen)}
-                                className="w-full font-serif text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between"
+                                className="w-full font-serif text-2xl sm:text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between"
                             >
                                 Get Involved
                                 <ChevronDown size={24} className={`transition-transform duration-300 ${mobileGetInvolvedOpen ? "rotate-180 text-brand-gold" : "text-foreground/40"}`} />

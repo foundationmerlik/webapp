@@ -23,7 +23,7 @@ export default function Footer() {
     const navLinks = [
         { name: "About Us", href: "/about" },
         { name: "Programs", href: "/programs" },
-        { name: "Get Involved", href: "/get-involved" },
+        { name: "Get Involved", href: "/support" },
         { name: "Gallery", href: "/gallery" },
         { name: "Contact", href: "/contact" },
         { name: "Donate", href: "/donate" },
