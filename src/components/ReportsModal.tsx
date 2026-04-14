@@ -99,8 +99,8 @@ export default function ReportsModal({ isOpen, onClose }: ReportsModalProps) {
                                 </div>
                             </div>
 
-                            {/* Body */}
-                            <div className="p-8">
+                            {/* Body - Scrollable Area */}
+                            <div className="p-8 max-h-[50vh] overflow-y-auto custom-scrollbar">
                                 {loading && (
                                     <div className="flex flex-col items-center justify-center py-16 gap-4">
                                         <Loader2 size={32} className="animate-spin text-brand-gold" />
