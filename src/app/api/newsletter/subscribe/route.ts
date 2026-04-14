@@ -32,36 +32,37 @@ export async function POST(request: Request) {
         const mailOptions = {
           from: process.env.SMTP_FROM || `"Merlik Foundation" <${process.env.SMTP_USER}>`,
           to: email,
-          subject: "Welcome to Merlik Foundation Newsletter! 🌓",
+          subject: "Welcome to the Merlik Movement! 🌓",
           html: `
             <!DOCTYPE html>
-            <html>
+            <html lang="en">
             <head>
+                <meta charset="UTF-8">
                 <style>
-                    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background-color: #f9f9f9; padding: 20px; }
-                    .container { max-width: 600px; margin: 0 auto; padding: 40px; background-color: #ffffff; border-radius: 24px; border: 1px solid #f0f0f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-                    .header { text-align: center; margin-bottom: 40px; }
-                    .content { font-size: 16px; text-align: center; }
-                    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #f0f0f0; font-size: 12px; color: #999; text-align: center; }
-                    .gold { color: #D4AF37; font-weight: bold; }
-                    .button { background-color: #D4AF37; color: #ffffff !important; padding: 16px 32px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; margin-top: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
+                    .msg-body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background-color: #f9f9f9; padding: 20px; }
+                    .wrapper { max-width: 600px; margin: 0 auto; padding: 40px; background-color: #ffffff; border-radius: 24px; border: 1px solid #f0f0f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+                    .msg-header { text-align: center; margin-bottom: 40px; }
+                    .msg-content { font-size: 16px; text-align: center; }
+                    .msg-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #f0f0f0; font-size: 12px; color: #999; text-align: center; }
+                    .gold-text { color: #D4AF37; font-weight: bold; }
+                    .cta-button { background-color: #D4AF37; color: #111111 !important; padding: 16px 32px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; margin-top: 30px; }
                 </style>
             </head>
-            <body>
-                <div class="container">
-                    <div class="header">
+            <body class="msg-body">
+                <div class="wrapper">
+                    <div class="msg-header">
                         <img src="https://webapp-wr2z.vercel.app/logo_black.png" alt="Merlik Foundation" height="40" style="display:block;margin:0 auto 15px;" />
-                        <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0;">MERLIK FOUNDATION</h2>
+                        <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0; color: #111;">MERLIK FOUNDATION</h2>
                         <p style="color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-size: 10px; font-weight: bold; margin-top: 5px;">Developing Nations, One Boy at a Time</p>
                     </div>
-                    <div class="content">
-                        <h1 style="font-family: serif; font-size: 28px; line-height: 1.2; margin-bottom: 20px;">Welcome to the <br><span class="gold">Merlik Movement</span>!</h1>
+                    <div class="msg-content">
+                        <h1 style="font-family: serif; font-size: 28px; line-height: 1.2; margin-bottom: 20px; color: #111;">Welcome to the <br><span class="gold-text">Merlik Movement</span>!</h1>
                         <p>Thank you for subscribing to our newsletter. You are now part of a community dedicated to restoring purpose and order to the hearts of young men across Kenya.</p>
-                        <p>From now on, you'll receive stories of transformation, impact reports, and exclusive updates on our programmes directly in your inbox.</p>
+                        <p>From now on, you&apos;ll receive stories of transformation, impact reports, and exclusive updates on our programmes directly in your inbox.</p>
                         <p>We are excited to have you with us as we develop nations, one boy at a time.</p>
-                        <a href="https://webapp-wr2z.vercel.app/about" class="button">Discover Our Impact</a>
+                        <a href="https://webapp-wr2z.vercel.app/about" class="cta-button">Discover Our Impact</a>
                     </div>
-                    <div class="footer">
+                    <div class="msg-footer">
                         <p>© 2026 Merlik Foundation. Nairobi, Kenya.</p>
                         <p>You received this email because you subscribed on our website.</p>
                     </div>
