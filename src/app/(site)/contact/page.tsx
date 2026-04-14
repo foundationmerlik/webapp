@@ -18,16 +18,24 @@ export default function Contact() {
 
     const faqs = [
         {
-            q: "How can I donate to specific projects?",
-            a: "You can choose specific projects on our 'Programs' page or select 'Other' in the form. During the donation process, you'll have the option to designate your gift to a particular initiative or our general fund."
+            q: "What exactly does Merlik Foundation do?",
+            a: "We are a Kenyan youth development organization dedicated to mentoring adolescent boys (the 'boy child'). We equip them with life competencies, values, and support systems needed to become responsible, purposeful leaders in their communities."
         },
         {
-            q: "Are donations tax-deductible?",
-            a: "Yes, Merlik Foundation is a registered non-profit organization. We provide tax receipts for all contributions over a certain amount, depending on your local tax jurisdiction."
+            q: "Where in Kenya do you operate?",
+            a: "Our network spans 14+ counties, including Nairobi (Mukuru informal settlements), Makueni, Nakuru, Kisumu, and Trans Nzoia. We встретить the boys where they are—in schools, community centers, and on the streets."
         },
         {
-            q: "How can I volunteer for local events?",
-            a: "We regularly post volunteer opportunities on our social media channels and newsletter. You can also fill out the contact form above and select 'Volunteer' as your category."
+            q: "How can I become a mentor?",
+            a: "Our mentorship manual involves 24 structured sessions (approx. 36 contact hours per year). If you have a passion for guidance, you can sign up through our 'Support' page. We provide the curriculum and orientation for all new mentors."
+        },
+        {
+            q: "Is my donation reaching the boys directly?",
+            a: "Absolutely. At Merlik Foundation, 100% of public donations go directly toward funding our core programmes: Mentorship, Education scholarships, and Community Outreach (like the Blue Bag Initiative)."
+        },
+        {
+            q: "How did the name 'Merlik' originate?",
+            a: "The name derives from the Arabic word 'malki', which means king. It represents our core belief that every young man has inherent leadership potential and is a 'king' in the making."
         }
     ];
 

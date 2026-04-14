@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import SafeYear from "@/components/SafeYear";
 import { Lock, Mail, ArrowRight, Loader2, Sparkles, Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
@@ -122,7 +123,7 @@ export default function Login() {
         </div>
 
         <p className="text-center text-foreground/30 text-xs mt-8">
-          © {new Date().getFullYear()} Merlik Foundation. Access restricted to authorized personnel.
+          © <SafeYear /> Merlik Foundation. Access restricted to authorized personnel.
         </p>
       </div>
     </div>

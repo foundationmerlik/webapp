@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck, Lock } from "lucide-react";
 import ReportsModal from "@/components/ReportsModal";
 import NewsletterModal from "@/components/NewsletterModal";
+import SafeYear from "@/components/SafeYear";
 
 export default function Footer() {
     const { resolvedTheme } = useTheme();
@@ -201,7 +202,7 @@ export default function Footer() {
             <div className="border-t border-foreground/10 py-5 px-6">
                 <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p className="text-foreground/50 text-xs font-medium">
-                        © {new Date().getFullYear()} Merlik Foundation. All rights reserved.
+                        © <SafeYear /> Merlik Foundation. All rights reserved.
                     </p>
                     <p className="text-foreground/30 text-xs">
                         Nairobi, Kenya &nbsp;·&nbsp; info@merlikfoundation.org
