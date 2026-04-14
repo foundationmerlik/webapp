@@ -40,18 +40,18 @@ export default function Gallery() {
             <div className={`max-w-7xl mx-auto px-6 mb-24 grid grid-cols-1 md:grid-cols-3 gap-8 animate-reveal delay-300 ${isLoaded ? '' : 'opacity-0'}`}>
                 <div className="p-10 rounded-3xl bg-foreground/[0.02] border border-foreground/5 flex flex-col items-center text-center">
                     <Heart className="text-brand-gold mb-4" size={32} />
-                    <span className="text-4xl font-black font-serif text-foreground mb-2">1.5M+</span>
+                    <span className="text-4xl font-black font-serif text-foreground mb-2">300+</span>
                     <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Lives Impacted</span>
                 </div>
                 <div className="p-10 rounded-3xl bg-foreground/[0.02] border border-foreground/5 flex flex-col items-center text-center">
                     <Users className="text-brand-gold mb-4" size={32} />
-                    <span className="text-4xl font-black font-serif text-foreground mb-2">200+</span>
+                    <span className="text-4xl font-black font-serif text-foreground mb-2">3+</span>
                     <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Active Projects</span>
                 </div>
                 <div className="p-10 rounded-3xl bg-foreground/[0.02] border border-foreground/5 flex flex-col items-center text-center">
                     <Sparkles className="text-brand-gold mb-4" size={32} />
-                    <span className="text-4xl font-black font-serif text-foreground mb-2">3 Countries</span>
-                    <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Global Reach</span>
+                    <span className="text-4xl font-black font-serif text-foreground mb-2">4</span>
+                    <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Counties Reached</span>
                 </div>
             </div>
 
