@@ -22,11 +22,38 @@
   :root {
     --background: #FFFFFF;
     --foreground: #2D2D2D;
+    --primary-color: #D4AF37;
+    --secondary-color: #FAF9F6;
   }
 
   [data-theme="dark"] {
     --background: #111111;
     --foreground: #F5F5F5;
+    --primary-color: #D4AF37;
+    --secondary-color: #1A1A1A;
+  }
+}
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+
+  .bg-secondary-color {
+    background-color: var(--secondary-color);
+  }
+
+  .text-primary-color {
+    color: var(--primary-color);
   }
 }
 

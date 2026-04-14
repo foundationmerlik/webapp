@@ -353,7 +353,50 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
+
+            {/* Supplemental Partners Scroller */}
+            <section className="mx-auto w-full xl:max-w-[1375px] px-4 lg:px-6 my-20">
+                <div className="scroller relative z-10 overflow-hidden" style={{ "--animation-direction": "forwards", "--animation-duration": "80s" } as any}>
+                    <div className="flex min-w-full shrink-0 w-max flex-nowrap animate-scroll hover:[animation-play-state:paused] gap-2">
+                        {[
+                            "Transform Nations", "Charitable Chefs", "Zoom Afrika", 
+                            "Mukuru Promotion Centre", "Mukuru Rescue Centre", 
+                            "Mji wa Huruma - Home for the Elderly",
+                            "Transform Nations", "Charitable Chefs", "Zoom Afrika", 
+                            "Mukuru Promotion Centre", "Mukuru Rescue Centre", 
+                            "Mji wa Huruma - Home for the Elderly"
+                        ].map((partner, i) => (
+                            <div key={`p1-${i}`} className="rounded-2xl border border-foreground/5 text-card-foreground shadow-sm p-6 min-w-[200px] h-[100px] flex items-center justify-center bg-secondary-color group hover:border-brand-gold/30 transition-all duration-500">
+                                <p className="font-black text-sm md:text-base uppercase text-primary-color text-center leading-tight tracking-widest" style={{ fontFamily: '"DM Sans", sans-serif' }}>
+                                    {partner}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="my-4"></div>
+
+                <div className="scroller relative z-10 overflow-hidden" style={{ "--animation-direction": "reverse", "--animation-duration": "80s" } as any}>
+                    <div className="flex min-w-full shrink-0 w-max flex-nowrap animate-scroll hover:[animation-play-state:paused] gap-2">
+                        {[
+                            "Mike the Social Worker", "Lula Homes", "Tribe Hotel", 
+                            "Hummingbird Transport", "Raising Hearts Foundation", 
+                            "Yazua Afrika", "Paper Hearts Foundation", "United Matunda Academy",
+                            "Mike the Social Worker", "Lula Homes", "Tribe Hotel", 
+                            "Hummingbird Transport", "Raising Hearts Foundation", 
+                            "Yazua Afrika", "Paper Hearts Foundation", "United Matunda Academy"
+                        ].map((partner, i) => (
+                            <div key={`p2-${i}`} className="rounded-2xl border border-foreground/5 text-card-foreground shadow-sm p-6 min-w-[200px] h-[100px] flex items-center justify-center bg-secondary-color group hover:border-brand-gold/30 transition-all duration-500">
+                                <p className="font-black text-sm md:text-base uppercase text-primary-color text-center leading-tight tracking-widest" style={{ fontFamily: '"DM Sans", sans-serif' }}>
+                                    {partner}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Call to Action */}
             < section className="py-32 px-6 bg-brand-gold text-white relative overflow-hidden" >
