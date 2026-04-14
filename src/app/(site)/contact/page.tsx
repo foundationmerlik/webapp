@@ -260,15 +260,18 @@ export default function Contact() {
                             )}
                         </div>
 
-                        {/* Map Decoration */}
-                        <div className="mt-10 rounded-[2rem] overflow-hidden h-48 border border-foreground/10 transition-all duration-700 cursor-pointer shadow-xl relative group">
-                            <Image
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                alt="Stylized map of Nairobi"
-                                src="/images/map.png"
-                            />
-                            <div className="absolute inset-0 bg-brand-gold/10 group-hover:bg-transparent transition-colors"></div>
+                        {/* Live Google Map */}
+                        <div className="mt-10 rounded-[2rem] overflow-hidden h-64 border border-foreground/10 shadow-xl relative group">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7509098231317!2d36.83451517413271!3d-1.325368035668329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f113fe368e131%3A0x68daf0630c1dcb74!2sMerlik%20Foundation!5e0!3m2!1sen!2ske!4v1776177841092!5m2!1sen!2ske" 
+                                width="100%" 
+                                height="100%" 
+                                style={{ border: 0 }} 
+                                allowFullScreen={true} 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="grayscale hover:grayscale-0 transition-all duration-700"
+                            ></iframe>
                         </div>
                     </div>
 
