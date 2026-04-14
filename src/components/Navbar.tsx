@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, ArrowRight, ChevronDown, BookOpen, Users, Globe, LayoutGrid, Compass, Sparkles } from "lucide-react";
+import { Menu, X, Sun, Moon, ArrowRight, ChevronDown, BookOpen, Users, Globe, LayoutGrid, Compass, Sparkles, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const programsLinks = [
@@ -19,8 +19,8 @@ const getInvolvedLinks = [
     { name: "Internship", href: "/support?tab=internship", icon: BookOpen, desc: "Gain hands-on experience" },
     { name: "Donate", href: "/donate", icon: Sun, desc: "Financial contributions" },
     { name: "Mentor", href: "/support?tab=mentor", icon: Compass, desc: "Shape a future leader" },
-    { name: "Sponsor for mentorship", href: "/support?tab=sponsor", icon: Sparkles, desc: "Directly support a boy" },
-    { name: "Merchandise", href: "/contact", icon: LayoutGrid, desc: "Coming soon..." },
+    { name: "Sponsor a Boy", href: "/support?tab=sponsor", icon: Sparkles, desc: "Invest in a boy's future today." },
+    { name: "Merchandise", href: "/shop", icon: ShoppingBag, desc: "Support the mission with branded gear." },
 ];
 
 export default function Navbar() {
