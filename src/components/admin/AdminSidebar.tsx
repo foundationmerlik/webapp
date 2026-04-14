@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
@@ -16,13 +16,24 @@ import {
   PlusCircle,
   Bell,
   Key,
-  Settings
+  Settings,
+  Sun,
+  Moon
 } from "lucide-react";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function AdminSidebar({ user }: { user: any }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const menuItems = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
@@ -66,16 +77,50 @@ export default function AdminSidebar({ user }: { user: any }) {
       `}>
         <div className="flex flex-col h-full p-8">
           <div className="shrink-0">
-            {/* Logo */}
-            <Link href="/" className="mb-10 block">
-              <Image
-                src="/logo_black.png"
-                alt="Merlik Foundation"
-                width={140}
-                height={42}
-                className="h-10 w-auto object-contain dark:invert"
-              />
-            </Link>
+            {/* Logo & Theme Toggle */}
+            <div className="mb-10 flex items-center justify-between">
+              <Link href="/">
+                <Image
+                  src="/logo_black.png"
+                  alt="Merlik Foundation"
+                  width={140}
+                  height={42}
+                  className="h-10 w-auto object-contain dark:invert"
+                />
+              </Link>
+              
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-3 rounded-2xl bg-foreground/5 hover:bg-brand-gold/20 text-foreground transition-all border border-foreground/5 group"
+                aria-label="Toggle Theme"
+              >
+                <div className="relative w-5 h-5 overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    {mounted && theme === 'dark' ? (
+                      <motion.div
+                        key="moon"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Moon size={20} className="text-brand-gold" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="sun"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Sun size={20} className="group-hover:text-brand-gold transition-colors" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </button>
+            </div>
 
             {/* User Profile Info */}
             <div className="mb-8 p-5 rounded-3xl bg-foreground/[0.03] border border-foreground/5">
