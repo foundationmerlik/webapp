@@ -14,7 +14,9 @@ import {
   Menu, 
   X,
   PlusCircle,
-  Bell
+  Bell,
+  Key,
+  Settings
 } from "lucide-react";
 
 export default function AdminSidebar({ user }: { user: any }) {
@@ -28,6 +30,7 @@ export default function AdminSidebar({ user }: { user: any }) {
     { name: "Calendar Events", href: "/admin/calendar", icon: Calendar },
     { name: "Newsletter", href: "/admin/newsletters", icon: Mail },
     { name: "Staff Management", href: "/admin/staff", icon: Users, adminOnly: true },
+    { name: "Settings", href: "/admin/settings", icon: Key },
   ];
 
   const handleLogout = async () => {
