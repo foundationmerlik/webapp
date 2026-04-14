@@ -88,19 +88,16 @@ export default function Footer() {
                             restoring order to the hearts of men.
                         </p>
                         {/* Social Links */}
-                        <div className="flex gap-3 mt-1">
-                            <a href="https://instagram.com/MerlikFoundation" target="_blank" rel="noopener noreferrer" aria-label="Follow Merlik Foundation on Instagram" className="w-9 h-9 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300">
-                                <Instagram size={16} />
+                        <div className="flex gap-4 mt-2">
+                            <a href="https://www.instagram.com/merlikorg/" target="_blank" rel="noopener noreferrer" aria-label="Follow Merlik Foundation on Instagram" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-500 shadow-sm hover:shadow-brand-gold/20">
+                                <Instagram size={18} />
                             </a>
-                            <a href="https://linkedin.com/company/MerlikFoundation" target="_blank" rel="noopener noreferrer" aria-label="Merlik Foundation on LinkedIn" className="w-9 h-9 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300">
-                                <Linkedin size={16} />
+                            <a href="https://www.linkedin.com/company/merlik-foundation/" target="_blank" rel="noopener noreferrer" aria-label="Merlik Foundation on LinkedIn" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-500 shadow-sm hover:shadow-brand-gold/20">
+                                <Linkedin size={18} />
                             </a>
-                            <a href="https://tiktok.com/@MerlikFoundation" target="_blank" rel="noopener noreferrer" aria-label="Merlik Foundation on TikTok" className="w-9 h-9 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300">
-                                <Video size={16} />
+                            <a href="https://www.tiktok.com/@merlikfoundation?_t=8riNpakE5f5&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Merlik Foundation on TikTok" className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-500 shadow-sm hover:shadow-brand-gold/20">
+                                <Video size={18} />
                             </a>
-                            <Link href="/contact" aria-label="Email Merlik Foundation" className="w-9 h-9 rounded-full border border-foreground/10 flex items-center justify-center text-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300">
-                                <Mail size={16} />
-                            </Link>
                         </div>
                     </div>
 
