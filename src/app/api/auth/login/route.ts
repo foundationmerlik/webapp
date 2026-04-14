@@ -16,6 +16,8 @@ export async function POST(request: Request) {
       .where(eq(users.email, email.toLowerCase()));
 
     if (!user) {
+      // Artificial delay to prevent timing attacks/brute force
+      await new Promise(resolve => setTimeout(resolve, 1000));
       return NextResponse.json(
         { message: "Invalid credentials" },
         { status: 401 }
@@ -25,6 +27,8 @@ export async function POST(request: Request) {
     const passwordsMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordsMatch) {
+      // Artificial delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
       return NextResponse.json(
         { message: "Invalid credentials" },
         { status: 401 }
@@ -48,7 +52,8 @@ export async function POST(request: Request) {
         expires, 
         httpOnly: true,
         path: "/",
-        secure: process.env.NODE_ENV === "production"
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax"
     });
 
     return NextResponse.json({ message: "Login successful" });
