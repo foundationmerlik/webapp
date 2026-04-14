@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Instagram, Linkedin, Video, Mail, ArrowRight, ShieldCheck, Lock } from "lucide-react";
 import ReportsModal from "@/components/ReportsModal";
+import NewsletterModal from "@/components/NewsletterModal";
 
 export default function Footer() {
     const { resolvedTheme } = useTheme();
@@ -13,6 +14,7 @@ export default function Footer() {
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
     const [isReportsModalOpen, setIsReportsModalOpen] = useState(false);
+    const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
     useEffect(() => { setMounted(true); }, []);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,6 +31,7 @@ export default function Footer() {
             });
             if (res.ok) {
                 setSubscribed(true);
+                setIsNewsletterModalOpen(true);
                 setEmail("");
             }
         } catch (err) {
@@ -207,6 +210,7 @@ export default function Footer() {
             </div>
         </footer>
         <ReportsModal isOpen={isReportsModalOpen} onClose={() => setIsReportsModalOpen(false)} />
+        <NewsletterModal isOpen={isNewsletterModalOpen} onClose={() => setIsNewsletterModalOpen(false)} />
         </>
     );
 }
