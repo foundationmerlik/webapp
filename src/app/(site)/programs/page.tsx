@@ -193,8 +193,8 @@ export default function Programs() {
                     <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2 overflow-hidden bg-background">
                         <div className="sticky top-20 h-full lg:h-[calc(100vh-80px)] w-full">
                             <Image
-                                src="/images/gallery/474767579_1128816535544486_3846929425689138926_n.jpg"
-                                alt="Merlik Foundation team during a community outreach event"
+                                src="/images/gallery/488654850_2787690034753457_4611330111416720041_n.jpg"
+                                alt="Merlik Foundation team in active community outreach"
                                 fill
                                 className="object-cover"
                             />
