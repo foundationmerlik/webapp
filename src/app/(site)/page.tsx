@@ -231,11 +231,8 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-foreground">
             Empowering the Boy Child.
           </h2>
-          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-4">
-            Merlik Foundation is a Kenyan youth development organization focused on mentoring and equipping adolescent boys with the skills, values, and support systems needed to become responsible leaders in their communities.
-          </p>
-          <p className="text-sm md:text-base text-foreground/60 font-sans leading-relaxed mb-8">
-            The name <strong>MERLIK</strong> derives from the Arabic word &quot;malki&quot; — meaning king — embodying our belief that every young man possesses inherent leadership potential waiting to be unlocked.
+          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-10">
+            Merlik Foundation is a non-profit organization whose primary focus is empowering young men through holistic mentorship — with the values, skills and support systems needed to become the epitome of sustainable leadership for the next generation.
           </p>
           <Link href="/about" className="group relative inline-flex items-center gap-2 px-7 py-3 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-sm">
             Discover Our Story
