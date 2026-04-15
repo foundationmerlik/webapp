@@ -296,7 +296,7 @@ export default function Home() {
                   width={600} height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Group of volunteers working in a community garden"
-                  src="/images/outreach.jpg"
+                  src="/images/gallery/474976897_463454780176419_5602066565479749917_n.jpg"
                 />
               </div>
               <div className="p-7 relative">
