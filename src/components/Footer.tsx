@@ -116,8 +116,8 @@ export default function Footer() {
                                 Developing Nations, One Boy at a Time
                             </p>
                         </div>
-                        <p className="text-foreground/60 text-sm leading-relaxed max-w-xs font-medium">
-                            Merlik Foundation is a non-profit organization whose primary focus is empowering young men through holistic mentorship — with the values, skills and support systems needed to become the epitome of sustainable leadership for the next generation.
+                        <p className="text-foreground/60 text-sm leading-relaxed max-w-xs font-medium italic">
+                            One boy. One mentor. A lifetime of impact.
                         </p>
                         {/* Social Links */}
                         <div className="flex gap-4 mt-2">
