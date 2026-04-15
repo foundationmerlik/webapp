@@ -117,7 +117,7 @@ export default function Footer() {
                             </p>
                         </div>
                         <p className="text-foreground/60 text-sm leading-relaxed max-w-xs font-medium">
-                            Empowering young boys in Kenya through education, mentorship and community engagement since 2019.
+                            Merlik Foundation is a non-profit organization whose primary focus is empowering young men through holistic mentorship — with the values, skills and support systems needed to become the epitome of sustainable leadership for the next generation.
                         </p>
                         {/* Social Links */}
                         <div className="flex gap-4 mt-2">
@@ -181,7 +181,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
-                                <span>Tax receipts issued for all qualifying gifts</span>
+                                <span>We don&apos;t do tax receipts</span>
                             </li>
                         </ul>
                         <div className="mt-8 flex flex-col gap-3">

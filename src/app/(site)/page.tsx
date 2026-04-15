@@ -231,7 +231,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-foreground">
             Empowering the Boy Child.
           </h2>
-          <p className="text-base md:text-lg text-foreground/70 font-sans leading-relaxed mb-10">
+          <p className="text-base text-foreground/70 font-sans leading-relaxed mb-10">
             Merlik Foundation is a non-profit organization whose primary focus is empowering young men through holistic mentorship — with the values, skills and support systems needed to become the epitome of sustainable leadership for the next generation.
           </p>
           <Link href="/about" className="group relative inline-flex items-center gap-2 px-7 py-3 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 text-sm">
@@ -332,7 +332,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground leading-tight">
                 Stories of Transformation
               </h2>
-              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed relative z-10 text-base md:text-lg">
+              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed relative z-10 text-sm md:text-base">
                 <p>
                   <strong className="text-foreground">Before:</strong> Grew up in a disadvantaged family in Makueni with no clear academic pathway or mentorship support.
                 </p>
@@ -438,8 +438,8 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
             Be Part of the Movement.
           </h2>
-          <p className="text-base md:text-lg text-white/70 font-sans mb-10 max-w-xl mx-auto">
-            Your support transforms lives. Shape the men of tomorrow today.
+          <p className="text-base text-white/70 font-sans mb-10 max-w-xl mx-auto">
+            Your support transforms lives, shaping the men of tomorrow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-involved" className="bg-brand-gold text-brand-black px-8 py-3 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
