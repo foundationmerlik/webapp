@@ -33,7 +33,7 @@ export default function OutreachPage() {
             {/* ─── Hero ─── */}
             <section className="relative min-h-[80vh] flex items-end pt-32 pb-20 px-6 overflow-hidden">
                 <div className="absolute inset-0">
-                    <Image src="/images/outreach.jpg" alt="Community outreach" fill priority className="object-cover" />
+                    <Image src="/images/gallery/488654850_2787690034753457_4611330111416720041_n.jpg" alt="Community outreach" fill priority className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-black/30" />
                 </div>
                 <div className={`relative z-10 max-w-4xl mx-auto w-full transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
