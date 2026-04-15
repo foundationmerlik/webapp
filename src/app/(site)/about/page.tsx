@@ -21,7 +21,7 @@ export default function About() {
 
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-serif tracking-tight mb-6 leading-tight text-foreground animate-reveal">
-                        Our Story. <span className="text-brand-gold italic">Our Mission.</span> <br />Our People.
+                        Our Story. <span className="text-brand-gold italic">Our Mission.</span>
                     </h1>
                     <p className="text-lg md:text-xl md:text-2xl text-foreground/80 font-sans max-w-2xl mx-auto animate-reveal delay-200">
                         Empowering the Boy Child Through Education, Mentorship & General Life Development.
@@ -52,8 +52,8 @@ export default function About() {
                             <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Foundation Roots</h3>
                         </div>
                         <div className="md:pl-6">
-                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Merlik Foundation established by dedicated community members in Nairobi.
+                            <p className="text-foreground/70 font-medium leading-relaxed text-lg italic">
+                                2019 — Merlik Foundation established by like-minded individuals in Nairobi.
                             </p>
                         </div>
                     </div>
@@ -168,6 +168,23 @@ export default function About() {
                             </p>
                         </div>
 
+                        {/* Values Card */}
+                        <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
+                            <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
+                                Values
+                            </span>
+                            <h3 className="text-3xl font-serif font-bold mb-6 text-foreground">
+                                Our Values
+                            </h3>
+                            <div className="flex flex-wrap gap-4">
+                                {["Service", "Responsibility", "Integrity"].map((v) => (
+                                    <span key={v} className="bg-brand-gold/10 text-brand-gold px-6 py-2 rounded-xl text-sm font-black uppercase tracking-widest border border-brand-gold/20">
+                                        {v}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Approach Card */}
                         <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
                             <span className="text-brand-gold font-bold text-[11px] uppercase tracking-widest border border-brand-gold/30 rounded-full px-4 py-1.5 self-start mb-8">
@@ -197,8 +214,12 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Core Values Grid */}
+            {/* Focus Areas Grid */}
             < section className="pb-32 px-6 max-w-7xl mx-auto pt-16" >
+                <div className="text-center mb-16">
+                    <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Strategic Direction</h2>
+                    <h3 className="text-4xl md:text-5xl font-serif font-bold text-foreground">Focus Areas</h3>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Education */}
