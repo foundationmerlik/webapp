@@ -21,8 +21,8 @@ export async function sendSecurityEmail({ to, type, browser, os, ip, time }: Sec
 
         const isLogin = type === "login";
         const subject = isLogin 
-            ? "New Login to Merlik Staff Portal 🌓" 
-            : "Password Changed - Merlik Foundation 🌓";
+            ? "Account Security: New Login Detected 🌓" 
+            : "Account Security: Password Changed 🌓";
 
         const html = `
             <!DOCTYPE html>
@@ -33,53 +33,63 @@ export async function sendSecurityEmail({ to, type, browser, os, ip, time }: Sec
                     .msg-body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background-color: #f9f9f9; padding: 20px; }
                     .wrapper { max-width: 600px; margin: 0 auto; padding: 40px; background-color: #ffffff; border-radius: 24px; border: 1px solid #f0f0f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
                     .msg-header { text-align: center; margin-bottom: 40px; }
-                    .msg-content { font-size: 15px; text-align: left; }
-                    .security-box { background: #fdfaf2; border: 1px solid #d4af3733; padding: 25px; border-radius: 16px; margin: 25px 0; }
-                    .security-item { margin-bottom: 15px; border-bottom: 1px solid #d4af3711; padding-bottom: 10px; }
+                    .msg-content { font-size: 16px; text-align: center; }
+                    .security-box { background: #fdfaf2; border: 1px solid #d4af3733; padding: 30px; border-radius: 20px; margin: 30px 0; text-align: left; }
+                    .security-item { margin-bottom: 20px; border-bottom: 1px solid #d4af3711; padding-bottom: 15px; }
                     .security-item:last-child { border: none; margin: 0; padding: 0; }
-                    .label { color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; display: block; }
-                    .value { color: #1a1a1a; font-size: 14px; font-weight: bold; display: block; margin-top: 2px; }
-                    .msg-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #f0f0f0; font-size: 11px; color: #999; text-align: center; }
+                    .label { color: #999; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; display: block; margin-bottom: 4px; }
+                    .value { color: #111; font-size: 15px; font-weight: bold; display: block; }
+                    .msg-footer { margin-top: 40px; padding-top: 25px; border-top: 1px solid #f0f0f0; font-size: 12px; color: #999; text-align: center; }
                     .gold-text { color: #D4AF37; font-weight: bold; }
+                    .brand-tagline { color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-size: 10px; font-weight: bold; margin-top: 5px; }
                 </style>
             </head>
             <body class="msg-body">
                 <div class="wrapper">
                     <div class="msg-header">
-                        <img src="https://webapp-wr2z.vercel.app/logo_black.png" alt="Merlik Foundation" height="32" style="display:block;margin:0 auto 15px;" />
-                        <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0; color: #111;">SECURITY ALERT</h2>
+                        <img src="https://webapp-wr2z.vercel.app/logo_black.png" alt="Merlik Foundation" height="40" style="display:block;margin:0 auto 15px;" />
+                        <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0; color: #111;">MERLIK FOUNDATION</h2>
+                        <p class="brand-tagline">Developing Nations, One Boy at a Time</p>
                     </div>
+                    
                     <div class="msg-content">
-                        <p>Hello,</p>
-                        <p>${isLogin ? 'A new successful login was detected for your staff account.' : 'The password for your Merlik Foundation staff account was recently changed.'}</p>
+                        <h1 style="font-family: serif; font-size: 24px; line-height: 1.2; margin-bottom: 15px; color: #111;">
+                            Security <span class="gold-text">Alert</span>
+                        </h1>
+                        <p style="color: #666; font-size: 15px;">
+                            ${isLogin ? 'We detected a new successful login to your Merlik Foundation staff account.' : 'The password for your staff account was recently updated.'}
+                        </p>
                         
                         <div class="security-box">
                             <div class="security-item">
-                                <span class="label">Event</span>
-                                <span class="value">${isLogin ? 'Successful Login' : 'Password updated'}</span>
+                                <span class="label">Activity</span>
+                                <span class="value">${isLogin ? 'Portal Access' : 'Credential Update'}</span>
                             </div>
                             <div class="security-item">
-                                <span class="label">Date & Time</span>
+                                <span class="label">Logged at</span>
                                 <span class="value">${time}</span>
                             </div>
                             <div class="security-item">
-                                <span class="label">Browser & Device</span>
-                                <span class="value">${browser} on ${os}</span>
+                                <span class="label">Browser & System</span>
+                                <span class="value">${browser} / ${os}</span>
                             </div>
                             ${ip ? `
                             <div class="security-item">
-                                <span class="label">IP Address</span>
+                                <span class="label">Network Location</span>
                                 <span class="value">${ip}</span>
                             </div>
                             ` : ''}
                         </div>
 
-                        <p>If this was you, you can safely ignore this email. No further action is required.</p>
-                        <p style="color: #666; font-style: italic;"><strong>If this was NOT you:</strong> Please contact the IT administrator immediately and change your password to secure your account.</p>
+                        <p style="font-size: 14px;">If this was you, you can safely ignore this automated message.</p>
+                        <p style="color: #e63946; font-weight: bold; font-size: 14px; margin-top: 20px; border: 1px solid #e6394633; padding: 15px; border-radius: 12px; background: #fff5f5;">
+                            Security Concern? If you did not perform this action, please contact the Foundation IT Administrator immediately and reset your password.
+                        </p>
                     </div>
+
                     <div class="msg-footer">
                         <p>© 2026 Merlik Foundation. Nairobi, Kenya.</p>
-                        <p>This is an automated security notification.</p>
+                        <p>This is a mandatory security notification regarding your staff account.</p>
                     </div>
                 </div>
             </body>
