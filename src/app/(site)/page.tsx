@@ -119,7 +119,7 @@ export default function Home() {
 
             {/* Sub-headline Paragraph */}
             <p className={`text-sm sm:text-base text-foreground/70 mb-5 leading-relaxed animate-reveal delay-200 ${isLoaded ? '' : 'opacity-0'}`}>
-              Every great nation is built on the shoulders of strong, purposeful men. At Merlik Foundation, we walk with boys on their journey to become exactly that — one life at a time.
+              Nations rise and fall on the character of the men leading them. At Merlik Foundation, we exist for one thing — to awaken the essence of manhood in every boy and cultivate a generation of men who know who they are, stand in integrity, and lead with purpose.
             </p>
 
             {/* Emerson Quote block */}
