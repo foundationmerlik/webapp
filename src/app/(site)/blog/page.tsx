@@ -130,18 +130,18 @@ export default async function BlogPage() {
         )}
 
         {/* Newsletter Call to Action */}
-        <section className="mt-40 p-12 md:p-24 rounded-[4rem] bg-brand-gold text-brand-black relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
+        <section className="mt-24 p-10 md:p-16 rounded-[3rem] bg-brand-gold text-brand-black relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
             <div className="relative z-10 max-w-2xl">
-                <h2 className="text-4xl md:text-6xl font-black font-serif mb-8 leading-tight">Stay inside the <span className="italic">circle.</span></h2>
-                <p className="text-xl md:text-2xl font-bold opacity-70 mb-12">Get monthly impact reports and early updates on our initiatives delivered to your inbox.</p>
+                <h2 className="text-3xl md:text-5xl font-black font-serif mb-6 leading-tight select-none">Stay inside the <span className="italic">circle.</span></h2>
+                <p className="text-lg font-bold opacity-70 mb-10 max-w-lg">Get monthly impact reports and early updates on our initiatives delivered to your inbox.</p>
                 <form className="flex flex-col sm:flex-row gap-4">
                     <input
                         type="email"
                         placeholder="your@email.com"
-                        className="flex-1 bg-white/20 border-2 border-brand-black/10 backdrop-blur-md rounded-2xl px-8 py-5 text-lg font-bold placeholder:text-brand-black/30 outline-none focus:border-brand-black transition-all"
+                        className="flex-1 bg-white/20 border-2 border-brand-black/10 backdrop-blur-md rounded-2xl px-8 py-4 text-base font-bold placeholder:text-brand-black/30 outline-none focus:border-brand-black transition-all"
                     />
-                    <button className="bg-brand-black text-white px-10 py-5 rounded-2xl font-black text-lg hover:brightness-125 transition-all">
+                    <button className="bg-brand-black text-white px-8 py-4 rounded-2xl font-black text-base hover:brightness-125 transition-all">
                         Subscribe
                     </button>
                 </form>
