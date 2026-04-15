@@ -25,12 +25,12 @@ export default async function CalendarPage() {
 
       <main className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl mb-24">
-            <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Take Action</span>
-            <h1 className="text-5xl md:text-6xl lg:text-[80px] font-black leading-[1.1] tracking-tight font-serif text-foreground">
+        <div className="max-w-3xl mb-16">
+            <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-xs mb-3 block italic">Take Action</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight font-serif text-foreground">
                 Upcoming <span className="text-brand-gold italic">Mission.</span>
             </h1>
-            <p className="text-xl md:text-2xl leading-relaxed text-foreground/70 font-medium mt-8 font-sans">
+            <p className="text-lg md:text-xl leading-relaxed text-foreground/70 font-medium mt-6 font-sans italic opacity-80">
                 Real-world impact happens on the ground. Join us as a volunteer, mentor, or observer at our next initiative.
             </p>
         </div>
@@ -42,7 +42,7 @@ export default async function CalendarPage() {
         ) : (
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
                 {upcomingEvents.map((event, idx) => (
-                    <div key={event.id} className="group relative bg-[#FDFAF3] dark:bg-zinc-900/50 rounded-[3rem] p-8 md:p-12 border border-brand-gold/10 hover:border-brand-gold/30 transition-all shadow-xl hover:shadow-2xl overflow-hidden">
+                    <div key={event.id} className="group relative bg-[#FDFAF3] dark:bg-zinc-900/50 rounded-[2.5rem] p-6 md:p-10 border border-brand-gold/10 hover:border-brand-gold/30 transition-all shadow-xl hover:shadow-2xl overflow-hidden">
                         {/* Event Number / Index */}
                         <div className="absolute top-[-20px] right-[-20px] text-[150px] font-black font-serif italic text-brand-gold/5 group-hover:text-brand-gold/10 transition-colors pointer-events-none">
                             {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
@@ -67,8 +67,8 @@ export default async function CalendarPage() {
                                             <Clock size={16} /> {new Date(event.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                         </span>
                                     </div>
-                                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-serif text-foreground group-hover:text-brand-gold transition-colors">{event.title}</h2>
-                                    <p className="text-lg text-foreground/60 font-medium max-w-2xl">{event.description}</p>
+                                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-black font-serif text-foreground group-hover:text-brand-gold transition-colors leading-tight">{event.title}</h2>
+                                    <p className="text-base text-foreground/60 font-medium max-w-2xl">{event.description}</p>
                                     
                                     <div className="flex items-center gap-6 pt-4">
                                         <span className="text-sm font-bold text-foreground/80 flex items-center gap-2">

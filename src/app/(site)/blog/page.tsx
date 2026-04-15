@@ -28,12 +28,12 @@ export default async function BlogPage() {
 
       <main className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl mb-24">
-            <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Stories of Change</span>
-            <h1 className="text-5xl md:text-6xl lg:text-[80px] font-black leading-[1.1] tracking-tight font-serif text-foreground">
+        <div className="max-w-3xl mb-16">
+            <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-xs mb-3 block italic">Stories of Change</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight font-serif text-foreground">
                 Blog & <span className="text-brand-gold italic">News</span>
             </h1>
-            <p className="text-xl md:text-2xl leading-relaxed text-foreground/70 font-medium mt-8 font-sans">
+            <p className="text-lg md:text-xl leading-relaxed text-foreground/70 font-medium mt-6 font-sans italic opacity-80">
                 Insights from our mentorship programs, community outreach reports, and official announcements.
             </p>
         </div>
@@ -72,10 +72,10 @@ export default async function BlogPage() {
                                     <span className="flex items-center gap-2"><Calendar size={14} className="text-brand-gold" /> {new Date(featuredPost.createdAt!).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                                     <span className="flex items-center gap-2"><User size={14} className="text-brand-gold" /> Merlik Staff</span>
                                 </div>
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-serif text-foreground leading-tight group-hover:text-brand-gold transition-colors">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-serif text-foreground leading-tight group-hover:text-brand-gold transition-colors">
                                     {featuredPost.title}
                                 </h2>
-                                <p className="text-xl text-foreground/60 leading-relaxed font-medium">
+                                <p className="text-lg text-foreground/60 leading-relaxed font-medium line-clamp-4">
                                     {featuredPost.excerpt}
                                 </p>
                                 <div className="pt-4">
@@ -89,7 +89,7 @@ export default async function BlogPage() {
                 )}
 
                 {/* Grid Posts */}
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                     {regularPosts.map((post) => (
                         <Link key={post.id} href={`/blog/${post.slug}`} className="group flex flex-col h-full">
                             <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden relative mb-8 shadow-lg">
