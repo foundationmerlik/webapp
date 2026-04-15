@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     // Verify current password
     const isMatch = await bcrypt.compare(currentPassword, user.password);
     if (!isMatch) {
-      return NextResponse.json({ message: "Incorect current password" }, { status: 400 });
+      return NextResponse.json({ message: "Incorrect current password" }, { status: 400 });
     }
 
     // Hash new password
@@ -33,6 +33,38 @@ export async function POST(request: Request) {
     await db.update(users)
       .set({ password: hashedNewPassword })
       .where(eq(users.id, session.user.id));
+
+    // Send Security Email
+    try {
+        const userAgent = request.headers.get("user-agent") || "Unknown";
+        const ip = request.headers.get("x-forwarded-for") || "Local";
+        
+        let browser = "Unknown Browser";
+        let os = "Unknown OS";
+
+        if (userAgent.includes("Firefox")) browser = "Firefox";
+        else if (userAgent.includes("Edge")) browser = "Edge";
+        else if (userAgent.includes("Chrome")) browser = "Chrome";
+        else if (userAgent.includes("Safari")) browser = "Safari";
+
+        if (userAgent.includes("Windows")) os = "Windows";
+        else if (userAgent.includes("Mac")) os = "macOS";
+        else if (userAgent.includes("Android")) os = "Android";
+        else if (userAgent.includes("iPhone")) os = "iOS";
+        else if (userAgent.includes("Linux")) os = "Linux";
+
+        const { sendSecurityEmail } = await import("@/lib/email");
+        await sendSecurityEmail({
+            to: session.user.email,
+            type: "password-change",
+            browser,
+            os,
+            ip: ip.split(",")[0].trim(),
+            time: new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }) + " (EAT)"
+        });
+    } catch (err) {
+        console.error("Password change security email failed:", err);
+    }
 
     return NextResponse.json({ message: "Password updated successfully" });
   } catch (error) {

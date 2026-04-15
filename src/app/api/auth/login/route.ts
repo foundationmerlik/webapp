@@ -56,6 +56,38 @@ export async function POST(request: Request) {
         sameSite: "lax"
     });
 
+    // Send Security Email (Login Alert)
+    try {
+        const userAgent = request.headers.get("user-agent") || "Unknown";
+        const ip = request.headers.get("x-forwarded-for") || "Local";
+        
+        let browser = "Unknown Browser";
+        let os = "Unknown OS";
+
+        if (userAgent.includes("Firefox")) browser = "Firefox";
+        else if (userAgent.includes("Edge")) browser = "Edge";
+        else if (userAgent.includes("Chrome")) browser = "Chrome";
+        else if (userAgent.includes("Safari")) browser = "Safari";
+
+        if (userAgent.includes("Windows")) os = "Windows";
+        else if (userAgent.includes("Mac")) os = "macOS";
+        else if (userAgent.includes("Android")) os = "Android";
+        else if (userAgent.includes("iPhone")) os = "iOS";
+        else if (userAgent.includes("Linux")) os = "Linux";
+
+        const { sendSecurityEmail } = await import("@/lib/email");
+        await sendSecurityEmail({
+            to: user.email,
+            type: "login",
+            browser,
+            os,
+            ip: ip.split(",")[0].trim(),
+            time: new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }) + " (EAT)"
+        });
+    } catch (err) {
+        console.error("Login security email failed:", err);
+    }
+
     return NextResponse.json({ message: "Login successful" });
   } catch (error) {
     console.error("Login Error:", error);
