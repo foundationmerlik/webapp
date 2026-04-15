@@ -97,16 +97,16 @@ function SupportContent() {
             </div>
 
             {/* Tab Navigation */}
-            <div className="relative mb-20 overflow-x-auto pb-4 scrollbar-hide">
-                <div className="flex items-center justify-between min-w-max border-b border-foreground/10 px-4">
+            <div className="relative mb-20 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6">
+                <div className="flex items-center justify-start sm:justify-center gap-2 min-w-fit border-b border-foreground/10">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => handleTabChange(tab.id)}
-                            className={`flex flex-col items-center gap-3 px-8 pb-6 transition-all relative group ${activeTabId === tab.id ? "text-brand-gold" : "text-foreground/40 hover:text-foreground/70"}`}
+                            className={`flex flex-col items-center gap-3 px-6 pb-6 transition-all relative group shrink-0 ${activeTabId === tab.id ? "text-brand-gold" : "text-foreground/40 hover:text-foreground/70"}`}
                         >
-                            <tab.icon size={24} strokeWidth={activeTabId === tab.id ? 2.5 : 2} />
-                            <span className="font-bold text-sm uppercase tracking-widest leading-none">{tab.label}</span>
+                            <tab.icon size={20} strokeWidth={activeTabId === tab.id ? 2.5 : 2} className="md:w-6 md:h-6" />
+                            <span className="font-bold text-[10px] md:text-sm uppercase tracking-widest leading-none whitespace-nowrap">{tab.label}</span>
                             {activeTabId === tab.id && (
                                 <motion.div layoutId="underline" className="absolute bottom-0 left-0 right-0 h-1 bg-brand-gold rounded-full" />
                             )}
@@ -334,11 +334,11 @@ function SupportContent() {
                     )}
 
                     {activeTabId === "sponsor" && (
-                        <div className="h-full min-h-[500px] rounded-[3rem] overflow-hidden relative shadow-2xl border border-foreground/10">
+                        <div className="h-full min-h-[400px] md:min-h-[500px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden relative shadow-2xl border border-foreground/10">
                             <Image fill src="/images/gallery/482021736_656826440187305_4826138251330898547_n.jpg" alt="A young boy benefiting from the Merlik Foundation programs" className="object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-60"></div>
                             <div className="absolute bottom-10 left-10 right-10">
-                                <p className="text-white font-serif text-3xl font-black leading-tight italic">
+                                <p className="text-white font-serif text-2xl md:text-3xl font-black leading-tight italic">
                                     "Your support is an investment in the future leaders of our community."
                                 </p>
                             </div>
@@ -371,7 +371,7 @@ function SupportContent() {
 
 export default function SupportPage() {
     return (
-        <div className="min-h-screen bg-background pt-32 pb-40">
+        <div className="min-h-screen bg-background pt-32 pb-40 relative overflow-x-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-gold/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             
