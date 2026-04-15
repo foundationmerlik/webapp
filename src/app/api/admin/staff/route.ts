@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth";
 import * as bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 import nodemailer from "nodemailer";
+import { eq } from "drizzle-orm";
 
 export async function POST(request: Request) {
   try {
@@ -69,6 +70,10 @@ export async function POST(request: Request) {
       html: emailTemplate,
     });
 
+    // Activity Audit Log
+    const { logActivity } = await import("@/lib/audit");
+    await logActivity(session.user.id, session.user.email, "CREATE_STAFF", `User: ${newUser.email} (Role: ${newUser.role})`);
+
     return NextResponse.json({ message: "Staff member added and email sent" });
   } catch (error) {
     console.error("Add Staff Error:", error);
@@ -94,4 +99,34 @@ export async function GET() {
     }).from(users);
 
     return NextResponse.json(allUsers);
+}
+
+export async function DELETE(request: Request) {
+    try {
+      const session = await getSession();
+      if (!session || session.user.role !== "admin") {
+        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+      }
+  
+      const { searchParams } = new URL(request.url);
+      const id = searchParams.get("id");
+      
+      if (!id) return NextResponse.json({ message: "Staff ID required" }, { status: 400 });
+
+      // Prevent self-deletion
+      if (id === session.user.id) {
+        return NextResponse.json({ message: "Cannot delete your own account" }, { status: 400 });
+      }
+  
+      await db.delete(users).where(eq(users.id, id));
+
+      // Activity Log
+      const { logActivity } = await import("@/lib/audit");
+      await logActivity(session.user.id, session.user.email, "DELETE_STAFF", `User ID: ${id}`);
+
+      return NextResponse.json({ message: "Staff member deleted successfully" });
+    } catch (error) {
+      console.error(error);
+      return NextResponse.json({ message: "Error deleting staff" }, { status: 500 });
+    }
 }

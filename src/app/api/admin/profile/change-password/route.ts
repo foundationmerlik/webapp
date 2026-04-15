@@ -65,20 +65,8 @@ export async function POST(request: Request) {
         });
 
         // 2. Log to Database
-        const { auditLogs } = await import("@/lib/db/schema");
-        const { v4: uuidv4 } = await import("uuid");
-        await db.insert(auditLogs).values({
-            id: uuidv4(),
-            userId: session.user.id,
-            userEmail: session.user.email,
-            action: "PASSWORD_CHANGE",
-            metadata: JSON.stringify({
-                browser,
-                os,
-                ip: ip.split(",")[0].trim(),
-                userAgent
-            })
-        });
+        const { logActivity } = await import("@/lib/audit");
+        await logActivity(session.user.id, session.user.email, "PASSWORD_CHANGE");
     } catch (err) {
         console.error("Password change logging/email failed:", err);
     }

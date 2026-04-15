@@ -87,20 +87,8 @@ export async function POST(request: Request) {
         });
 
         // 2. Log to Database
-        const { auditLogs } = await import("@/lib/db/schema");
-        const { v4: uuidv4 } = await import("uuid");
-        await db.insert(auditLogs).values({
-            id: uuidv4(),
-            userId: user.id,
-            userEmail: user.email,
-            action: "LOGIN",
-            metadata: JSON.stringify({
-                browser,
-                os,
-                ip: ip.split(",")[0].trim(),
-                userAgent
-            })
-        });
+        const { logActivity } = await import("@/lib/audit");
+        await logActivity(user.id, user.email, "LOGIN");
     } catch (err) {
         console.error("Login logging/email failed:", err);
     }

@@ -35,6 +35,11 @@ export async function POST(request: Request) {
     };
 
     await db.insert(posts).values(newPost);
+
+    // Activity Log
+    const { logActivity } = await import("@/lib/audit");
+    await logActivity(session.user.id, session.user.email, "CREATE_POST", `Title: ${newPost.title}`);
+
     return NextResponse.json(newPost);
   } catch (error) {
     console.error(error);
@@ -61,6 +66,11 @@ export async function PUT(request: Request) {
     };
 
     await db.update(posts).set(updatedPost).where(eq(posts.id, id));
+
+    // Activity Log
+    const { logActivity } = await import("@/lib/audit");
+    await logActivity(session.user.id, session.user.email, "UPDATE_POST", `Title: ${updatedPost.title} (ID: ${id})`);
+
     return NextResponse.json({ message: "Post updated successfully" });
   } catch (error) {
     console.error(error);
@@ -79,6 +89,11 @@ export async function DELETE(request: Request) {
       if (!id) return NextResponse.json({ message: "Post ID required" }, { status: 400 });
   
       await db.delete(posts).where(eq(posts.id, id));
+
+      // Activity Log
+      const { logActivity } = await import("@/lib/audit");
+      await logActivity(session.user.id, session.user.email, "DELETE_POST", `Post ID: ${id}`);
+
       return NextResponse.json({ message: "Post deleted successfully" });
     } catch (error) {
       console.error(error);

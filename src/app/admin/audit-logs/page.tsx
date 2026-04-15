@@ -76,6 +76,11 @@ export default async function AuditLogsPage() {
                                             </td>
                                             <td className="px-8 py-6">
                                                 <div className="flex flex-col gap-1">
+                                                    {metadata.details && (
+                                                        <div className="text-xs font-bold text-brand-gold mb-1">
+                                                            {metadata.details}
+                                                        </div>
+                                                    )}
                                                     <div className="text-sm font-bold text-foreground flex items-center gap-2">
                                                         <Globe size={14} className="text-foreground/30" /> {metadata.ip || "Unknown IP"}
                                                     </div>

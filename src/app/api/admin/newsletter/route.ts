@@ -78,6 +78,10 @@ export async function POST(request: Request) {
         sentBy: session.user.id
     });
 
+    // Activity Audit Log
+    const { logActivity } = await import("@/lib/audit");
+    await logActivity(session.user.id, session.user.email, "SEND_NEWSLETTER", `Subject: ${subject}`);
+
     return NextResponse.json({ message: `Newsletter sent to ${emails.length} subscribers` });
   } catch (error) {
     console.error("Newsletter Send Error:", error);
