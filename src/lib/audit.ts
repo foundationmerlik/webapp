@@ -16,13 +16,15 @@ export type AuditAction =
     | "SEND_NEWSLETTER"
     | "CREATE_STAFF"
     | "DELETE_STAFF"
-    | "UPDATE_STAFF";
+    | "UPDATE_STAFF"
+    | "REPORT_UPLOAD"
+    | "REPORT_DELETE";
 
 export async function logActivity(
     userId: string, 
     userEmail: string, 
     action: AuditAction, 
-    details?: string
+    details?: any
 ) {
     try {
         const headerList = await headers();

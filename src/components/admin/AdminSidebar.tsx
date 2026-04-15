@@ -43,6 +43,7 @@ export default function AdminSidebar({ user }: { user: any }) {
     { name: "Newsletter", href: "/admin/newsletters", icon: Mail },
     { name: "Mission Control", href: "/admin/inquiries", icon: Bell, adminOnly: true },
     { name: "Staff Management", href: "/admin/staff", icon: Users, adminOnly: true },
+    { name: "Impact Reports", href: "/admin/reports", icon: FileText, adminOnly: true },
     { name: "Security Audit", href: "/admin/audit-logs", icon: ShieldCheck, adminOnly: true },
     { name: "Settings", href: "/admin/settings", icon: Key },
   ];
