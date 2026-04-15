@@ -75,6 +75,7 @@ export async function POST(request: Request) {
         else if (userAgent.includes("iPhone")) os = "iOS";
         else if (userAgent.includes("Linux")) os = "Linux";
 
+        // 1. Send Email
         const { sendSecurityEmail } = await import("@/lib/email");
         await sendSecurityEmail({
             to: user.email,
@@ -84,8 +85,24 @@ export async function POST(request: Request) {
             ip: ip.split(",")[0].trim(),
             time: new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }) + " (EAT)"
         });
+
+        // 2. Log to Database
+        const { auditLogs } = await import("@/lib/db/schema");
+        const { v4: uuidv4 } = await import("uuid");
+        await db.insert(auditLogs).values({
+            id: uuidv4(),
+            userId: user.id,
+            userEmail: user.email,
+            action: "LOGIN",
+            metadata: JSON.stringify({
+                browser,
+                os,
+                ip: ip.split(",")[0].trim(),
+                userAgent
+            })
+        });
     } catch (err) {
-        console.error("Login security email failed:", err);
+        console.error("Login logging/email failed:", err);
     }
 
     return NextResponse.json({ message: "Login successful" });

@@ -71,3 +71,12 @@ export const donations = sqliteTable("donations", {
   status: text("status").notNull(),
   createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(strftime('%s', 'now'))`),
 });
+
+export const auditLogs = sqliteTable("audit_logs", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").references(() => users.id),
+  userEmail: text("user_email").notNull(),
+  action: text("action").notNull(), // LOGIN, PASSWORD_CHANGE, etc.
+  metadata: text("metadata"), // JSON string with browser, OS, IP
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(strftime('%s', 'now'))`),
+});

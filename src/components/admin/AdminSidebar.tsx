@@ -16,6 +16,7 @@ import {
   PlusCircle,
   Bell,
   Key,
+  ShieldCheck,
   Settings,
   Sun,
   Moon
@@ -42,6 +43,7 @@ export default function AdminSidebar({ user }: { user: any }) {
     { name: "Newsletter", href: "/admin/newsletters", icon: Mail },
     { name: "Mission Control", href: "/admin/inquiries", icon: Bell, adminOnly: true },
     { name: "Staff Management", href: "/admin/staff", icon: Users, adminOnly: true },
+    { name: "Security Audit", href: "/admin/audit-logs", icon: ShieldCheck, adminOnly: true },
     { name: "Settings", href: "/admin/settings", icon: Key },
   ];
 
