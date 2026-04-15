@@ -18,6 +18,21 @@ export async function POST(req: Request) {
     };
 
     await db.insert(donations).values(newDonation);
+
+    // Send Thank You Email
+    try {
+        const { sendDonationEmail } = await import("@/lib/email");
+        await sendDonationEmail({
+            to: newDonation.donorEmail,
+            donorName: newDonation.donorName,
+            amount: newDonation.amount,
+            currency: newDonation.currency,
+            reference: newDonation.reference,
+        });
+    } catch (emailErr) {
+        console.error("Donation thank you email failed:", emailErr);
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Donation log error:", error);
