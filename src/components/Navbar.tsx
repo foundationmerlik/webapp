@@ -225,7 +225,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 w-full bg-white dark:bg-[#111111] border-b border-black/10 dark:border-white/10 shadow-lg py-6 px-6 flex flex-col gap-5 md:hidden max-h-[85vh] overflow-y-auto"
                     >
-                        {navLinks.slice(0, 2).map((link) => (
+                        {navLinks.map((link) => (
                             <Link key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)}
                                 className="font-serif text-2xl sm:text-3xl text-foreground dark:text-white font-black hover:text-brand-gold transition-colors flex items-center justify-between group">
                                 {link.name}

@@ -307,7 +307,7 @@ export default function Programs() {
                                 allowFullScreen={true} 
                                 loading="lazy" 
                                 referrerPolicy="no-referrer-when-downgrade"
-                                className="grayscale hover:grayscale-0 transition-all duration-700"
+                                className="w-full h-full"
                             ></iframe>
                         </div>
                     </div>
