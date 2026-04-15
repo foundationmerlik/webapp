@@ -114,7 +114,7 @@ export default function Home() {
             </h2>
 
             <div className={`font-serif text-3xl sm:text-4xl leading-tight mb-4 text-foreground animate-reveal delay-100 ${isLoaded ? '' : 'opacity-0'}`}>
-              to the Hearts of Men.
+              to the Hearts of Men
             </div>
 
             {/* Sub-headline Paragraph */}
