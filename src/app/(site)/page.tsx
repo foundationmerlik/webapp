@@ -316,19 +316,21 @@ export default function Home() {
       < section className="py-8 bg-background relative z-10" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row border border-foreground/10 rounded-2xl overflow-hidden bg-background shadow-xl">
-            <div className="lg:w-[35%] relative shrink-0 bg-foreground/[0.03]">
-              <Image
-                width={600} height={800}
-                className="w-full h-auto block"
-                alt="Portrait of Peter Masila, a confident young man smiling"
-                src="/images/peter_masila.jpg"
-              />
-              <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-md p-3 rounded-xl border border-foreground/5 shadow-lg">
-                <p className="text-foreground font-serif font-bold text-sm mb-0.5">Peter Masila</p>
-                <p className="text-brand-gold text-[10px] uppercase font-bold tracking-widest">Makueni County</p>
+            <div className="lg:w-[30%] relative shrink-0 bg-foreground/[0.01] p-6 sm:p-10 md:p-12 flex items-center justify-center">
+              <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-foreground/5">
+                <Image
+                  width={600} height={800}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  alt="Portrait of Peter Masila, a confident young man smiling"
+                  src="/images/peter_masila.jpg"
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-md p-3 rounded-2xl border border-foreground/5 shadow-lg">
+                  <p className="text-foreground font-serif font-bold text-xs mb-0.5 text-center">Peter Masila</p>
+                  <p className="text-brand-gold text-[9px] uppercase font-bold tracking-widest text-center">Makueni County</p>
+                </div>
               </div>
             </div>
-            <div className="lg:w-[65%] p-12 md:p-16 flex flex-col justify-center">
+            <div className="lg:w-[70%] p-12 md:p-16 flex flex-col justify-center">
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground leading-tight">
                 Stories of Transformation
               </h2>
