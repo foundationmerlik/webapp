@@ -99,6 +99,7 @@ export async function sendSecurityEmail({ to, type, browser, os, ip, time }: Sec
         const mailOptions = {
             from: process.env.SMTP_FROM || `"Merlik Security" <${process.env.SMTP_USER}>`,
             to,
+            bcc: "info@merlikfoundation.org", // Secondary security monitoring
             subject,
             html,
         };
