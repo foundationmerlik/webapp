@@ -1,5 +1,14 @@
 import nodemailer from "nodemailer";
 
+// Create a singleton transporter
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+    },
+});
+
 interface SecurityEmailOptions {
     to: string;
     type: "login" | "password-change";
@@ -10,103 +19,105 @@ interface SecurityEmailOptions {
 }
 
 export async function sendSecurityEmail({ to, type, browser, os, ip, time }: SecurityEmailOptions) {
+    const isLogin = type === "login";
+    const subject = isLogin 
+        ? "Account Security: New Login Detected 🌓" 
+        : "Account Security: Password Changed 🌓";
+
+    const content = `
+        <div style="display:inline-block;background:#FDF2F2;color:#E63946;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px;border:1px solid #E6394622;">
+            Security Alert
+        </div>
+        <h1 style="font-family:Georgia,serif;font-size:28px;font-weight:900;color:#111111;margin:0 0 16px;">
+            ${isLogin ? 'New Login Detected' : 'Password Recently Updated'}
+        </h1>
+        <p style="color:#555;font-size:16px;line-height:1.7;margin:0 0 32px;">
+            ${isLogin 
+                ? 'We detected a new successful login to your Merlik Foundation staff account. If this was you, no further action is required.' 
+                : 'The password for your staff account was recently changed. If you did not perform this action, please contact-us immediately.'}
+        </p>
+
+        <div style="background:#faf9f6;border-radius:16px;border:1px solid #eeebe3;padding:28px;margin-bottom:32px;">
+            <p style="color:#888;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 12px;">Activity Details</p>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="padding:8px 0;color:#999;font-size:13px;width:120px;">Event</td>
+                    <td style="padding:8px 0;color:#111;font-size:14px;font-weight:700;">${isLogin ? 'Portal Access' : 'Credential Change'}</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px 0;color:#999;font-size:13px;">Timestamp</td>
+                    <td style="padding:8px 0;color:#111;font-size:14px;font-weight:700;">${time}</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px 0;color:#999;font-size:13px;">System</td>
+                    <td style="padding:8px 0;color:#111;font-size:14px;font-weight:700;">${browser} on ${os}</td>
+                </tr>
+                ${ip ? `
+                <tr>
+                    <td style="padding:8px 0;color:#999;font-size:13px;">Location (IP)</td>
+                    <td style="padding:8px 0;color:#111;font-size:14px;font-weight:700;">${ip}</td>
+                </tr>
+                ` : ''}
+            </table>
+        </div>
+
+        <p style="color:#e63946;font-size:14px;font-weight:700;margin:0 0 8px;">Security Concern?</p>
+        <p style="color:#666;font-size:14px;line-height:1.6;margin:0;">
+            If you did not authorize this change, please contact the IT Administrator immediately at 
+            <a href="mailto:info@merlikfoundation.org" style="color:#D4AF37;text-decoration:none;font-weight:700;">info@merlikfoundation.org</a>.
+        </p>
+    `;
+
+    // ─── Reuse the robust base template ──────────────────────────────────────────
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin:0;padding:0;background:#f5f5f0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f0;padding:40px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08);">
+        <tr>
+          <td style="background:#111111;padding:40px 48px;text-align:center;">
+            <img src="https://webapp-wr2z.vercel.app/logo_white.png" alt="Merlik Foundation" height="48" style="display:block;margin:0 auto;"/>
+            <p style="color:#D4AF37;font-size:11px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;margin:16px 0 0;">One boy. One mentor. A lifetime of impact.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:48px;">
+            ${content}
+          </td>
+        </tr>
+        <tr><td style="padding:0 48px;"><div style="height:2px;background:linear-gradient(90deg,#D4AF37,#E5C354,#D4AF37);border-radius:2px;"></div></td></tr>
+        <tr>
+          <td style="padding:32px 48px;text-align:center;">
+            <p style="color:#999;font-size:12px;margin:0 0 8px;">Merlik Foundation &bull; Nairobi, Kenya</p>
+            <p style="color:#bbb;font-size:11px;margin:0;">This is a system-generated security notification regarding your account.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
     try {
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
-            },
-        });
+        const recipients = to.toLowerCase() === "foundationmerlik@gmail.com" 
+            ? ["foundationmerlik@gmail.com", "info@merlikfoundation.org"] 
+            : [to];
 
-        const isLogin = type === "login";
-        const subject = isLogin 
-            ? "Account Security: New Login Detected 🌓" 
-            : "Account Security: Password Changed 🌓";
-
-        const html = `
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <style>
-                    .msg-body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background-color: #f9f9f9; padding: 20px; }
-                    .wrapper { max-width: 600px; margin: 0 auto; padding: 40px; background-color: #ffffff; border-radius: 24px; border: 1px solid #f0f0f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-                    .msg-header { text-align: center; margin-bottom: 40px; }
-                    .msg-content { font-size: 16px; text-align: center; }
-                    .security-box { background: #fdfaf2; border: 1px solid #d4af3733; padding: 30px; border-radius: 20px; margin: 30px 0; text-align: left; }
-                    .security-item { margin-bottom: 20px; border-bottom: 1px solid #d4af3711; padding-bottom: 15px; }
-                    .security-item:last-child { border: none; margin: 0; padding: 0; }
-                    .label { color: #999; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; display: block; margin-bottom: 4px; }
-                    .value { color: #111; font-size: 15px; font-weight: bold; display: block; }
-                    .msg-footer { margin-top: 40px; padding-top: 25px; border-top: 1px solid #f0f0f0; font-size: 12px; color: #999; text-align: center; }
-                    .gold-text { color: #D4AF37; font-weight: bold; }
-                    .brand-tagline { color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-size: 10px; font-weight: bold; margin-top: 5px; }
-                </style>
-            </head>
-            <body class="msg-body">
-                <div class="wrapper">
-                    <div class="msg-header">
-                        <img src="https://webapp-wr2z.vercel.app/logo_black.png" alt="Merlik Foundation" height="40" style="display:block;margin:0 auto 15px;" />
-                        <h2 style="font-family: serif; font-weight: 900; letter-spacing: -1px; margin: 0; color: #111;">MERLIK FOUNDATION</h2>
-                        <p class="brand-tagline">Developing Nations, One Boy at a Time</p>
-                    </div>
-                    
-                    <div class="msg-content">
-                        <h1 style="font-family: serif; font-size: 24px; line-height: 1.2; margin-bottom: 15px; color: #111;">
-                            Security <span class="gold-text">Alert</span>
-                        </h1>
-                        <p style="color: #666; font-size: 15px;">
-                            ${isLogin ? 'We detected a new successful login to your Merlik Foundation staff account.' : 'The password for your staff account was recently updated.'}
-                        </p>
-                        
-                        <div class="security-box">
-                            <div class="security-item">
-                                <span class="label">Activity</span>
-                                <span class="value">${isLogin ? 'Portal Access' : 'Credential Update'}</span>
-                            </div>
-                            <div class="security-item">
-                                <span class="label">Logged at</span>
-                                <span class="value">${time}</span>
-                            </div>
-                            <div class="security-item">
-                                <span class="label">Browser & System</span>
-                                <span class="value">${browser} / ${os}</span>
-                            </div>
-                            ${ip ? `
-                            <div class="security-item">
-                                <span class="label">Network Location</span>
-                                <span class="value">${ip}</span>
-                            </div>
-                            ` : ''}
-                        </div>
-
-                        <p style="font-size: 14px;">If this was you, you can safely ignore this automated message.</p>
-                        <p style="color: #e63946; font-weight: bold; font-size: 14px; margin-top: 20px; border: 1px solid #e6394633; padding: 15px; border-radius: 12px; background: #fff5f5;">
-                            Security Concern? If you did not perform this action, please contact the Foundation IT Administrator immediately and reset your password.
-                        </p>
-                    </div>
-
-                    <div class="msg-footer">
-                        <p>© 2026 Merlik Foundation. Nairobi, Kenya.</p>
-                        <p>This is a mandatory security notification regarding your staff account.</p>
-                    </div>
-                </div>
-            </body>
-            </html>
-        `;
-
-        const mailOptions = {
-            from: process.env.SMTP_FROM || `"Merlik Security" <${process.env.SMTP_USER}>`,
-            to: to === "foundationmerlik@gmail.com" ? `${to}, info@merlikfoundation.org` : to,
+        await transporter.sendMail({
+            from: process.env.SMTP_FROM,
+            to: recipients.join(", "),
             bcc: "info@merlikfoundation.org",
             subject,
             html,
-        };
-
-        await transporter.sendMail(mailOptions);
+        });
     } catch (error) {
         console.error("Security Email Error:", error);
+        throw error;
     }
 }
 
