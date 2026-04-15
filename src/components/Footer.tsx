@@ -179,10 +179,6 @@ export default function Footer() {
                                 <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
                                 <span>100% of public donations fund programmes directly</span>
                             </li>
-                            <li className="flex items-start gap-3">
-                                <ShieldCheck size={16} className="text-brand-gold shrink-0 mt-0.5" />
-                                <span>We don&apos;t do tax receipts</span>
-                            </li>
                         </ul>
                         <div className="mt-8 flex flex-col gap-3">
                             <button
