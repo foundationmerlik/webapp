@@ -97,7 +97,7 @@ export default function Home() {
             <div className={`flex items-center gap-3 mb-3 sm:mb-4 animate-reveal ${isLoaded ? '' : 'opacity-0'}`}>
               <div className="h-[1px] w-12 bg-brand-gold"></div>
               <span className="uppercase tracking-widest text-xs font-semibold text-brand-gold flex items-center gap-2">
-                <Sparkles size={14} /> Strategic Boy-child Mentorship
+                <Sparkles size={14} /> Holistic Transformation
               </span>
             </div>
 
