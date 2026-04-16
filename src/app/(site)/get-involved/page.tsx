@@ -15,8 +15,8 @@ export default function GetInvolved() {
             <main className="relative z-10 flex flex-col px-6 md:px-12 py-12 max-w-7xl mx-auto w-full mt-24">
 
                 {/* Hero Section */}
-                <section className="mb-24">
-                    <div className="relative rounded-[2.5rem] overflow-hidden min-h-[500px] flex flex-col justify-center items-center text-center p-10 bg-brand-black shadow-2xl shadow-brand-gold/10">
+                <section className="mb-16">
+                    <div className="relative rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col justify-center items-center text-center p-8 bg-brand-black shadow-2xl shadow-brand-gold/10">
                         <div className="absolute inset-0 bg-[url('/images/outreach.png')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
 
@@ -44,10 +44,10 @@ export default function GetInvolved() {
                 </section>
 
                 {/* 2026 Goals Section */}
-                <section className="mb-32" id="options">
-                    <div className="flex flex-col items-center mb-16 animate-reveal delay-200">
+                <section className="mb-32">
+                    <div className="flex flex-col items-center mb-12 animate-reveal delay-200">
                         <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Our Vision for the Future</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">2026 SMART Goals</h2>
+                        <h2 className="text-3xl md:text-5xl font-serif font-black text-center text-foreground">2026 SMART Goals</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -124,7 +124,7 @@ export default function GetInvolved() {
                 </section>
 
                 {/* Partnership Opportunities Section */}
-                <section className="mb-32">
+                <section className="mb-32" id="options">
                     <div className="flex flex-col items-center mb-16">
                         <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Resource Requirements</span>
                         <h2 className="text-4xl md:text-5xl font-serif font-black text-center text-foreground">Partnership Options</h2>

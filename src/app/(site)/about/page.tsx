@@ -8,22 +8,23 @@ export default function About() {
     return (
         <>
             {/* Parallax Hero Header */}
-            <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0 bg-background/50">
                     <Image
-                        src="/images/hands.png"
-                        alt="Monochrome image of hands reaching towards a bright light"
+                        src="/images/gallery/IMG-20260310-WA0015.jpg"
+                        alt="Merlik Foundation community activity"
                         fill
-                        className="object-cover  scale-105 animate-image-load"
+                        className="object-cover scale-105 animate-image-load opacity-60"
+                        priority
                     />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
 
-                <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-serif tracking-tight mb-6 leading-tight text-foreground animate-reveal">
+                <div className="relative z-20 text-center px-6 max-w-3xl mx-auto mt-12">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-serif tracking-tight mb-4 leading-tight text-foreground animate-reveal">
                         Our Story. <span className="text-brand-gold italic">Our Mission.</span>
                     </h1>
-                    <p className="text-lg md:text-xl md:text-2xl text-foreground/80 font-sans max-w-2xl mx-auto animate-reveal delay-200">
+                    <p className="text-base md:text-lg lg:text-xl text-foreground/80 font-sans max-w-2xl mx-auto animate-reveal delay-200 italic">
                         Empowering the Boy Child Through Education, Mentorship & General Life Development.
                     </p>
                 </div>
@@ -94,11 +95,11 @@ export default function About() {
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
                             <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2023</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Expanded Outreach</h3>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground leading-tight">Curriculum Design</h3>
                         </div>
                         <div className="md:order-1 md:text-right pr-6">
-                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Community outreach expanded with Blue Umbrella Day and Boy Child Awareness Walk partnerships.
+                            <p className="text-foreground/70 font-medium leading-relaxed text-base italic">
+                                Intensive development of the Merlik Mentorship curriculum based on life competencies.
                             </p>
                         </div>
                     </div>
@@ -109,11 +110,11 @@ export default function About() {
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
                             <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2024</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Scaling Impact</h3>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground leading-tight">Scaling Impact</h3>
                         </div>
                         <div className="md:pl-6">
-                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
-                                Volunteer network grows to 18+ mission partners. 300+ boys impacted across programs.
+                            <p className="text-foreground/70 font-medium leading-relaxed text-base italic">
+                                Volunteer network grows to 18+ mission partners. Community outreach expanded with Boy Child Awareness partnerships.
                             </p>
                         </div>
                     </div>
@@ -124,10 +125,10 @@ export default function About() {
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
                             <span className="text-brand-gold font-black font-serif text-4xl mb-2 block">2025</span>
-                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground">Strategic Growth</h3>
+                            <h3 className="text-3xl font-bold font-serif mb-4 text-foreground leading-tight">Strategic Growth</h3>
                         </div>
                         <div className="md:order-1 md:text-right pr-6">
-                            <p className="text-foreground/70 font-medium leading-relaxed text-lg">
+                            <p className="text-foreground/70 font-medium leading-relaxed text-base italic">
                                 Deepened strategic partnerships with CBOs, government bodies, and regional networks.
                             </p>
                         </div>
@@ -136,11 +137,15 @@ export default function About() {
             </section>
 
             {/* Core Pillars: Mission, Vision, Approach, Partnerships */}
-            <section className="bg-foreground/[0.02] py-24 md:py-32 border-y border-brand-gold/10 relative overflow-hidden">
+            <section className="bg-foreground/[0.02] py-20 border-y border-brand-gold/10 relative overflow-hidden">
                 <div className="absolute -right-40 top-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
                 <div className="absolute -left-40 bottom-10 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="text-center mb-16">
+                        <span className="text-brand-gold font-bold text-xs uppercase tracking-[0.3em] block mb-3 italic">(Our Foundation)</span>
+                        <h2 className="text-3xl md:text-5xl font-serif font-black text-foreground">Mission & Vision</h2>
+                    </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Mission Card */}
                         <div className="bg-[#FAF9F6] dark:bg-background/80 p-10 md:p-12 rounded-[2rem] border border-brand-gold/20 shadow-sm relative flex flex-col hover:shadow-md transition-shadow">
@@ -234,24 +239,24 @@ export default function About() {
                     </div>
 
                     {/* Mentorship */}
-                    <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-100">
-                        <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
-                            <Users size={36} />
+                    <div className="p-10 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-100">
+                        <div className="w-16 h-16 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
+                            <Users size={32} />
                         </div>
-                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Mentorship</h3>
-                        <p className="text-foreground/70 leading-relaxed font-medium">
-                            Structured guidance based on 7 life competencies taught by experienced coaches.
+                        <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">Mentorship</h3>
+                        <p className="text-sm text-foreground/70 leading-relaxed font-medium">
+                            Structured guidance based on real life competencies taught by experienced coaches.
                         </p>
                     </div>
 
                     {/* Community Outreach */}
-                    <div className="p-12 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-200">
-                        <div className="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
-                            <Globe size={36} />
+                    <div className="p-10 border border-foreground/10 rounded-2xl bg-background text-center group hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.1)] hover:-translate-y-2 transition-all duration-500 hover:border-brand-gold/30 delay-200">
+                        <div className="w-16 h-16 bg-brand-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-white transition-all duration-500">
+                            <Globe size={32} />
                         </div>
-                        <h3 className="text-3xl font-serif font-bold mb-4 text-foreground">Community Outreach</h3>
-                        <p className="text-foreground/70 leading-relaxed font-medium">
-                            Advocacy and the Blue Bag initiative to tackle immediate wellbeing and safety.
+                        <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">Community Outreach</h3>
+                        <p className="text-sm text-foreground/70 leading-relaxed font-medium">
+                            Advocacy and Partnerships for societal transformation.
                         </p>
                     </div>
                 </div>
@@ -274,31 +279,31 @@ export default function About() {
                         <div>
                             <h4 className="text-2xl font-serif font-bold mb-6 text-foreground">Management Team</h4>
                             <div className="space-y-6">
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
-                                        <Image src="/images/sheila_ngui.jpg" alt="Sheila Ngui" fill className="object-cover" />
+                                <div className="p-5 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                        <Image src="/images/gallery/Sheila Ngui.jpg" alt="Sheila Ngui" fill className="object-cover" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-foreground">Sheila Ngui</p>
-                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Executive Director, Programme Dev. & Ops</p>
+                                        <p className="text-lg font-bold text-foreground">Sheila Ngui</p>
+                                        <p className="text-brand-gold font-bold uppercase tracking-widest text-[9px] mt-1">Founder and Executive Director</p>
                                     </div>
                                 </div>
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                <div className="p-5 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
                                         <Image src="/images/Lavinah.jpeg" alt="Lavinah Gonah" fill className="object-cover" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-foreground">Lavinah Gonah</p>
-                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Co-Founder, Community Outreach</p>
+                                        <p className="text-lg font-bold text-foreground">Lavinah Gonah</p>
+                                        <p className="text-brand-gold font-bold uppercase tracking-widest text-[9px] mt-1">Director</p>
                                     </div>
                                 </div>
-                                <div className="p-6 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
+                                <div className="p-5 bg-background border border-foreground/10 rounded-2xl shadow-sm flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-full bg-foreground/10 overflow-hidden relative shrink-0">
                                         <Image src="/images/Herbert.jpeg" alt="Herbert Njoroge" fill className="object-cover" />
                                     </div>
                                     <div>
-                                        <p className="text-xl font-bold text-foreground">Herbert Njoroge</p>
-                                        <p className="text-brand-gold font-semibold uppercase tracking-widest text-[10px] mt-1">Co-Founder, Strategic Planning</p>
+                                        <p className="text-lg font-bold text-foreground">Herbert Njoroge</p>
+                                        <p className="text-brand-gold font-bold uppercase tracking-widest text-[9px] mt-1">Director</p>
                                     </div>
                                 </div>
                             </div>
@@ -464,18 +469,18 @@ export default function About() {
             </section>
 
             {/* Call to Action */}
-            < section className="py-20 px-6 bg-brand-gold text-white relative overflow-hidden" >
+            < section className="py-16 px-6 bg-brand-gold text-white relative overflow-hidden" >
                 <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="text-4xl md:text-6xl font-black font-serif mb-6 text-brand-black tracking-tight leading-tight">Ready to make an impact?</h2>
-                    <p className="text-xl font-serif font-medium mb-10 opacity-90 text-brand-black italic max-w-2xl mx-auto">
-                        Join our community of donors and volunteers committed to creating a better world.
+                    <h2 className="text-3xl md:text-5xl font-black font-serif mb-6 text-brand-black tracking-tight leading-tight">Ready to make an impact?</h2>
+                    <p className="text-lg font-serif font-medium mb-10 opacity-90 text-brand-black italic max-w-2xl mx-auto leading-relaxed">
+                        Join our community of donors and volunteers committed to creating a better world for the boy child.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/get-involved" className="bg-brand-black text-white px-10 py-4 rounded-full font-black text-lg hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all transform hover:-translate-y-1">
-                            Become a Partner
+                        <Link href="/get-involved#options" className="bg-brand-black text-white px-10 py-4 rounded-full font-black text-base hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all transform hover:-translate-y-1">
+                            Explore Partnership Options
                         </Link>
-                        <Link href="/donate" className="border-2 border-brand-black text-brand-black bg-transparent px-10 py-4 rounded-full font-black text-lg hover:bg-brand-black hover:text-white transition-all transform hover:-translate-y-1">
+                        <Link href="/donate" className="border-2 border-brand-black text-brand-black bg-transparent px-10 py-4 rounded-full font-black text-base hover:bg-brand-black hover:text-white transition-all transform hover:-translate-y-1">
                             Support Our Projects
                         </Link>
                     </div>
