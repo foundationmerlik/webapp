@@ -258,13 +258,13 @@ export default function About() {
             </section >
 
             {/* Governance & Leadership Section */}
-            < section className="py-32 px-6 bg-foreground/[0.02]" >
+            < section className="py-20 px-6 bg-foreground/[0.02]" >
                 <div className="max-w-7xl mx-auto">
-                    <div className="mb-20">
+                    <div className="mb-12">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
                             <div className="w-10 h-[1px] bg-brand-gold"></div> Leadership & Accountability
                         </h2>
-                        <h3 className="text-4xl md:text-5xl lg:text-[56px] font-black font-serif mb-8 leading-tight text-foreground">
+                        <h3 className="text-3xl md:text-5xl font-black font-serif mb-6 leading-tight text-foreground">
                             Governance Structure
                         </h3>
                     </div>
@@ -307,7 +307,7 @@ export default function About() {
                         {/* Governance Details */}
                         <div>
                             <h4 className="text-2xl font-serif font-bold mb-6 text-foreground">Accountability & Oversight</h4>
-                            <div className="space-y-8 text-foreground/80 font-sans leading-relaxed">
+                            <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-sm md:text-base">
                                 <div>
                                     <strong className="text-foreground block mb-1">Legal Status</strong>
                                     <p>Company Limited by Guarantee, Republic of Kenya. Fully registered non-profit with operational capacity since 2019.</p>
@@ -331,13 +331,13 @@ export default function About() {
             </section >
 
             {/* Global Impact Alignment (SDGs) & Partners */}
-            <section className="pt-32 pb-0 px-6">
+            <section className="pt-20 pb-0 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="mb-20">
+                    <div className="mb-12">
                         <h2 className="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
                             <div className="w-10 h-[1px] bg-brand-gold"></div> Global Impact
                         </h2>
-                        <h3 className="text-4xl md:text-5xl lg:text-[56px] font-black font-serif mb-8 leading-tight text-foreground">
+                        <h3 className="text-3xl md:text-5xl font-black font-serif mb-6 leading-tight text-foreground">
                             SDG Alignment
                         </h3>
                     </div>
@@ -464,18 +464,18 @@ export default function About() {
             </section>
 
             {/* Call to Action */}
-            < section className="py-32 px-6 bg-brand-gold text-white relative overflow-hidden" >
+            < section className="py-20 px-6 bg-brand-gold text-white relative overflow-hidden" >
                 <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="text-5xl md:text-7xl font-black font-serif mb-8 text-brand-black tracking-tight">Ready to make an impact?</h2>
-                    <p className="text-2xl font-serif font-medium mb-12 opacity-90 text-brand-black italic">
+                    <h2 className="text-4xl md:text-6xl font-black font-serif mb-6 text-brand-black tracking-tight leading-tight">Ready to make an impact?</h2>
+                    <p className="text-xl font-serif font-medium mb-10 opacity-90 text-brand-black italic max-w-2xl mx-auto">
                         Join our community of donors and volunteers committed to creating a better world.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/get-involved" className="bg-brand-black text-white px-10 py-5 rounded-full font-black text-lg hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all transform hover:-translate-y-1">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link href="/get-involved" className="bg-brand-black text-white px-10 py-4 rounded-full font-black text-lg hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all transform hover:-translate-y-1">
                             Become a Partner
                         </Link>
-                        <Link href="/donate" className="border-2 border-brand-black text-brand-black bg-transparent px-10 py-5 rounded-full font-black text-lg hover:bg-brand-black hover:text-white transition-all transform hover:-translate-y-1">
+                        <Link href="/donate" className="border-2 border-brand-black text-brand-black bg-transparent px-10 py-4 rounded-full font-black text-lg hover:bg-brand-black hover:text-white transition-all transform hover:-translate-y-1">
                             Support Our Projects
                         </Link>
                     </div>
