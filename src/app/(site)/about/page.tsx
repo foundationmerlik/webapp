@@ -164,7 +164,7 @@ export default function About() {
                                 Our Vision
                             </h3>
                             <p className="text-foreground/80 font-sans leading-relaxed text-lg font-medium">
-                                Strengthening and Developing Nations one boy at a time.
+                                Developing nations, one boy at a time.
                             </p>
                         </div>
 
