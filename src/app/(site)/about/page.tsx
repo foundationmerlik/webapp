@@ -44,7 +44,7 @@ export default function About() {
                     <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-brand-gold/30 transform -translate-x-1/2"></div>
 
                     {/* 2019 */}
-                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                    <div className="relative mb-16 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
@@ -59,7 +59,7 @@ export default function About() {
                     </div>
 
                     {/* 2020 */}
-                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                    <div className="relative mb-16 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
@@ -74,7 +74,7 @@ export default function About() {
                     </div>
 
                     {/* 2022 */}
-                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                    <div className="relative mb-16 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
@@ -89,7 +89,7 @@ export default function About() {
                     </div>
 
                     {/* 2023 */}
-                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                    <div className="relative mb-16 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10 
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:order-2 md:pl-6">
@@ -104,7 +104,7 @@ export default function About() {
                     </div>
 
                     {/* 2024 */}
-                    <div className="relative mb-24 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
+                    <div className="relative mb-16 md:grid md:grid-cols-2 md:gap-20 items-center pl-10 md:pl-0">
                         <div className="absolute -left-[5px] md:left-1/2 w-4 h-4 rounded-full bg-brand-gold transform -translate-x-1/2 mt-1.5 md:mt-0 z-10
                             shadow-[0_0_15px_rgba(212,175,55,0.6)] border-4 border-background"></div>
                         <div className="md:text-right pr-6">
