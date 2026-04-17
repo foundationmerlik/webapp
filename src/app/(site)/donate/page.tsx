@@ -27,6 +27,15 @@ export default function Donate() {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isReportsModalOpen, setIsReportsModalOpen] = useState(false);
 
+    // Plan mapping for monthly donations
+    const planMapping: Record<number, string | undefined> = {
+        1500: process.env.NEXT_PUBLIC_PAYSTACK_PLAN_1500,
+        5000: process.env.NEXT_PUBLIC_PAYSTACK_PLAN_5000,
+        15000: process.env.NEXT_PUBLIC_PAYSTACK_PLAN_15000,
+    };
+
+    const currentPlan = frequency === "monthly" ? planMapping[Number(amount)] : undefined;
+
     // Impact labels for each giving amount (converted roughly to KES)
     const predefinedAmounts = [
         { value: 1500, label: "Books & supplies for 1 boy for a term" },
@@ -232,15 +241,21 @@ export default function Donate() {
                             </div>
 
                             {/* Custom Amount */}
-                            <div className="mb-10">
-                                <label className="block text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3 ml-2">Custom Amount (KES)</label>
+                            <div className={`mb-10 transition-opacity duration-300 ${frequency === "monthly" ? "opacity-40 grayscale pointer-events-none" : ""}`}>
+                                <label className="block text-xs font-bold uppercase tracking-widest text-foreground/50 mb-3 ml-2 flex justify-between items-center">
+                                    <span>Custom Amount (KES)</span>
+                                    {frequency === "monthly" && (
+                                        <span className="text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full">Available for One-time only</span>
+                                    )}
+                                </label>
                                 <div className="relative group">
                                     <span className="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-foreground/50 text-xl group-focus-within:text-brand-gold transition-colors">KES</span>
                                     <input
                                         type="number"
                                         value={amount}
                                         onChange={(e) => setAmount(e.target.value)}
-                                        className="w-full rounded-2xl border-2 border-foreground/10 bg-foreground/5 py-5 pl-16 pr-6 text-xl font-bold focus:border-brand-gold focus:ring-0 outline-none transition-all"
+                                        disabled={frequency === "monthly"}
+                                        className="w-full rounded-2xl border-2 border-foreground/10 bg-foreground/5 py-5 pl-16 pr-6 text-xl font-bold focus:border-brand-gold focus:ring-0 outline-none transition-all disabled:cursor-not-allowed"
                                         placeholder="Enter amount"
                                     />
                                 </div>
@@ -257,6 +272,7 @@ export default function Donate() {
                                 onClose={onClose}
                                 isProcessing={isProcessing}
                                 setIsProcessing={setIsProcessing}
+                                plan={currentPlan}
                             />
 
                             <p className="mt-4 text-center text-xs font-semibold text-foreground/40 uppercase tracking-widest">

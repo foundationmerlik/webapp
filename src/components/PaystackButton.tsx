@@ -14,6 +14,7 @@ interface PaystackButtonProps {
     onClose: () => void;
     isProcessing: boolean;
     setIsProcessing: (val: boolean) => void;
+    plan?: string;
 }
 
 export default function PaystackButton({ 
@@ -25,7 +26,8 @@ export default function PaystackButton({
     onSuccess, 
     onClose,
     isProcessing,
-    setIsProcessing
+    setIsProcessing,
+    plan
 }: PaystackButtonProps) {
     const [mounted, setMounted] = useState(false);
     const [reference, setReference] = useState("");
@@ -41,6 +43,7 @@ export default function PaystackButton({
         amount: Math.round(amount * 100),
         publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_a9690e4d37e92a23f23e2c0a178f5496cae30d08",
         currency: "KES",
+        plan: plan || undefined,
         metadata: {
             custom_fields: [
                 {
@@ -60,7 +63,7 @@ export default function PaystackButton({
                 }
             ]
         }
-    }), [reference, email, amount, firstName, lastName, frequency]);
+    }), [reference, email, amount, firstName, lastName, frequency, plan]);
 
     const initializePayment = usePaystackPayment(config);
 
