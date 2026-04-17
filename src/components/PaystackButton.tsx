@@ -41,7 +41,6 @@ export default function PaystackButton({
         amount: Math.round(amount * 100),
         publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_a9690e4d37e92a23f23e2c0a178f5496cae30d08",
         currency: "KES",
-        label: `${frequency === 'monthly' ? 'Monthly' : 'One-time'} Donation - ${firstName} ${lastName}`,
         metadata: {
             custom_fields: [
                 {
