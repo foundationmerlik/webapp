@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { usePaystackPayment } from "react-paystack";
 import { Heart, RefreshCw } from "lucide-react";
 
@@ -26,12 +27,13 @@ export default function PaystackButton({
     isProcessing,
     setIsProcessing
 }: PaystackButtonProps) {
-    const config = {
+    const config = useMemo(() => ({
         reference: (new Date()).getTime().toString(),
         email: email,
-        amount: amount * 100, // Amount in kobo/cents
+        amount: Math.round(amount * 100), // Ensure it's an integer in kobo/cents
         publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_a9690e4d37e92a23f23e2c0a178f5496cae30d08",
         currency: "KES",
+        label: `${frequency === 'monthly' ? 'Monthly' : 'One-time'} Donation - ${firstName} ${lastName}`,
         metadata: {
             custom_fields: [
                 {
@@ -43,10 +45,15 @@ export default function PaystackButton({
                     display_name: "Last Name",
                     variable_name: "last_name",
                     value: lastName,
+                },
+                {
+                    display_name: "Frequency",
+                    variable_name: "frequency",
+                    value: frequency,
                 }
             ]
         }
-    };
+    }), [email, amount, firstName, lastName, frequency]);
 
     const initializePayment = usePaystackPayment(config);
 
